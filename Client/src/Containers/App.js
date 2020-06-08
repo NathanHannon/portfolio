@@ -5,6 +5,7 @@ import './App.css';
 import Layout from '../components/Layout';
 import About from '../components/About/About';
 import Projects from '../components/Projects/Projects';
+import Home from '../components/Home/Home'
 
 const history = createBrowserHistory();
 
@@ -15,10 +16,9 @@ class App extends Component {
           <Router history={history}>
             <Layout />
             <div className="App">
-              <h2>Hello, My name is Nathan, and I am a computer programmer!</h2>
-              <hr />
-              <h3>Click the hamburger menu to go to my projects, about page, and contact info</h3>
               <Switch>
+                <Route path="/Home" component={Home} />
+								<Route exact path="/" component={Home} />
                 <Route path="/About" component={About} /> 
                 <Route path="/Projects" component={Projects} />
               </Switch>

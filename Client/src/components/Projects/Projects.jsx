@@ -19,8 +19,8 @@ class Projects extends Component {
       render() {
         console.log(this.state.projects)
         return (
-          <div className="project-method">
-            <ProjectList project={this.state.projects} />
+          <div className="projects-method">
+            <ProjectList projects={this.state.projects} />
           </div>
         );
       }
