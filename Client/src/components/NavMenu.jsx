@@ -32,7 +32,7 @@ import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } f
 					<Collapse isOpen={!this.state.collapsed} navbar>
 						<Nav navbar>
 							<NavItem>
-								<NavLink href="/Home" className="text-white">
+								<NavLink href="/" className="text-white">
 									Home
 								</NavLink>
 							</NavItem>
