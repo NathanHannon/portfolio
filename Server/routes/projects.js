@@ -14,3 +14,4 @@ router.get("/projects", (request, response, next) => {
         }
     });
 });
+module.exports = router;
