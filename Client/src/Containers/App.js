@@ -15,6 +15,9 @@ class App extends Component {
           <Router history={history}>
             <Layout />
             <div className="App">
+              <h2>Hello, My name is Nathan, and I am a computer programmer!</h2>
+              <hr />
+              <h3>Click the hamburger menu to go to my projects, about page, and contact info</h3>
               <Switch>
                 <Route path="/About" component={About} /> 
                 <Route path="/Projects" component={Projects} />

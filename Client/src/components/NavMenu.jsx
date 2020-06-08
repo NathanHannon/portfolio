@@ -27,7 +27,7 @@ import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } f
 		return (
 			<header>
 				<Navbar color="primary" dark>
-					<NavbarBrand href="/" className="mr-auto"><h4>Nathan's Portfolio</h4></NavbarBrand>
+					<NavbarBrand href="/" className="mr-auto"><h4>Portfolio</h4></NavbarBrand>
 					<NavbarToggler onClick={this.toggleNavbar} className="mr-2" />	
 					<Collapse isOpen={!this.state.collapsed} navbar>
 						<Nav navbar>
