@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { ProjectList } from "./ProjectList";
+import { ProjectList } from "./ProjectList/ProjectList";
 
 class Projects extends Component {
 
     constructor() {
         super();
         this.state = {
-          projects: [],
+          projects: []
         };
     }
       //pull data from the backend (database)
