@@ -9,7 +9,6 @@ export const ProjectCard = props => {
             <Card outline color="primary">
                 <CardBody>
                     <CardTitle className="text-dark">{props.projects.name}</CardTitle>
-                    {/* <CardSubtitle className="text-dark">GitHub: {props.projects.url}</CardSubtitle> */}
                     <CardText className="text-dark">{props.projects.description}</CardText>
                 </CardBody>
             </Card>

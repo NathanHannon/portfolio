@@ -11,7 +11,7 @@ router.get("/projects", (request, response, next) => {
             return response.status(404).json('Projects not found');
         }
         else {
-            console.log(response.status(200))
+            // console.log(response.status(200))
             return response.status(200).json(results.rows);
         }
     });
@@ -24,6 +24,7 @@ router.get("/projects/:id", (request, response, next) => {
       [id],
       (error, results) => {
         if (error) {
+          console.log(error)
           //return an error message stating there are no projects
           return  response.status(404).json('project not found');
         }
