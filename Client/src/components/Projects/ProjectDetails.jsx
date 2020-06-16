@@ -22,6 +22,7 @@ class ProjectDetails extends Component {
                 </header>
                 <p className="projectName">{this.state.projectDetails.name}</p>
                 <p className="productDescription">{this.state.projectDetails.description}</p>
+                <a className="githubLink" href={this.state.projectDetails.url}>GitHub Repository</a>
             </Container>
         )
     }
