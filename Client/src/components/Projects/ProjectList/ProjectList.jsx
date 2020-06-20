@@ -6,7 +6,7 @@ import './ProjectList.css'
 //Creates the project list using the card component
 export const ProjectList = props => (
 <div>
-    <Container className="projects-list">
+    <Container className="project-list">
         {props.projects.map((projects) => <ProjectCard key={projects.projectid} projects={projects} />)}
     </Container> 
 </div>
