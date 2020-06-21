@@ -8,9 +8,10 @@ class Home extends Component {
     render() {
       return (
         <div className="home-method">
-            <h2>Hello, My name is Nathan, and I am a computer programmer!</h2>
+            <h1>Nathan Hannon</h1>
             <hr />
-            <h3>Click the hamburger menu to go to my projects, about page, and contact info</h3>
+            <h3>Hello! I'm Nathan Hannon. I have a passion for programming and technology.</h3>
+            <p>Click the hamburger menu to navigate my website.</p>
         </div>
       );
     }
