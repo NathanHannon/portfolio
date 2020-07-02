@@ -20,7 +20,7 @@ router.get("/projects", (request, response, next) => {
 router.get("/projects/:id", (request, response, next) => {
     const id = parseInt(request.params.id);
     db_connection.query(
-      "SELECT * FROM projects WHERE projectid=$1",
+      "SELECT * FROM projects WHERE project_id=$1",
       [id],
       (error, results) => {
         if (error) {

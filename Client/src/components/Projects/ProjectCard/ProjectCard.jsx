@@ -5,14 +5,14 @@ import './ProjectCard.css';
 
 export const ProjectCard = props => {
     return (
-        <Link to={"/Details/" + props.projects.projectid} className="text-dark">
+        <a href={props.projects.repo_url}>
             <Card outline color="primary">
                 <CardBody style={style}>
                     <CardTitle className="text-dark">{props.projects.name}</CardTitle>
                     <CardText className="text-dark">{props.projects.description}</CardText>
                 </CardBody>
             </Card>
-        </Link>
+        </a>
     );
 }
 
