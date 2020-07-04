@@ -7,8 +7,8 @@ export const ProjectCard = props => {
     return (
         <Link to={"/Details/" + props.projects.project_id} className="text-dark">
             <Card outline color="primary">
-                <CardImg className="text-dark" style={style} src={props.projects.image_url}/>
-                    <CardBody>  
+                <CardImg style={style} src={props.projects.image_url}/>
+                <CardBody>  
                     <CardTitle className="text-dark">{props.projects.name}</CardTitle>
                     <CardText className="text-dark">{props.projects.description}</CardText>
                 </CardBody>
@@ -19,5 +19,5 @@ export const ProjectCard = props => {
 
 const style ={
     width:'100%',
-    height:'150px'
+    height:'200px'
 }
