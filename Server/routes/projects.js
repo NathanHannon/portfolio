@@ -5,7 +5,7 @@ var db_connection = require("../connections/database_connection");
 // -----------------------------------------------------------------------
 //get all projects
 router.get("/projects", (request, response, next) => {
-    db_connection.query("SELECT * FROM projects", (error, results) => {
+    db_connection.query("SELECT * FROM projects ORDER BY project_id ASC", (error, results) => {
         if(error) {
             console.log(error)
             return response.status(404).json('Projects not found');
