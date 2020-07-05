@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { Card, CardBody, CardTitle, CardImg, CardText } from 'reactstrap';
-import './ProjectCard.css'; 
 
 export const ProjectCard = props => {
     return (
         <Link to={"/Details/" + props.projects.project_id} className="text-dark">
-            <Card outline color="primary">
-                <CardImg style={style} src={props.projects.image_url}/>
+            <Card outline color="primary" >
+                <CardImg className='project-card' src={props.projects.image_url} width='320px' height='200px'/>
                 <CardBody>  
                     <CardTitle className="text-dark">{props.projects.name}</CardTitle>
                     <CardText className="text-dark">{props.projects.description}</CardText>
@@ -15,9 +14,4 @@ export const ProjectCard = props => {
             </Card>
         </Link>
     );
-}
-
-const style ={
-    width:'100%',
-    height:'200px'
 }
