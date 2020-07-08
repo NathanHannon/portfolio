@@ -21,16 +21,7 @@ class About extends Component {
                     <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Nathan Hannon's DEV Profile" height="30" width="30"/>    
                     <a href="https://dev.to/nathanhannon" className="socialLink"> Dev.to Profile</a>
                 </p>
-                <iframe width="830" height="1150" frameborder="0" src={`https://storage.cloud.google.com/portfoliofiles/Nathan_Hannon_Resume.pdf`}></iframe>
-                <p>
-                    
-                </p>
-                <p>
-                    
-                </p>
-                <p>
-                    
-                </p>
+                <iframe width="100%" height="1150" frameborder="0" src={`https://storage.cloud.google.com/portfoliofiles/Nathan_Hannon_Resume.pdf`}/>
                 {/* <Button className="btnDownload" color='info' >Download Resumé</Button> */}
              </Container>
         );
