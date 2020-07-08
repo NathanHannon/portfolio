@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, Container } from 'reactstrap';
+import './About.css'
 
 class About extends Component {
     render() {
@@ -14,17 +15,23 @@ class About extends Component {
                 <hr/>
                 <p>
                     <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="30" width="30"/>
-                    <a href='https://github.com/NathanHannon'> My Github Profile</a>
-                </p>
-                <p>
+                    <a href='https://github.com/NathanHannon' className="socialLink"> Github Profile</a>
                     <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" height='30' width='30'/>
-                    <a href='https://www.linkedin.com/in/nathan-hannon'> My LinkedIn Profile</a>
+                    <a href='https://www.linkedin.com/in/nathan-hannon' className="socialLink"> LinkedIn Profile</a>
+                    <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Nathan Hannon's DEV Profile" height="30" width="30"/>    
+                    <a href="https://dev.to/nathanhannon" className="socialLink"> Dev.to Profile</a>
+                </p>
+                <iframe width="830" height="1150" frameborder="0" src={`https://storage.cloud.google.com/portfoliofiles/Nathan_Hannon_Resume.pdf`}></iframe>
+                <p>
+                    
                 </p>
                 <p>
-                    <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Nathan Hannon's DEV Profile" height="30" width="30"/>    
-                    <a href="https://dev.to/nathanhannon"> My Dev.to Profile</a>
+                    
                 </p>
-                <Button className="btnDownload" color='info' >Download Resumé</Button>
+                <p>
+                    
+                </p>
+                {/* <Button className="btnDownload" color='info' >Download Resumé</Button> */}
              </Container>
         );
     }
