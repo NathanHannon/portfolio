@@ -48,7 +48,7 @@ import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } f
 							</NavItem>
 							<NavItem>
 								<NavLink href="/Contact" className="text-white">
-									Resume & Contact Info
+									Resumé & Contact Info
 								</NavLink>
 							</NavItem>
 							
