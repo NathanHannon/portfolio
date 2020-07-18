@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Button, Container } from 'reactstrap';
 import './Contact.css';
 
 class Contact extends Component {
