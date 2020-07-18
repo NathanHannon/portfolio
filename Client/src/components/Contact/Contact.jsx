@@ -5,7 +5,7 @@ import './Contact.css';
 class Contact extends Component {
     render() {
         return (
-             <Container className="contactPage">
+             <div className="contactPage">
                 <header className="contactHeader">
                     <h1><u>Resumé & Contact Info</u></h1>
                 </header>
@@ -13,8 +13,10 @@ class Contact extends Component {
                     <a href="tel:519-878-6227" className="contactLink" alt="Call 519-878-6227">Give me a call!</a>
                     <a href="mailto:nathan@hannon.me" className="contactLink" alt="Send email to nathan@hannon.me">Send me an email!</a>
                 </p>
-                <iframe width="100%" height="1150px" frameborder="0" src={`https://storage.cloud.google.com/portfoliofiles/Nathan_Hannon_Resume.pdf`}/>
-             </Container>
+                <div class="iframe-container">
+                    <iframe seamless="seamless" frameborder="0" src={`https://storage.cloud.google.com/portfoliofiles/Nathan_Hannon_Resume.pdf`}/>
+                </div>
+             </div>
         );
     }
 }
