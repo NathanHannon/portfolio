@@ -69,3 +69,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 
 My personal portfolio site. Currently a work in progress!
+
+To Build: 
+1. Change directories to Client folder and type "npm install"; do this as well, but for the Server folder.
+2. Run the provided sql file with the PostgreSQL recovery tool for database availability. 
+3. Go to both the Client and Server directories and run "npm start".
