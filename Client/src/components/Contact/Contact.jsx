@@ -13,7 +13,7 @@ class Contact extends Component {
                     <a href="mailto:nathan@hannon.me" className="contactLink" alt="Send email to nathan@hannon.me">Send me an email!</a>
                 </p>
                 <div class="iframe-container">
-                    <iframe seamless="seamless" frameborder="0" src={`https://storage.cloud.google.com/portfoliofiles/Nathan_Hannon_Resume.pdf`}/>
+                    <iframe seamless="seamless" frameborder="0" src={`https://storage.googleapis.com/portfoliofiles/Nathan_Hannon_Resume.pdf`}/>
                 </div>
              </div>
         );
