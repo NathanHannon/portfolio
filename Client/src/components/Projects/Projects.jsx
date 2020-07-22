@@ -12,7 +12,7 @@ class Projects extends Component {
       //pull data from the backend (database)
       componentDidMount() {
     
-        fetch("http://localhost:8080/projects")
+        fetch("http://localhost:5000/projects")
           .then(res => res.json())
           .then(data => this.setState({ projects: data }));
       }
