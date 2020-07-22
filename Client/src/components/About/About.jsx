@@ -9,21 +9,11 @@ class About extends Component {
                 <header className="aboutHeader">
                     <h1><u>About Me</u></h1>
                 </header>
-                <p>Hello curious veiwer or potential employer! My name is Nathan Hannon and I am a Computer Programming/Analysis graduate from Conestoga College. 
-                    I am proficient with HTML5/CSS/JavaScript and React.js/Node.js, as well as C#, Python and Java. I am proficient with the Microsoft SQL, Oracle SQL, MySQL, and PostgreSQL databse systems.
-                    I am currently teaching myself Rust and Go to broaden my skillset.</p>
-                <hr/>
+                <h2><u>Interests</u></h2>
                 <p>
-                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="30" width="30"/>
-                    <a href='https://github.com/NathanHannon' className="socialLink">Github Profile</a>
-                </p>
-                <p>
-                   <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" height='30' width='30'/>
-                    <a href='https://www.linkedin.com/in/nathan-hannon' className="socialLink">LinkedIn Profile</a>
-                </p> 
-                <p>
-                    <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Nathan Hannon's DEV Profile" height="30" width="30"/>    
-                    <a href="https://dev.to/nathanhannon" className="socialLink">Dev.to Profile</a>
+                    I have a wide variety of interests including reading books (both fiction and non-fiction) fishing, golfing, video games, programming, 
+                    and just sceince and technology in general. I also try to keep up with the latest trends in the technology space, even if I won't learn them directly. 
+                    I feel it is good to have a sense of development in the industry and those that affect it and which we affect in return.
                 </p>
              </Container>
         );
