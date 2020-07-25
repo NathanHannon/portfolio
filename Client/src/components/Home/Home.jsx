@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Container } from 'reactstrap';
+import { Container } from 'reactstrap';
 import './Home.css'
 
 class Home extends Component {
@@ -13,9 +13,7 @@ class Home extends Component {
           <header className="aboutHeader">
               <h1><u>Welcome!</u></h1>
           </header>
-          <p>Hello curious veiwer or potential employer! My name is Nathan Hannon and I am a Computer Programming/Analysis graduate from Conestoga College. 
-              I am proficient with HTML5/CSS/JavaScript and React.js/Node.js, as well as C#, Python and Java. I am proficient with the Microsoft SQL, Oracle SQL, MySQL, and PostgreSQL databse systems.
-              I am currently teaching myself Rust and Go to broaden my skillset.</p>
+          <p>Hello curious veiwer or potential employer! My name is Nathan Hannon and I am a Computer Programming/Analysis graduate from Conestoga College.</p>
           <hr/>
           <p>
               <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="30" width="30"/>
