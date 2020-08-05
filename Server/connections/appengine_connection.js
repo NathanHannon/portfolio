@@ -8,7 +8,7 @@ const connectWithUnixSockets = (config) => {
       user: 'postgres', // e.g. 'my-user'
       password: 'Nhannon03231996!?><', // e.g. 'my-user-password'
       database: 'PortfolioDB', // e.g. 'my-database'
-      host: `${dbSocketPath}/'portfolio-285502:us-east1:portfolio-db'`,
+      host: `${dbSocketPath}/portfolio-285502:us-east1:portfolio-db`,
     },
     // ... Specify additional properties here.
     ...config
