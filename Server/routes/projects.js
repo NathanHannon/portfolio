@@ -6,10 +6,10 @@ var app_connection = require("../connections/appengine_connection")
 // -----------------------------------------------------------------------
 //get all projects
 router.get("/projects", (request, response, next) => {
-    app_connection.query("SELECT * FROM projects ORDER BY project_id ASC", (error, results) => {
+    db_connection.query("SELECT * FROM projects ORDER BY project_id ASC", (error, results) => {
         if(error) {
             console.log(error)
-            return response.status(404).json('Projects not found');
+            return response.status(404).json('no projects found');
         }
         else {
             // console.log(response.status(200))
@@ -20,7 +20,7 @@ router.get("/projects", (request, response, next) => {
 //get a project by Id
 router.get("/projects/:id", (request, response, next) => {
     const id = parseInt(request.params.id);
-    app_connection.query(
+    db_connection.query(
       "SELECT * FROM projects WHERE project_id=$1",
       [id],
       (error, results) => {
