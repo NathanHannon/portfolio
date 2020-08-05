@@ -1,5 +1,5 @@
-require('dotenv').config();
-const Pool = require('pg').Pool;
+require('./node_modules/dotenv').config();
+const Pool = require('./node_modules/pg').Pool;
 const pool = new Pool({
 	user: 'postgres',
 	host: '34.73.186.70',
