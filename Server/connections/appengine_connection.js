@@ -5,10 +5,10 @@ const connectWithUnixSockets = (config) => {
   return Knex({
     client: 'pg',
     connection: {
-      user: process.env.DB_USER, // e.g. 'my-user'
-      password: process.env.DB_PASS, // e.g. 'my-user-password'
-      database: process.env.DB_NAME, // e.g. 'my-database'
-      host: `${dbSocketPath}/${process.env.INSTANCE_CONNECTION_NAME}`,
+      user: 'postgres', // e.g. 'my-user'
+      password: 'Nhannon03231996!?><', // e.g. 'my-user-password'
+      database: 'PortfolioDB', // e.g. 'my-database'
+      host: `${dbSocketPath}/'portfolio-285502:us-east1:portfolio-db'`,
     },
     // ... Specify additional properties here.
     ...config
