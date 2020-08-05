@@ -6,7 +6,7 @@ const connectWithUnixSockets = (config) => {
       client: 'pg',
       connection: {
         user: 'postgres',
-        host: '35.231.19.245',
+        host: '34.73.186.70',
         database: 'PortfolioDB',
         password: 'Nhannon03231996!?><',
         port: 5432
