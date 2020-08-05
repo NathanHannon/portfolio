@@ -1,6 +1,6 @@
 runtime: nodejs12
 vpc_access_connector:
-        name: portfolio-vpc
+        name: projects/portfolio-285502/locations/us-east1/connectors/portfolio-vpc
 handlers:
 # Serve all static files with url ending with a file extension
 - url: /(.*\..+)$
