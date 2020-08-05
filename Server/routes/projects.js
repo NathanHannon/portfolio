@@ -1,11 +1,12 @@
-var express = require("express");
+var express = require("../../node_modules/express");
 var router = express.Router();
 var db_connection = require("../connections/database_connection");
+var app_connection = require("../connections/appengine_connection")
 
 // -----------------------------------------------------------------------
 //get all projects
 router.get("/projects", (request, response, next) => {
-    db_connection.query("SELECT * FROM projects ORDER BY project_id ASC", (error, results) => {
+    app_connection.query("SELECT * FROM projects ORDER BY project_id ASC", (error, results) => {
         if(error) {
             console.log(error)
             return response.status(404).json('Projects not found');
@@ -19,7 +20,7 @@ router.get("/projects", (request, response, next) => {
 //get a project by Id
 router.get("/projects/:id", (request, response, next) => {
     const id = parseInt(request.params.id);
-    db_connection.query(
+    app_connection.query(
       "SELECT * FROM projects WHERE project_id=$1",
       [id],
       (error, results) => {

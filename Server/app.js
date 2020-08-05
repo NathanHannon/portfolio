@@ -1,9 +1,9 @@
-var createError = require('http-errors');
-var express = require('express');
+var createError = require('../node_modules/http-errors');
+var express = require('../node_modules/express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cors = require("cors");
+var cookieParser = require('../node_modules/cookie-parser');
+var logger = require('../node_modules/morgan');
+var cors = require("../node_modules/cors");
 
 //---------------Routers-----------------
 var projectRouter = require("./routes/projects")
