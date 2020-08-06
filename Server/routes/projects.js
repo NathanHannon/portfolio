@@ -1,8 +1,7 @@
 const express = require("../../node_modules/express");
 const Knex = require('../../node_modules/knex');
-const app = express();
-app.enable('trust proxy');
 const router = express.Router();
+router.enable('trust proxy');
 const db_connection = require("../connections/database_connection");
 const app_connection = require("../connections/appengine_connection")
 
