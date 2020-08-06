@@ -10,7 +10,7 @@ class ProjectDetails extends Component {
     }
     componentDidMount() {
         let project_id = this.props.location.pathname.split('/').pop();
-        fetch("http://localhost:5000/projects/" + project_id)
+        fetch("https://portfolio-285502.ue.r.appspot.com/projects/" + project_id)
         .then(res => res.json())
         .then(data => this.setState({ projectDetails: data[0] }))
     }
