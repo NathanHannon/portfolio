@@ -11,3 +11,8 @@ handlers:
   static_files: build/index.html
   upload: build/index.html
   
+env_variables:
+  CLOUD_SQL_USERNAME: postgres
+  CLOUD_SQL_PASSWORD: Nhannon03231996!?><
+  CLOUD_SQL_DATABASE: PortfolioDB
+  CLOUD_SQL_CONNECTION: portfolio-285502:us-east1:portfolio-db
