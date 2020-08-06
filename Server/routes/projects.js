@@ -1,29 +1,8 @@
 const express = require("../../node_modules/express");
-const Knex = require('../../node_modules/knex');
 const router = express.Router();
-router.enable('trust proxy');
 const db_connection = require("../connections/database_connection");
 const app_connection = require("../connections/appengine_connection")
 
-const connect = () => {
-  // [START gae_flex_postgres_connect]
-  const config = {
-    user: process.env.SQL_USER,
-    password: process.env.SQL_PASSWORD,
-    database: process.env.SQL_DATABASE,
-  };
-
-// Connect to the database
-const knex = Knex({
-  client: 'pg',
-  connection: config,
-});
-// [END gae_flex_postgres_connect]
-
-return knex;
-};
-
-const knex = connect();
 // -----------------------------------------------------------------------
 //get all projects
 router.get("/projects", (request, response, next) => {
