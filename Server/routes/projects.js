@@ -1,7 +1,7 @@
-var express = require("../../node_modules/express");
-var router = express.Router();
-var db_connection = require("../connections/database_connection");
-var app_connection = require("../connections/appengine_connection")
+const express = require("../../node_modules/express");
+const router = express.Router();
+const db_connection = require("../connections/database_connection");
+const app_connection = require("../connections/appengine_connection")
 
 // -----------------------------------------------------------------------
 //get all projects
