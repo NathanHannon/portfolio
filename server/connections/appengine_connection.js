@@ -1,5 +1,5 @@
 const connectWithUnixSockets = (config) => {
-  const dbSocketPath = process.env.DB_SOCKET_PATH || "/cloudsql/portfolio-285612:us-east1:portfolio-db"
+  const dbSocketPath = process.env.DB_SOCKET_PATH || "/cloudsql/portfolio-285502:us-east1:portfolio-db"
 
   // Establish a connection to the database
   return Knex({
