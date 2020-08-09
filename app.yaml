@@ -15,8 +15,8 @@ env_variables:
   SQL_USER: "postgres"
   SQL_PASSWORD: "Nhannon03231996!?><"
   SQL_DATABASE: "PortfolioDB"
-  INSTANCE_CONNECTION_NAME: "portfolio-285502:us-east1:portfolio-db"
+  INSTANCE_CONNECTION_NAME: "portfolio-285801:us-east1:portfolio-db"
 
-beta_settings:
-  cloud_sql_instances: "portfolio-285502:us-east1:portfolio-db"
-  # cloud_sql_instances: portfolio-285502:us-east1:portfolio-db=tcp:5433
+# beta_settings:
+#   cloud_sql_instances: "portfolio-285801:us-east1:portfolio-db"
+#   # cloud_sql_instances: portfolio-285502:us-east1:portfolio-db=tcp:5433
