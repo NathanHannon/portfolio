@@ -1,3 +1,4 @@
+// STANDARD/PLACEHOLDER CONNECTION
 require('../../node_modules/dotenv').config();
 const Pool = require('../../node_modules/pg').Pool;
 const pool = new Pool({

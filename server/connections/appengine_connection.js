@@ -1,3 +1,4 @@
+// UNIX SOCKET CONNECTION
 const connectWithUnixSockets = (config) => {
   const dbSocketPath = process.env.DB_SOCKET_PATH || "/cloudsql/portfolio-285801:us-east1:portfolio-db/.s.PGSQL.5432"
 
