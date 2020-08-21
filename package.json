@@ -36,7 +36,7 @@
     "start": "concurrently \"node ./server/bin/www\" \"react-scripts start\"",
     "server": "cd server && npm run start",
     "client": "cd client && npm run start",
-    "build": "npm run build:react && npm run build:bundle", 
+    "build": "npm run build:react", 
     "build:react": "react-scripts build", 
     "build:bundle": "webpack --config webpack.config.js", 
     "test": "react-scripts test",
