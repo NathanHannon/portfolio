@@ -36,9 +36,9 @@
     "start": "concurrently \"node ./server/bin/www\" \"react-scripts start\"",
     "server": "cd server && npm run start",
     "client": "cd client && npm run start",
-    "build": "npm run build:react", 
-    "build:react": "react-scripts build", 
-    "build:bundle": "webpack --config webpack.config.js", 
+    "build": "npm run build:react",
+    "build:react": "react-scripts build",
+    "build:bundle": "webpack --config webpack.config.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -56,6 +56,7 @@
   },
   "devDependencies": {
     "axios": "^0.19.2",
+    "babel": "^6.23.0",
     "concurrently": "^5.3.0",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
