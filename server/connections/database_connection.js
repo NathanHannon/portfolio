@@ -5,17 +5,17 @@ require('../../node_modules/dotenv').config();
 const Pool = require('../../node_modules/pg').Pool;
 const pool = new Pool({
 	user: 'doadmin',
-	password: 'lkon3ablk9qtndmv',
-	host: 'portfolio-cluster-do-user-6898555-0.a.db.ondigitalocean.com',
+	password: 'ptcbqp6xw8eo7rs0',
+	host: 'portfolio-cluster-do-user-6898555-0.b.db.ondigitalocean.com',
 	port: 25060,
 	database: 'PortfolioDB',
 	ssl: {
 		require,
 		ca: '../ssl/do-ca-certificate.crt',
 		rejectUnauthorized: false,
-	} 
-	
-	
+	}
+
+
 	// user: 'postgres',
 	// host: '35.185.7.181',
 	// database: 'PortfolioDB',

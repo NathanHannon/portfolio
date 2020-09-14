@@ -4,13 +4,13 @@
 /node_modules
 /.pnp
 .pnp.js
-
+/backup
 # testing
 /coverage
 
 # production
 /build
-
+.env
 # misc
 .DS_Store
 .env.local
@@ -24,3 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 
 server/ssl/*
+app.yaml
