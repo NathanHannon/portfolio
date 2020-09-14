@@ -4,10 +4,10 @@ const { findSeries } = require('async');
 require('../../node_modules/dotenv').config();
 const Pool = require('../../node_modules/pg').Pool;
 const pool = new Pool({
-	host: 'app-38233e33-4ba9-4976-9390-3822b3dfa945-do-user-6898555-0.b.db.ondigitalocean.com',
+	host: 'app-9d250f68-6db5-40aa-bdd7-e8ecbab9cf39-do-user-6898555-0.b.db.ondigitalocean.com',
 	port: 25060,
 	username: 'portfolio-db',
-	password: 'lnhu01gmdgj9rtmt',
+	password: 'f369r23mf90kk3hz',
 	database: 'portfolio-db',
 	ssl: {
 		require,
