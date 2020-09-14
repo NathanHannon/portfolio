@@ -33,7 +33,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "concurrently \"node ./server/bin/www\" \"export PORT=3006 react-scripts start\"",
+    "start": "concurrently \"node ./server/bin/www\" \"react-scripts start\"",
     "server": "cd server && npm run start",
     "client": "cd client && npm run start",
     "build": "react-scripts build",
