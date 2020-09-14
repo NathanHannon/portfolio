@@ -9,11 +9,12 @@ const pool = new Pool({
 	username: 'portfolio-db',
 	password: 'f369r23mf90kk3hz',
 	database: 'portfolio-db',
-	ssl: {
-		require,
-		ca: '../ssl/do-ca-certificate.crt',
-		rejectUnauthorized: false,
-	},
+	sslmode: 'require'
+	// sslmode: {
+	// 	require,
+	// 	ca: '../ssl/do-ca-certificate.crt',
+	// 	rejectUnauthorized: false,
+	// },
 
 
 	// user: 'postgres',
