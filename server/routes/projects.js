@@ -4,7 +4,7 @@ const db_connection = require("../database_connection");
 
 // -----------------------------------------------------------------------
 //get all projects
-router.get("/projects", (request, response, next) => {
+router.get("/api/projects", (request, response, next) => {
   db_connection.query("SELECT * FROM projects ORDER BY project_id ASC", (error, results) => {
     if (error) {
       console.log(error)
@@ -17,7 +17,7 @@ router.get("/projects", (request, response, next) => {
   });
 });
 //get a project by Id
-router.get("/projects/:id", (request, response, next) => {
+router.get("/api/projects/:id", (request, response, next) => {
   const id = parseInt(request.params.id);
   db_connection.query(
     "SELECT * FROM projects WHERE project_id=$1",
