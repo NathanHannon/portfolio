@@ -21,7 +21,7 @@ var projectRouter = require("./routes/projects")
 //       database: process.env.SQL_DATABASE,
 //     };
 //     config.host = `/cloudsql/${process.env.INSTANCE_CONNECTION_NAME}`;
-  
+
 //     // Connect to the database
 //     const knex = Knex({
 //       client: 'pg',
@@ -38,6 +38,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.listen(3000);
 
 //use create route api
 app.use("/", projectRouter);
