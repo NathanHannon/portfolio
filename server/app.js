@@ -11,7 +11,7 @@ const app = express();
 app.enable('trust proxy');
 
 //---------------Routers-----------------
-var projectRouter = require("./routes/projects")
+var projectRouter = require("./routes/projects.js")
 
 //use required packages
 app.use(cors());
