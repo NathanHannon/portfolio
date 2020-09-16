@@ -10,7 +10,7 @@ class Projects extends Component {
     };
   }
   callAPI() {
-    fetch("https://portfolio-qlw59.ondigitalocean.app/projects")
+    fetch("https://portfolio-qlw59.ondigitalocean.app/api/projects")
       .then(res => res.json())
       .then(data => this.setState({ projects: data }));
   }
