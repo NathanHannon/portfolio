@@ -33,8 +33,8 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "concurrently \"node ./server/bin/www\" \"react-scripts start\"",
-    "server": "cd server && npm run start",
+    "start": "react-scripts start",
+    "server": "node ./server/bin/www",
     "client": "cd client && npm run start",
     "build": "react-scripts build",
     "test": "react-scripts test",
