@@ -11,7 +11,7 @@ class NavMenu extends Component {
 			collapsed: true
 		};
 	}
-	
+
 	//Toggle for navbar collapsing
 	toggleNavbar() {
 		this.setState({
@@ -19,7 +19,7 @@ class NavMenu extends Component {
 		});
 	}
 
-	componentDidMount(){
+	componentDidMount() {
 		console.log(this.props.status)
 	}
 
@@ -28,7 +28,7 @@ class NavMenu extends Component {
 			<header>
 				<Navbar color="primary" className="navbar-expand-sm navbar-toggleable-sm box-shadow mb-3" dark>
 					<NavbarBrand href="/" className="mr-auto"><h4>Portfolio</h4></NavbarBrand>
-					<NavbarToggler onClick={this.toggleNavbar} className="mr-2" />	
+					<NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
 					<Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
 						<Nav navbar>
 							<NavItem>
@@ -38,7 +38,7 @@ class NavMenu extends Component {
 								<NavLink href="/About" className="text-white">About Me</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink href="/Projects" className="text-white">My Projects</NavLink>
+								<NavLink href="/api/Projects" className="text-white">My Projects</NavLink>
 							</NavItem>
 							<NavItem>
 								<NavLink href="/Contact" className="text-white">Resumé & Contact Info</NavLink>
