@@ -8,7 +8,7 @@ const pool = new Pool({
 	username: 'portfolio-db',
 	password: 'kii9exh32ii6in4c',
 	database: 'portfolio-db',
-	ssl: true
+	sslmode: 'require'
 });
 
 module.exports = pool;
