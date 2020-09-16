@@ -10,7 +10,7 @@ class ProjectDetails extends Component {
     }
     componentDidMount() {
         let project_id = this.props.location.pathname.split('/').pop();
-        fetch("http://localhost:5000/api/projects/" + project_id)
+        fetch("http://localhost:5000/projects/" + project_id)
             // loclahost:5000
             .then(res => res.json())
             .then(data => this.setState({ projectDetails: data[0] }))
