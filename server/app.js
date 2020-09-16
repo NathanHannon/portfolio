@@ -21,6 +21,6 @@ app.use(express.static(path.join(__dirname, "public")));
 // app.listen(3000);
 
 //use create route api
-app.use("/api/", projectRouter);
+app.use("/", projectRouter);
 
 module.exports = app;
