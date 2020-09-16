@@ -9,12 +9,14 @@ class Projects extends Component {
       projects: []
     };
   }
-  //pull data from the backend (database)
-  componentDidMount() {
-
-    fetch("http://localhost:5000/api/projects")
+  callAPI() {
+    fetch("https://portfolio-qlw59.ondigitalocean.app/api/projects")
       .then(res => res.json())
       .then(data => this.setState({ projects: data }));
+  }
+  //pull data from the backend (database)
+  componentDidMount() {
+    this.callAPI();
   }
   render() {
     console.log(this.state.projects)
