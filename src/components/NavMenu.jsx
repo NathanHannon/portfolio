@@ -38,7 +38,7 @@ class NavMenu extends Component {
 								<NavLink href="/About" className="text-white">About Me</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink href="/api/Projects" className="text-white">My Projects</NavLink>
+								<NavLink href="/Projects" className="text-white">My Projects</NavLink>
 							</NavItem>
 							<NavItem>
 								<NavLink href="/Contact" className="text-white">Resumé & Contact Info</NavLink>
