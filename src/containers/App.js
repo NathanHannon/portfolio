@@ -14,21 +14,21 @@ const history = createBrowserHistory();
 class App extends Component {
   render() {
     return (
-       <div>
-          <Router history={history}>
-            <Layout />
-            <div className="App">
-              <Switch>
-                <Route path="/Home" component={Home} />
-								<Route exact path="/" component={Home} />
-                <Route path="/About" component={About} /> 
-                <Route path="/Projects" component={Projects} />
-                <Route path="/Contact" component={Contact} />
-                <Route path="/Details" component={ProjectDetails} />
-              </Switch>
-            </div>
-          </Router>
-       </div>
+      <div>
+        <Router history={history}>
+          <Layout />
+          <div className="App">
+            <Switch>
+              <Route path="/Home" component={Home} />
+              <Route exact path="/" component={Home} />
+              <Route path="/About" component={About} />
+              <Route path="/Projects" component={Projects} />
+              <Route path="/Contact" component={Contact} />
+              <Route path="/Details" component={ProjectDetails} />
+            </Switch>
+          </div>
+        </Router>
+      </div>
     );
   }
 }
