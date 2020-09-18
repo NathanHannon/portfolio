@@ -1,7 +1,6 @@
 .project-list {
-    display:grid;
+    display:grid, inline-block;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2rem;
     margin: 5% 0 5% 0;
-    position: relative;
 }
