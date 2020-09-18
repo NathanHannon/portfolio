@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Container } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 class ProjectDetails extends Component {
     constructor() {
@@ -24,9 +24,9 @@ class ProjectDetails extends Component {
                 <header className="projectName">
                     <h1><u>{this.state.projectDetails.name} Details</u></h1>
                 </header>
-                <img src={this.state.projectDetails.image_url} width='50%' />
+                <img src={this.state.projectDetails.image_url} width='50%' alt="" />
                 <p className="productDescription">{this.state.projectDetails.description}</p>
-                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="30" width="30" />
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="30" width="30" alt="Github Logo" />
                 <a className="githubLink" href={this.state.projectDetails.repo_url} target="_blank" rel="noreferrer noopener">GitHub Repository</a>
             </Container>
         )
