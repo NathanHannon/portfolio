@@ -4,7 +4,7 @@ import { Card, CardBody, CardTitle, CardImg, CardText } from 'reactstrap';
 
 export const ProjectCard = props => {
     return (
-        <a href={"/Details/" + props.projects.project_id} className="text-dark">
+        <Link to={"/Details/" + props.projects.project_id} className="text-dark">
             <Card outline color="primary" style={{ flex: 1 }} >
                 <CardImg className='project-card' src={props.projects.image_url} width='320px' height='200px' />
                 <CardBody>
@@ -12,6 +12,6 @@ export const ProjectCard = props => {
                     {/* <CardText className="text-dark">{props.projects.description}</CardText> */}
                 </CardBody>
             </Card>
-        </a>
+        </Link>
     );
 }
