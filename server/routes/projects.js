@@ -17,7 +17,7 @@ router.get("/projects", (request, response, next) => {
   });
 });
 //get a project by Id
-router.get("/projects/:id", (request, response, next) => {
+router.get("/projects/details/:id", (request, response, next) => {
   const id = parseInt(request.params.id);
   db_connection.query(
     "SELECT * FROM projects WHERE project_id=$1",
