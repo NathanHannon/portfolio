@@ -9,7 +9,7 @@ export const ProjectCard = props => {
                 <CardImg className='project-card' src={props.projects.image_url} width='320px' height='200px' />
                 <CardBody>
                     <CardTitle className="text-dark">{props.projects.name}</CardTitle>
-                    {/* <CardText className="text-dark">{props.projects.description}</CardText> */}
+                    <CardText className="text-dark">{props.projects.description}</CardText>
                 </CardBody>
             </Card>
         </Link>
