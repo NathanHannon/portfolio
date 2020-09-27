@@ -19,12 +19,12 @@ class App extends Component {
           <Layout />
           <div className="App">
             <Switch>
-              <Route path="/home" component={Home} />
+              <Route path="/Home" component={Home} />
               <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/projects" component={Projects} />
-              <Route path="/contact" component={Contact} />
-              <Route path="/details/" component={ProjectDetails} />
+              <Route path="/About" component={About} />
+              <Route path="/Projects" component={Projects} />
+              <Route path="/Contact" component={Contact} />
+              <Route path="/Details" component={ProjectDetails} />
             </Switch>
           </div>
         </BrowserRouter>
