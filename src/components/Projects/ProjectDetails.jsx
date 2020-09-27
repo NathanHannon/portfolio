@@ -10,7 +10,7 @@ class ProjectDetails extends Component {
     }
     callAPI() {
         let project_id = this.props.location.pathname.split('/').pop();
-        fetch("https://portfolio-qlw59.ondigitalocean.app/api/projects/:projectId")
+        fetch("https://portfolio-qlw59.ondigitalocean.app/api/projects/" + project_id)
             // loclahost:5000
             .then(res => res.json())
             .then(data => this.setState({ projectDetails: data[0] }))
