@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch, Router } from 'react-router';
+import { Route, Switch, Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import './App.css';
 import Layout from '../components/Layout';
@@ -19,12 +19,12 @@ class App extends Component {
           <Layout />
           <div className="App">
             <Switch>
-              <Route path="/Home" component={Home} />
+              <Route path="/home" component={Home} />
               <Route exact path="/" component={Home} />
-              <Route path="/About" component={About} />
-              <Route path="/Projects" component={Projects} />
-              <Route path="/Contact" component={Contact} />
-              <Route path="/Details/:projectId" component={ProjectDetails} />
+              <Route path="/about" component={About} />
+              <Route path="/projects" component={Projects} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/details/:projectId" component={ProjectDetails} />
             </Switch>
           </div>
         </Router>
