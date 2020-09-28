@@ -14,10 +14,10 @@ class ProjectDetails extends Component {
             // loclahost:5000
             .then(res => res.json())
             .then(data => this.setState({ projectDetails: data[0] }))
-        window.location.reload();
     }
     componentDidMount() {
         this.callAPI();
+        this.forceUpdate();
     }
     render() {
         return (
