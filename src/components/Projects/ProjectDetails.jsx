@@ -16,8 +16,8 @@ class ProjectDetails extends Component {
             .then(data => this.setState({ projectDetails: data[0] }))
     }
     componentDidMount() {
-        this.callAPI();
         this.forceUpdate();
+        this.callAPI();
     }
     render() {
         return (
