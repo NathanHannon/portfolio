@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Switch, Router } from 'react-router';
+import { createBrowserHistory } from 'history';
 import './App.css';
 import Layout from '../components/Layout';
 import About from '../components/About/About';
@@ -8,11 +9,13 @@ import Home from '../components/Home/Home'
 import Contact from '../components/Contact/Contact'
 import ProjectDetails from '../components/Projects/ProjectDetails'
 
+const history = createBrowserHistory();
+
 class App extends Component {
   render() {
     return (
       <div>
-        <BrowserRouter>
+        <Router history={history}>
           <Layout />
           <div className="App">
             <Switch>
@@ -21,10 +24,10 @@ class App extends Component {
               <Route path="/About" component={About} />
               <Route path="/Projects" component={Projects} />
               <Route path="/Contact" component={Contact} />
-              <Route path="/Details/:project_id" component={ProjectDetails} />
+              <Route path="/Details" component={ProjectDetails} />
             </Switch>
           </div>
-        </BrowserRouter>
+        </Router>
       </div>
     );
   }

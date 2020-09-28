@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { useParams } from "react-router";
 import { Container } from 'reactstrap';
 
 class ProjectDetails extends Component {
@@ -10,7 +9,6 @@ class ProjectDetails extends Component {
         }
     }
     callAPI() {
-        // let { project_id } = useParams()
         let project_id = this.props.location.pathname.split('/').pop();
         fetch("https://portfolio-qlw59.ondigitalocean.app/api/projects/" + project_id)
             // loclahost:5000
