@@ -19,7 +19,7 @@ class ProjectDetails extends Component {
         this.callAPI();
     }
     render() {
-        if (!this.componentDidMount) {
+        if (!this.render) {
             this.forceUpdate();
         }
         else {
