@@ -17,6 +17,7 @@ class ProjectDetails extends Component {
     }
     componentDidMount() {
         this.callAPI();
+        this.forceUpdate();
     }
     render() {
         return (
