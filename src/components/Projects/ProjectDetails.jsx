@@ -14,9 +14,9 @@ class ProjectDetails extends Component {
             // loclahost:5000
             .then(res => res.json())
             .then(data => this.setState({ projectDetails: data[0] }))
+        this.forceUpdate();
     }
     componentDidMount() {
-        this.forceUpdate();
         this.callAPI();
     }
     render() {
