@@ -17,9 +17,9 @@ class ProjectDetails extends Component {
     }
     componentDidMount() {
         this.callAPI();
-        this.forceUpdate();
     }
     render() {
+        this.forceUpdate();
         return (
             <Container className="projectDetails">
                 <header className="projectName">
