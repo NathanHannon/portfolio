@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 import './App.css';
 import Layout from '../components/Layout';
 import About from '../components/About/About';
@@ -22,7 +21,7 @@ class App extends Component {
               <Route path="/About" component={About} />
               <Route path="/Projects" component={Projects} />
               <Route path="/Contact" component={Contact} />
-              <Route path="/{project_id}/Details" component={ProjectDetails} />
+              <Route path="/Details/:project_id" component={ProjectDetails} />
             </Switch>
           </div>
         </BrowserRouter>
