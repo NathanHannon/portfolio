@@ -1,12 +1,14 @@
 .contactLink {
     padding-right: 10px;
 }
+.contactpage {
+    box-sizing: border-box;
+}
 .iframe-container {
     overflow: hidden;
     /* 16:9 aspect ratio */
     padding-top: 56.25%;
     position: relative;
-    box-sizing: border-box;
   }
    
   .iframe-container iframe {
