@@ -21,13 +21,15 @@ class ProjectDetails extends Component {
     render() {
         return (
             <Container className="projectDetails">
-                <header className="projectName">
-                    <h1><u>{this.state.projectDetails.name} Details</u></h1>
-                </header>
-                <img src={this.state.projectDetails.image_url} width='50%' />
-                <p className="productDescription">{this.state.projectDetails.description}</p>
-                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="30" width="30" />
-                <a className="githubLink" href={this.state.projectDetails.repo_url} target="_blank">GitHub Repository</a>
+                <div className="projectDetails">
+                    <header className="projectName">
+                        <h1><u>{this.state.projectDetails.name} Details</u></h1>
+                    </header>
+                    <img src={this.state.projectDetails.image_url} width='50%' />
+                    <p className="productDescription">{this.state.projectDetails.description}</p>
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="30" width="30" />
+                    <a className="githubLink" href={this.state.projectDetails.repo_url} target="_blank">GitHub Repository</a>
+                </div>
             </Container>
         )
     }
