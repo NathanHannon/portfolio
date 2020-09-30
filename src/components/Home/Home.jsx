@@ -13,7 +13,7 @@ class Home extends Component {
         <header className="homeHeader">
           <h1><u>Welcome!</u></h1>
         </header>
-        <p>Hello curious veiwer or potential employer! My name is Nathan Hannon and I am a Computer Programming/Analysis graduate from Conestoga College.</p>
+        <p>Hello curious viewer or potential employer! My name is Nathan Hannon and I am a Computer Programming/Analysis graduate from Conestoga College.</p>
         <hr />
         <p>
           <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="30" width="30" />
@@ -32,27 +32,3 @@ class Home extends Component {
   }
 }
 export default Home
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/*  */ }

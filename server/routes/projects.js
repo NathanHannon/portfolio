@@ -30,7 +30,6 @@ router.get("/projects/:id", (request, response, next) => {
       }
       //return a single project
       return response.status(200).json(results.rows);
-
     }
   );
 });

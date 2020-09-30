@@ -1,10 +1,8 @@
 // [START gae_flex_postgres_app]
-const createError = require('../node_modules/http-errors');
 const express = require('../node_modules/express');
 const path = require('path');
 const cookieParser = require('../node_modules/cookie-parser');
 const logger = require('../node_modules/morgan');
-const cors = require("../node_modules/cors");
 
 const app = express();
 app.enable('trust proxy');
