@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Switch, Router } from 'react-router';
 import { createBrowserHistory } from 'history';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 import './App.css';
 import Layout from '../components/Layout';
 import About from '../components/About/About';
@@ -9,6 +12,7 @@ import Home from '../components/Home/Home'
 import Contact from '../components/Contact/Contact'
 import ProjectDetails from '../components/Projects/ProjectDetails'
 
+library.add(fab, fas);
 const history = createBrowserHistory();
 
 class App extends Component {
