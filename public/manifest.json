@@ -23,6 +23,5 @@
   "start_url": ".",
   "display": "standalone",
   "orientation": "any",
-  "theme_color": "#007bff",
-  "title_bar_color": "#007bff"
+  "theme_color": "#007bff"
 }
