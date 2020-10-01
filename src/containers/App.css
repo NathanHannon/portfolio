@@ -64,36 +64,3 @@ div.homePage, .aboutPage, .projectDetails, .contactPage {
   color: #0077B5;
   padding-right: 10px;
 }
-
-/* Contact Page */
-.contactLink {
-  padding-right: 10px;
-}
-.contactpage {
-  box-sizing: border-box;
-}
-.iframe-container {
-  overflow: hidden;
-  /* 16:9 aspect ratio */
-  padding-top: 56.25%;
-  position: relative;
-}
- 
-.iframe-container iframe {
-   border: 0;
-   height: 100%;
-   left: 0;
-   position: absolute;
-   top: 0;
-   width: 100%;
-}
-
-/* Project List/Grid */
-.project-list {
-  display:inline-grid;
-  grid-template-columns: 0.5fr 0.5fr 0.5fr;
-  gap: 2rem;
-  margin: 1% 0 1% 0;
-  position: relative;
-  box-sizing: border-box;
-}
