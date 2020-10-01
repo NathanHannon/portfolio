@@ -14,9 +14,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public"), {
-    maxAge: 15768000
-}));
+app.use(express.static(path.join(__dirname, "public")));
 // app.listen(3000);
 
 //use create route api
