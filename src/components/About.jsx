@@ -12,9 +12,8 @@ class About extends Component {
                 <p>
                     I have a wide variety of interests including reading books (both fiction and non-fiction) fishing, golfing, video games, programming,
                     and just sceince and technology in general. I also try to keep up with the latest trends in the technology space, even if I won't learn them directly.
-                    I feel it is good to have a sense of development in the industry and those that affect it and which we affect in return.
+                    I believe it is good to have an idea of the direction and developments in the industry and those that affect it and which we affect in return.
                 </p>
-                <hr />
                 <h3><u>Skills</u></h3>
                 <p>
                     I am proficient with HTML5/CSS/JavaScript and React.js/Node.js, as well as C#, Python and Java. I am also proficient with various databases including
