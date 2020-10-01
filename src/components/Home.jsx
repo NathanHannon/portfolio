@@ -11,7 +11,6 @@ class Home extends Component {
           <h1><u>Welcome!</u></h1>
         </header>
         <p>Hello curious viewer or potential employer! My name is Nathan Hannon and I am a Computer Programming/Analysis graduate from Conestoga College.</p>
-        <hr />
         <p>
           <a href='https://github.com/NathanHannon' className="githubLink" title="GitHub Profile"><FontAwesomeIcon icon={['fab', 'github']} size='2x' /></a>
           <a href='https://www.linkedin.com/in/nathan-hannon' className="linkedinLink" title="LinkedIn Profile"><FontAwesomeIcon icon={['fab', 'linkedin']} size='2x' /></a>
