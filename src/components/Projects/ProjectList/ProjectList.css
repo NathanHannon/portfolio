@@ -1,8 +1,0 @@
-.project-list {
-    display:inline-grid;
-    grid-template-columns: 0.5fr 0.5fr 0.5fr;
-    gap: 2rem;
-    margin: 1% 0 1% 0;
-    position: relative;
-    box-sizing: border-box;
-}

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import './Contact.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Contact extends Component {

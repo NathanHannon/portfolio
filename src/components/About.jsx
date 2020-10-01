@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Container } from 'reactstrap';
-import './About.css'
 
 class About extends Component {
     render() {
