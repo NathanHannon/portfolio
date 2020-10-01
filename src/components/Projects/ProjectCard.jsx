@@ -5,7 +5,7 @@ import { Card, CardBody, CardTitle, CardImg } from 'reactstrap';
 export const ProjectCard = props => {
     return (
         <Link to={"/Details/" + props.projects.project_id} className="text-dark">
-            <Card outline color="dark">
+            <Card outline color="dark" className="projectCard">
                 <CardImg className='project-card' src={props.projects.image_url} width='320px' height='200px' />
                 <CardBody>
                     <CardTitle className="text-dark">{props.projects.name}</CardTitle>
