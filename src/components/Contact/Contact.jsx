@@ -13,7 +13,6 @@ class Contact extends Component {
                     <FontAwesomeIcon icon={['fas', 'envelope']} />
                     <a href="mailto:nathan@hannon.me" className="contactLink" alt="Send email to nathan@hannon.me"> Send me an email!</a>
                 </header>
-                <hr></hr>
                 <div class="iframe-container">
                     <iframe seamless="seamless" frameborder="0" src={`https://storage.googleapis.com/portfolio-file-bucket/Nathan_Hannon_Resume.pdf`} title="Resume" />
                 </div>
