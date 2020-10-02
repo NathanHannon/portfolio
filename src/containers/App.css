@@ -42,7 +42,7 @@ body {
 }
 .navmenu {
   width: 100% !important;
-  position: absolute;
+  position: relative;
 }
 /* Content Boxes */
 div.homePage, .aboutPage, .projectDetails, .contactPage, .projectCard {
