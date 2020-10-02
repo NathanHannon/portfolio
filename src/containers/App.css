@@ -51,11 +51,6 @@ div.homePage, .aboutPage, .projectDetails, .contactPage, .projectCard {
   background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
-
-.projectList {
-  width: fit-content;
-  padding: 10px;
-}
 /* Social Links */
 .githubLink, .devLink {
   color: #000000;
