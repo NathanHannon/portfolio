@@ -1,8 +1,7 @@
 import React from "react";
 import { ProjectCard } from '../ProjectCard';
-import "react-simple-flex-grid";
 import './ProjectList.css';
-import "react-simple-flex-grid";
+import { Row, Col } from "react-simple-flex-grid";
 
 //Creates the project list using the card component
 export const ProjectList = props => (
