@@ -42,7 +42,7 @@ body {
 }
 .navmenu {
   border-radius: 10px;
-  width: 100% !important;
+  /* width: 100% !important; */
 }
 /* Content Boxes */
 div.homePage, .aboutPage, .projectDetails, .contactPage, .projectCard {
