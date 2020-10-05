@@ -1,10 +1,11 @@
-/* Project List */
+/* List Mode */
 @media screen and (max-width: 441px) {
 .project-list {
     display: block;
     padding: 20px !important;
   }
 }
+/* Grid Mode */
 @media screen and (min-width: 442px) {
   .project-list {
     display: inline-grid;
