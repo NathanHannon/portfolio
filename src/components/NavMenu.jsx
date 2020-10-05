@@ -26,7 +26,7 @@ class NavMenu extends Component {
 	render() {
 		return (
 			<header>
-				<Navbar color="primary" className="navbar-expand-sm navbar-toggleable-sm box-shadow mb-3" dark>
+				<Navbar color="primary" className="navbar-expand-sm navbar-toggleable-sm box-shadow mb-3 navmenu" dark>
 					<NavbarBrand href="/" className="mr-auto"><h4>Portfolio</h4></NavbarBrand>
 					<NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
 					<Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>

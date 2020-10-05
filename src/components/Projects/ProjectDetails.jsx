@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class ProjectDetails extends Component {
     constructor() {
@@ -26,8 +27,7 @@ class ProjectDetails extends Component {
                 </header>
                 <img src={this.state.projectDetails.image_url} width='50%' alt="" />
                 <p className="productDescription">{this.state.projectDetails.description}</p>
-                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="30" width="30" alt="Github Logo" />
-                <a className="githubLink" href={this.state.projectDetails.repo_url} target="_blank" rel="noreferrer noopener">GitHub Repository</a>
+                <a className="githubLink" href={this.state.projectDetails.repo_url} target="_blank" rel="noreferrer noopener" title="GitHub Repository"><FontAwesomeIcon icon={['fab', 'github']} size='2x' /></a>
             </Container>
         )
     }
