@@ -1,12 +1,12 @@
 /* List Mode */
-@media screen and (max-width: 441px) {
+@media screen and (max-width: 767px) {
 .project-list {
     display: block;
     padding: 20px !important;
   }
 }
 /* Grid Mode */
-@media screen and (min-width: 442px) {
+@media screen and (min-width: 768px) {
   .project-list {
     display: inline-grid;
     grid-template-columns: 0.5fr 0.5fr 0.5fr;
