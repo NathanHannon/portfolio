@@ -45,7 +45,7 @@ body {
   width: 100% !important;
 }
 /* Content Boxes */
-div.homePage, .aboutPage, .projectDetails, .contactPage, .projectCard {
+div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .projectCard {
   width: auto;
   padding: 10px;
   border: 1px solid #000000;
@@ -53,6 +53,12 @@ div.homePage, .aboutPage, .projectDetails, .contactPage, .projectCard {
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+/* Changes when below iPad Mini demensions */
+@media screen and (max-width: 767px) {
+  div.homePage, div.aboutPage, div.projectDetails, div.contactPage {
+    margin: auto 10px;
+  }
 }
 /* Social Links */
 .githubLink, .devLink {
