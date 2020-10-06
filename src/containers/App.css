@@ -78,7 +78,9 @@ div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .projectCard {
   color: #0077B5;
   padding-right: 10px;
 }
-
+.linkedinLink:hover {
+  color: #0094E0;
+}
 /* -------------------Specific changes for contact page container------------------------ */
 /* Desktop */
 div.contactPage {
