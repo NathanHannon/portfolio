@@ -73,7 +73,6 @@ div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .projectCard {
 }
 .githubLink:hover, .devLink:hover {
   color: #4B5362;
-
 }
 .linkedinLink {
   color: #0077B5;
