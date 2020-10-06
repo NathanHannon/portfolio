@@ -2,7 +2,7 @@
 @media screen and (max-width: 767px) {
 .project-list {
     display: block;
-    padding: 20px !important;
+    padding: 2rem !important;
   }
 }
 /* Grid Mode */
