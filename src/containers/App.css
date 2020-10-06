@@ -54,7 +54,7 @@ div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .projectCard {
   background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
-/* Changes when below iPad Mini demensions */
+/* Changes when below iPad Mini dimensions */
 @media screen and (max-width: 767px) {
   div.homePage, div.aboutPage, div.projectDetails, div.contactPage {
     margin: auto 10px;
