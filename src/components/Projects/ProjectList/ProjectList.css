@@ -1,14 +1,16 @@
 /* List Mode */
 @media screen and (max-width: 767px) {
-.project-list {
+.projectList {
     display: block;
     padding: 2rem !important;
+  }
+  .projectCard {
     margin-bottom: 15px !important;
   }
 }
 /* Grid Mode */
 @media screen and (min-width: 768px) {
-  .project-list {
+  .projectList {
     display: inline-grid;
     grid-template-columns: 0.5fr 0.5fr 0.5fr;
     gap: 2rem;
