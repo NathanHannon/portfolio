@@ -6,8 +6,7 @@ class ProjectDetails extends Component {
     constructor() {
         super();
         this.state = {
-            projectDetails: [],
-            loading: true
+            projectDetails: []
         }
     }
     callAPI() {
@@ -18,21 +17,10 @@ class ProjectDetails extends Component {
             .then(res => res.json())
             .then(data => this.setState({ projectDetails: data[0] }))
     }
-    loader() {
-        const el = document.querySelector(".loader-container");
-        if (el) {
-            el.remove();
-            this.setState({ loading: false });
-        }
-    }
     componentDidMount() {
-        this.loader();
         this.callAPI();
     }
     render() {
-        if (this.state.loading) {
-            return null;
-        }
         return (
             <Container className="projectDetails">
                 <header className="projectName">
