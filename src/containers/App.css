@@ -69,8 +69,17 @@ div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .projectCard {
 
 /* Content Box changes when width is below iPad Mini portrait dimensions */
 @media screen and (max-width: 767px) {
-  div.homePage, div.aboutPage, div.projectDetails {
-    margin: auto 10px;
+  div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .projectCard {
+    margin: auto 10px !important;
+  }
+}
+/* Content Box changes when width is below iPhone X landscape dimensions */
+@media screen and (max-width: 812px) {
+  .programming-image {
+    width: 100%
+  }
+  div.contactPage {
+    margin: auto 10px !important;
   }
 }
 
@@ -93,11 +102,4 @@ div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .projectCard {
 /* Desktop */
 div.contactPage {
   margin: auto 10px !important;
-}
-
-/* Mobile Landscape Orientation*/
-@media screen and (max-width: 812px) {
-  div.contactPage {
-    margin: auto 10px !important;
-  }
 }
