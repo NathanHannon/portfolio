@@ -8,9 +8,9 @@ export const ProjectCard = props => {
     return (
         // <Link to={'/Details/' + props.projects.project_id} className='text-dark' id='project-link'>
         <Card outline className='projectCard'>
-            <CardImg className='project-card-image' src={props.projects.image_url} width='300px' height='200px' />
+            <CardImg className='projectCardImage' src={props.projects.image_url} width='300px' height='200px' />
             <CardBody>
-                <CardTitle className='text-dark'>{props.projects.name}</CardTitle>
+                <CardTitle className='text-dark' id='cardTitle'>{props.projects.name}</CardTitle>
                 <CardText className='text-dark'>{props.projects.description}</CardText>
                 <a className='githubLink' href={props.projects.repo_url} target='_blank' rel='noreferrer noopener' title='GitHub Repository'><FontAwesomeIcon icon={['fab', 'github']} size='2x' /></a>
             </CardBody>
