@@ -98,8 +98,5 @@ div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .projectCard {
 .linkedinLink:hover {
   color: #0094E0;
 }
-/* -------------------Specific changes for contact page container------------------------ */
-/* Desktop */
-div.contactPage {
-  margin: auto 10px !important;
-}
+
+
