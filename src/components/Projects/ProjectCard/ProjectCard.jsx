@@ -12,7 +12,7 @@ export const ProjectCard = props => {
             <CardBody>
                 <CardTitle className="text-dark">{props.projects.name}</CardTitle>
                 <CardText className="text-dark">{props.projects.description}</CardText>
-                <a className="githubLink" href={this.state.projectDetails.repo_url} target="_blank" rel="noreferrer noopener" title="GitHub Repository"><FontAwesomeIcon icon={['fab', 'github']} size='2x' /></a>
+                <a className="githubLink" href={props.projects.repo_url} target="_blank" rel="noreferrer noopener" title="GitHub Repository"><FontAwesomeIcon icon={['fab', 'github']} size='2x' /></a>
             </CardBody>
         </Card>
         // </Link>
