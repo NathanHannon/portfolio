@@ -3,12 +3,12 @@ import { Container } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class ProjectDetails extends Component {
-    constructor() {
-        super();
-        this.state = {
-            projectDetails: []
-        }
+
+    // Set State
+    state = {
+        projectDetails: []
     }
+
     callAPI() {
         let project_id = this.props.location.pathname.split('/').pop();
         const project_url = `https://portfolio-qlw59.ondigitalocean.app/api/projects/${project_id}`;

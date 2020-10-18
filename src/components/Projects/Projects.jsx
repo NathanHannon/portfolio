@@ -3,12 +3,11 @@ import { ProjectList } from './ProjectList/ProjectList';
 
 class Projects extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      projects: []
-    };
-  }
+  // Set state
+  state = {
+    projects: []
+  };
+
   callAPI() {
     const api_url = 'https://portfolio-qlw59.ondigitalocean.app/api/projects';
     fetch(api_url)
