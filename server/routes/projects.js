@@ -16,6 +16,7 @@ router.get("/projects", (request, response, next) => {
     }
   });
 });
+// --------------------Keep this around in case a solution for the details page bug is found---------------------------------------------
 //get a project by Id
 // router.get("/projects/:id", (request, response, next) => {
 //   const id = parseInt(request.params.id);
@@ -33,5 +34,4 @@ router.get("/projects", (request, response, next) => {
 //     }
 //   );
 // });
-// TODO: Cache.add(db_connection.response);
 module.exports = router;
