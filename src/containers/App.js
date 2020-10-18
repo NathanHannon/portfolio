@@ -10,7 +10,7 @@ import About from '../components/About';
 import Projects from '../components/Projects/Projects';
 import Home from '../components/Home'
 import Contact from '../components/Contact/Contact'
-import ProjectDetails from '../components/Projects/ProjectDetails'
+// import ProjectDetails from '../components/Projects/ProjectDetails'
 
 library.add(fab, fas);
 const history = createBrowserHistory();
