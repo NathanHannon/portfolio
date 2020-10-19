@@ -14,7 +14,6 @@ export const ProjectCard = props => {
                 <CardText className='text-dark'>{props.projects.description}
                     <a className='githubLink' href={props.projects.repo_url} target='_blank' rel='noreferrer noopener' title='GitHub Repository'><FontAwesomeIcon icon={['fab', 'github']} size='2x' /></a>
                 </CardText>
-
             </CardBody>
         </Card>
         // </Link>
