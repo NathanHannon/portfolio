@@ -1,5 +1,5 @@
 .projectCard {
-    height: 500px !important;
+    min-height: 450px !important;
 }
 #cardTitle {
     font-weight: bold;
