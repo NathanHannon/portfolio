@@ -1,6 +1,11 @@
 .projectCard {
     height: 425px !important;
 }
+@media screen and (max-width: 344px) {
+    .projectCard {
+        height: fit-content;
+    }
+}
 #cardTitle {
     font-weight: bold;
 }
