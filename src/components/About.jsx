@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Container } from 'reactstrap';
 import programming from '../assets/programming.svg';
 
 class About extends Component {
     render() {
         return (
-            <Container className='aboutPage'>
+            <div className='aboutPage'>
                 <header className='aboutHeader'>
                     <h1><u>About Me</u></h1>
                 </header>
@@ -21,7 +20,7 @@ class About extends Component {
                     Microsoft SQL, Oracle SQL, MySQL, and PostgreSQL. I am currently teaching myself TypeScript, Rust, Dart/Flutter, and the concept of PWAs; to broaden my skillset.
                 </p>
                 <img src={programming} alt={programming} className='programming-image' />
-            </Container>
+            </div>
         );
     }
 }

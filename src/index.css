@@ -39,14 +39,22 @@ div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .projectCard {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Margin Fix */
+div.aboutPage, div.projectDetails, div.contactPage, .projectCard {
+  margin: auto 10px !important;
+}
+
 /* Content Box changes when width is below iPad Mini portrait dimensions */
 @media screen and (max-width: 767px) {
-  div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .projectCard {
+  div.homePage {
+    margin-right: auto 10px;
+  }
+  div.aboutPage, div.projectDetails, div.contactPage, .projectCard {
     margin: auto 10px !important;
   }
 }
-/* Content Box changes when width is below iPhone X landscape dimensions */
-@media screen and (max-width: 812px) {
+/* Content Box changes when width is below 1052 pixels wide */
+@media screen and (max-width: 1052px) {
   .programming-image {
     width: 100%
   }
