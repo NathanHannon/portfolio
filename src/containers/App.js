@@ -5,11 +5,11 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
-import Layout from '../components/Layout';
 import About from '../components/About';
 import Projects from '../components/Projects/Projects';
 import Home from '../components/Home'
 import Contact from '../components/Contact/Contact'
+import NavMenu from '../components/NavMenu';
 // import ProjectDetails from '../components/Projects/ProjectDetails'
 
 library.add(fab, fas);
@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div>
         <Router history={history}>
-          <Layout />
+          <NavMenu />
           <div className='App'>
             <Switch>
               <Route path='/home' component={Home} />
