@@ -32,13 +32,13 @@ class NavMenu extends Component {
 							<NavLink href='/' className='text-white'>Home</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href='/About' className='text-white'>About Me</NavLink>
+							<NavLink href='/about' className='text-white'>About Me</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href='/Projects' className='text-white'>My Projects</NavLink>
+							<NavLink href='/projects' className='text-white'>My Projects</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href='/Contact' className='text-white'>Resumé & Contact Info</NavLink>
+							<NavLink href='/contact' className='text-white'>Resumé & Contact Info</NavLink>
 						</NavItem>
 					</Nav>
 				</Collapse>
