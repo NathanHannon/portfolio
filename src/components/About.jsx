@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { Container } from 'reactstrap';
+import React, { Component } from 'react';
+import programming from '../assets/programming.svg';
 
 class About extends Component {
     render() {
         return (
-            <Container className="aboutPage">
-                <header className="aboutHeader">
+            <div className='aboutPage'>
+                <header className='aboutHeader'>
                     <h1><u>About Me</u></h1>
                 </header>
                 <h3><u>Interests</u></h3>
@@ -19,7 +19,8 @@ class About extends Component {
                     I am proficient with HTML5/CSS/JavaScript and React.js/Node.js, as well as C#, Python and Java. I am also proficient with various databases including
                     Microsoft SQL, Oracle SQL, MySQL, and PostgreSQL. I am currently teaching myself TypeScript, Rust, Dart/Flutter, and the concept of PWAs; to broaden my skillset.
                 </p>
-            </Container>
+                <img src={programming} alt={programming} className='programming-image' />
+            </div>
         );
     }
 }
