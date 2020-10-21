@@ -10,7 +10,7 @@ import Projects from '../components/Projects/Projects';
 import Home from '../components/Home'
 import Contact from '../components/Contact/Contact'
 import NavMenu from '../components/NavMenu';
-// import ProjectDetails from '../components/Projects/ProjectDetails'
+import ProjectDetails from '../components/Projects/ProjectDetails'
 
 library.add(fab, fas);
 const history = createBrowserHistory();
@@ -28,7 +28,7 @@ class App extends Component {
               <Route path='/about' component={About} />
               <Route path='/projects' component={Projects} />
               <Route path='/contact' component={Contact} />
-              {/* <Route path='/details' component={ProjectDetails} /> */}
+              <Route path='/details' component={ProjectDetails} />
             </Switch>
           </div>
         </Router>
