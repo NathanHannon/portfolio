@@ -19,6 +19,7 @@ class ProjectDetails extends Component {
     }
     componentDidMount() {
         this.callAPI();
+        console.log(this.state.projectDetails);
     }
     render() {
         return (
