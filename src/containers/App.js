@@ -10,6 +10,7 @@ import Projects from '../components/Projects/Projects';
 import Home from '../components/Home'
 import Contact from '../components/Contact/Contact'
 import NavMenu from '../components/NavMenu';
+import NotFoundPage from '../components/NotFoundPage';
 // import ProjectDetails from '../components/Projects/ProjectDetails'
 
 library.add(fab, fas);
@@ -29,6 +30,7 @@ class App extends Component {
               <Route path='/projects' component={Projects} />
               <Route path='/contact' component={Contact} />
               {/* <Route path='/details' component={ProjectDetails} /> */}
+              <Route component={NotFoundPage} />
             </Switch>
           </div>
         </Router>
