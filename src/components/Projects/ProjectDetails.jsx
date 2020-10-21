@@ -11,7 +11,8 @@ class ProjectDetails extends Component {
 
     callAPI() {
         let project_id = this.props.location.pathname.split('/').pop();
-        const project_url = `https://portfolio-qlw59.ondigitalocean.app/api/projects/${project_id}`;
+        const top_level = 'https://portfolio-2-bggv2.ondigitalocean.app';
+        const project_url = `${top_level}/api/projects/${project_id}`;
         fetch(project_url)
             // loclahost:5000
             .then(res => res.json())
