@@ -29,7 +29,7 @@ div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .projectCard {
 }
 
 /* Margin Fix */
-div.aboutPage, div.projectDetails, div.contactPage, .projectCard {
+div.aboutPage, div.contactPage, .projectCard {
   margin: auto 10px !important;
 }
 

@@ -6,7 +6,7 @@ import './ProjectCard.css';
 
 export const ProjectCard = props => {
     return (
-        <Link to={'/Details/' + props.projects.project_id} className='text-dark' id='project-link'>
+        <Link to={'/details/' + props.projects.project_id} className='text-dark' id='project-link'>
             <Card outline className='projectCard'>
                 <CardImg className='projectCardImage' src={props.projects.image_url} width='300px' height='200px' />
                 <CardBody>
