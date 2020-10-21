@@ -9,8 +9,7 @@ class Projects extends Component {
   };
 
   callAPI() {
-    const top_level = 'https://portfolio-2-bggv2.ondigitalocean.app/';
-    const api_url = `${top_level}/api/projects`;
+    const api_url = 'https://portfolio-2-bggv2.ondigitalocean.app/api/projects';
     fetch(api_url)
       .then(res => res.json())
       .then(data => this.setState({ projects: data }));
