@@ -6,10 +6,10 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 import About from '../components/About';
-import Projects from '../components/Projects/Projects';
+import Projects from './Projects/Projects';
 import Home from '../components/Home'
 import Contact from '../components/Contact/Contact'
-import NavMenu from '../components/NavMenu';
+import NavMenu from './NavMenu';
 import NotFoundPage from '../components/NotFoundPage';
 // import ProjectDetails from '../components/Projects/ProjectDetails'
 
