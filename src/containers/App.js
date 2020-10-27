@@ -11,6 +11,7 @@ import NotFoundPage from '../components/NotFoundPage';
 import './App.css';
 import NavMenu from './NavMenu';
 import Projects from './Projects/Projects';
+import Layout from '../components/Layout';
 // import ProjectDetails from '../components/Projects/ProjectDetails'
 
 library.add(fab, fas);
@@ -21,7 +22,7 @@ class App extends Component {
     return (
       <div>
         <Router history={history}>
-          <NavMenu />
+          <Layout />
           <div className='App'>
             <Switch>
               <Route path='/home' component={Home} />
