@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { Route, Switch, Router } from 'react-router';
-import { createBrowserHistory } from 'history';
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import './App.css';
+import { createBrowserHistory } from 'history';
+import React, { Component } from 'react';
+import { Route, Router, Switch } from 'react-router';
 import About from '../components/About';
-import Projects from './Projects/Projects';
-import Home from '../components/Home'
-import Contact from '../components/Contact/Contact'
-import NavMenu from './NavMenu';
+import Contact from '../components/Contact/Contact';
+import Home from '../components/Home';
 import NotFoundPage from '../components/NotFoundPage';
+import './App.css';
+import NavMenu from './NavMenu';
+import Projects from './Projects/Projects';
 // import ProjectDetails from '../components/Projects/ProjectDetails'
 
 library.add(fab, fas);
