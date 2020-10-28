@@ -32,3 +32,4 @@ yarn-error.log*
 
 server/ssl/*
 app.yaml
+server/.babelrc

@@ -1,0 +1,6 @@
+.projectCard {
+    min-height: 450px !important;
+}
+#cardTitle {
+    font-weight: bold;
+}

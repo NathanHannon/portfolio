@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import { ProjectList } from "./ProjectList/ProjectList";
+import React, { Component } from 'react';
+import { ProjectList } from './ProjectList/ProjectList';
 
 class Projects extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      projects: []
-    };
-  }
+  // Set state
+  state = {
+    projects: []
+  };
+
   callAPI() {
-    fetch("https://portfolio-qlw59.ondigitalocean.app/api/projects")
+    const api_url = 'https://portfolio-2-bggv2.ondigitalocean.app/api/projects';
+    fetch(api_url)
       .then(res => res.json())
       .then(data => this.setState({ projects: data }));
   }
@@ -21,7 +21,7 @@ class Projects extends Component {
   render() {
     console.log(this.state.projects)
     return (
-      <div className="projects-method">
+      <div className='projects-method'>
         <ProjectList projects={this.state.projects} />
       </div>
     );
