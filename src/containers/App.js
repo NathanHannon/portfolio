@@ -9,7 +9,6 @@ import Contact from '../components/Contact/Contact';
 import Home from '../components/Home';
 import NotFoundPage from '../components/NotFoundPage';
 import './App.css';
-import NavMenu from './NavMenu';
 import Projects from './Projects/Projects';
 import Layout from '../components/Layout';
 // import ProjectDetails from '../components/Projects/ProjectDetails'
