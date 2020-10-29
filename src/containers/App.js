@@ -8,7 +8,7 @@ import About from '../components/About';
 import Contact from '../components/Contact/Contact';
 import Home from '../components/Home';
 import Layout from '../components/Layout';
-import NotFoundPage from '../components/NotFoundPage';
+import notFoundPage from '../components/NotFoundPage';
 import './App.css';
 import Projects from './Projects/Projects';
 // import ProjectDetails from '../components/Projects/ProjectDetails'
@@ -30,7 +30,7 @@ class App extends Component {
               <Route path='/projects' component={Projects} />
               <Route path='/contact' component={Contact} />
               {/* <Route path='/details' component={ProjectDetails} /> */}
-              <Route component={NotFoundPage} />
+              <Route component={notFoundPage} />
             </Switch>
           </div>
         </Router>
