@@ -1,7 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 // import { Link } from 'react-router-dom'
-import { Card, CardBody, CardTitle, CardImg, CardText } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Card, CardBody, CardImg, CardText, CardTitle } from 'reactstrap';
 import './ProjectCard.css';
 
 export const ProjectCard = props => {
