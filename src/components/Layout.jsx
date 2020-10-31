@@ -1,5 +1,5 @@
 import React from 'react';
-import NavMenu from '../containers/NavMenu'
+import NavMenu from '../containers/NavMenu';
 
 const layout = (props) => (
     <div>

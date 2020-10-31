@@ -1,6 +1,6 @@
 import React from 'react';
-import { ProjectCard } from '../ProjectCard/ProjectCard';
 import { Container } from 'reactstrap';
+import { ProjectCard } from '../ProjectCard/ProjectCard';
 import './ProjectList.css';
 
 //Creates the project list using the card component

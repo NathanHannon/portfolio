@@ -7,10 +7,10 @@ import { Route, Router, Switch } from 'react-router';
 import About from '../components/About';
 import Contact from '../components/Contact/Contact';
 import Home from '../components/Home';
-import NotFoundPage from '../components/NotFoundPage';
+import Layout from '../components/Layout';
+import notFoundPage from '../components/NotFoundPage';
 import './App.css';
 import Projects from './Projects/Projects';
-import Layout from '../components/Layout';
 // import ProjectDetails from '../components/Projects/ProjectDetails'
 
 library.add(fab, fas);
@@ -30,7 +30,7 @@ class App extends Component {
               <Route path='/projects' component={Projects} />
               <Route path='/contact' component={Contact} />
               {/* <Route path='/details' component={ProjectDetails} /> */}
-              <Route component={NotFoundPage} />
+              <Route component={notFoundPage} />
             </Switch>
           </div>
         </Router>
