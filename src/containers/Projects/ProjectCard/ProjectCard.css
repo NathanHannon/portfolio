@@ -2,9 +2,12 @@
     min-height: 400px !important;
     transition: all .2s ease-in-out; 
 }
-.projectCard:hover {
-    transform: scale(1.1);  
+@media(hover: hover) and (pointer: fine) {
+    .projectCard:hover {
+        transform: scale(1.1);  
+    }
 }
+
 #cardTitle {
     font-weight: bold;
 }
