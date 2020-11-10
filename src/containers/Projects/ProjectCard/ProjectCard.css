@@ -1,5 +1,5 @@
 .projectCard {
-    min-height: 450px !important;
+    min-height: 350px !important;
     transition: all .2s ease-in-out; 
 }
 .projectCard:hover {
