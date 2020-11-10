@@ -12,13 +12,12 @@ export const ProjectCard = props => {
                 <CardBody>
                     <CardTitle className='text-dark' id='cardTitle'>{props.projects.name}</CardTitle>
                     <CardText className='text-dark'>{props.projects.description}
-                        <br />
                         {/* <a className='githubLink' href={props.projects.repo_url} target='_blank' rel='noreferrer noopener' title='GitHub Repository'><FontAwesomeIcon icon={['fab', 'github']} size='2x' /></a> */}
                     </CardText>
                 </CardBody>
             </Card>
         </Link>
 
-        // {'/details/' + props.projects.project_id} href={props.projects.repo_url} target='_blank' rel='noreferrer noopener' title='GitHub Repository'
+        // {'/details/' + props.projects.project_id} className='text-dark' id='project-link'
     );
 }
