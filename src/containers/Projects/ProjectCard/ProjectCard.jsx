@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 // import { Link } from 'react-router-dom'
 import { Card, CardBody, CardImg, CardText, CardTitle } from 'reactstrap';
