@@ -32,7 +32,6 @@ class Projects extends Component {
     return (
       <div className='projects-method'>
         <ProjectList projects={this.state.projects} />
-        <br />
         <footer>
           <Button className='top-button' color='success' onClick={this.scrollToTop}>Back to top</Button>
         </footer>
