@@ -12,6 +12,15 @@ a:hover {
   cursor: pointer;
 }
 
+/* Back to top button */
+
+.top-button {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* NavBar */
 .navmenu {
   width: 100% !important;

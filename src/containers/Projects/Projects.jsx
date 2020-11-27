@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
 import { ProjectList } from './ProjectList/ProjectList';
 
 class Projects extends Component {
@@ -19,13 +20,23 @@ class Projects extends Component {
     this.callAPI();
   }
 
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
   render() {
     console.log(this.state.projects)
     return (
       <div className='projects-method'>
         <ProjectList projects={this.state.projects} />
+        <br />
+        <footer>
+          <Button className='top-button' color='success' onClick={this.scrollToTop}>Back to top</Button>
+        </footer>
       </div>
-
     );
   }
 };
