@@ -1,10 +1,11 @@
 import React from 'react';
-import NavMenu from '../containers/NavMenu';
+import NavMenu from '../../containers/Navigation/NavMenu';
+import './Layout.css'
 
 const layout = (props) => (
     <div>
         <NavMenu />
-        <main>
+        <main className='Content'>
             {props.children}
         </main>
     </div>

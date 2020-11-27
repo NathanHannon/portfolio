@@ -7,7 +7,7 @@ import { Route, Router, Switch } from 'react-router';
 import About from '../components/About';
 import Contact from '../components/Contact/Contact';
 import Home from '../components/Home';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import notFoundPage from '../components/NotFoundPage';
 import './App.css';
 import Projects from './Projects/Projects';
