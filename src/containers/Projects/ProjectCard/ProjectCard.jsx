@@ -10,10 +10,12 @@ export const ProjectCard = props => {
             <Card outline id='projectCard'>
                 <CardImg className='projectCardImage' src={props.projects.image_url} width='300px' height='200px' />
                 <CardBody>
-                    <CardTitle className='text-dark' id='cardTitle'>{props.projects.name}</CardTitle>
-                    <CardText className='text-dark'>{props.projects.description}
-                        {/* <a className='githubLink' href={props.projects.repo_url} target='_blank' rel='noreferrer noopener' title='GitHub Repository'><FontAwesomeIcon icon={['fab', 'github']} size='2x' /></a> */}
-                    </CardText>
+                    <body>
+                        <CardTitle className='text-dark' id='cardTitle'>{props.projects.name}</CardTitle>
+                        <CardText className='text-dark'>{props.projects.description}
+                            {/* <a className='githubLink' href={props.projects.repo_url} target='_blank' rel='noreferrer noopener' title='GitHub Repository'><FontAwesomeIcon icon={['fab', 'github']} size='2x' /></a> */}
+                        </CardText>
+                    </body>
                 </CardBody>
             </Card>
         </a>
