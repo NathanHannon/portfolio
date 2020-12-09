@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import './NavMenu.css';
+import DarkModeToggle from '../../components/DarkMode'
 
 class NavMenu extends Component {
 	static displayName = NavMenu.name;
@@ -25,7 +26,8 @@ class NavMenu extends Component {
 	render() {
 		return (
 			<Navbar color='primary' dark className='navbar-expand-sm navbar-toggleable-sm box-shadow mb-3 navmenu'>
-				<NavbarBrand href='/' className='mr-auto'><h4>Portfolio</h4></NavbarBrand>
+				<NavbarBrand href='/' className='mr-auto brand'><h4>Portfolio</h4></NavbarBrand>
+				<DarkModeToggle className='dark-mode-toggle' />
 				<NavbarToggler onClick={this.toggleNavbar} className='mr-2' />
 				<Collapse className='d-sm-inline-flex flex-sm-row-reverse' isOpen={!this.state.collapsed} navbar>
 					<Nav navbar>
