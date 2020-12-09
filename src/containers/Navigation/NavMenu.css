@@ -9,3 +9,10 @@
 .brand {
     padding-right: 10px;
 }
+.dropdown {
+    border: none !important;
+    padding-left: 18px !important;
+}
+.dropdown:focus {
+    outline: none;
+}
