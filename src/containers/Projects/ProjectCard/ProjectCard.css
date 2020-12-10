@@ -1,9 +1,9 @@
-#projectCard {
+.projectCard {
     min-height: 400px !important;
     transition: all .2s ease-in-out; 
 }
 @media(hover: hover) and (pointer: fine) {
-    #projectCard:hover {
+    .projectCard:hover {
         transform: scale(1.1);  
     }
 }
