@@ -23,6 +23,7 @@ div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .notFoundPage,
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
+  /* backdrop-filter: blur(3px); */
 }
 
 /* Margin Fix */
