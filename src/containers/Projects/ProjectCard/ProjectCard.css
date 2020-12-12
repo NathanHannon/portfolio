@@ -5,7 +5,7 @@
 @media(hover: hover) and (pointer: fine) {
     .projectCard:hover {
         transform: scale(1.1);  
-        backdrop-filter: blur(3px);
+        backdrop-filter: none;
     }
 }
 
