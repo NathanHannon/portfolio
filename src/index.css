@@ -27,7 +27,6 @@ div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .notFoundPage,
   /* backdrop-filter: blur(3px); */
 }
 
-
 /* Margin Fix */
 div.aboutPage, div.contactPage, .projectCard {
   margin: auto 10px !important;
