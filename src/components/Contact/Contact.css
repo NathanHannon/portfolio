@@ -1,17 +1,17 @@
 /* Contact Page */
 .contactLink {
     padding-right: 1rem;
-  }
+}
 .contactpage {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 .iframe-container {
-  overflow: hidden;
-  /* 16:9 aspect ratio */
-  padding-top: 56.25%;
-  position: relative;
+    overflow: hidden;
+    /* 16:9 aspect ratio */
+    padding-top: 56.25%;
+    position: relative;
 }
-  
+
 .iframe-container iframe {
     border: 0;
     height: 100%;
@@ -22,5 +22,5 @@
 }
 
 div.contactPage {
-  margin: auto 10px !important;
+    margin: auto 10px !important;
 }
