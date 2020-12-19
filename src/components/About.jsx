@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import programming from '../assets/programming.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import programming from '../assets/programming.svg';
 
 class About extends Component {
     render() {
@@ -18,7 +19,12 @@ class About extends Component {
                     I am proficient with HTML5/CSS/JavaScript and React.js/Node.js, as well as C#, Python and Java. I am also proficient with various databases including
                     Microsoft SQL, Oracle SQL, MySQL, and PostgreSQL. I am currently teaching myself TypeScript and the concept of Progressive Web Apps; to broaden my skillset.
                 </p>
-                <img src={programming} alt={programming} className='programming-image' />
+                {/* <img src={programming} alt={programming} className='programming-image' /> */}
+                <p>
+                    <a href='https://github.com/NathanHannon' className='githubLink' target='_blank' rel='noreferrer noopener' title='GitHub Profile'><FontAwesomeIcon icon={['fab', 'github']} size='2x' /></a>
+                    <a href='https://www.linkedin.com/in/nathan-hannon' className='linkedinLink' target='_blank' rel='noreferrer noopener' title='LinkedIn Profile'><FontAwesomeIcon icon={['fab', 'linkedin']} size='2x' /></a>
+                    <a href='https://dev.to/nathanhannon' className='devLink' target='_blank' rel='noreferrer noopener' title='Dev.to Profile'><FontAwesomeIcon icon={['fab', 'dev']} size='2x' /></a>
+                </p>
             </div>
         );
     }
