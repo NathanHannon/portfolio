@@ -25,16 +25,16 @@ class NavMenu extends Component {
 	render() {
 		return (
 			<Navbar color='primary' dark className='navbar-expand-sm navbar-toggleable-sm box-shadow mb-3 navmenu'>
-				<NavbarBrand href='/' className='mr-auto brand'><h4>Portfolio</h4></NavbarBrand>
+				<NavbarBrand href='/' className='mr-auto brand'><h4>Nathan Hannon</h4></NavbarBrand>
 				<NavbarToggler onClick={this.toggleNavbar} className='mr-2' />
 				<Collapse className='d-sm-inline-flex flex-sm-row-reverse' isOpen={!this.state.collapsed} navbar>
 					<Nav navbar>
 						<NavItem>
-							<NavLink href='/' className='text-white'>Home</NavLink>
+							<NavLink href='/' className='text-white'>About Me</NavLink>
 						</NavItem>
-						<NavItem>
+						{/* <NavItem>
 							<NavLink href='/about' className='text-white'>About Me</NavLink>
-						</NavItem>
+						</NavItem> */}
 						<NavItem>
 							<NavLink href='/projects' className='text-white'>My Projects</NavLink>
 						</NavItem>
