@@ -9,7 +9,8 @@ class Projects extends Component {
   };
 
   callAPI() {
-    const api_url = 'https://portfolio-2-bggv2.ondigitalocean.app/api/projects';
+    const api_url = 'https://nathanhannon.tech/api/projects'
+    // 'https://portfolio-2-bggv2.ondigitalocean.app/api/projects';
     fetch(api_url)
       .then(res => res.json())
       .then(data => this.setState({ projects: data }));
