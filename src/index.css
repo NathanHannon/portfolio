@@ -15,12 +15,8 @@ a:hover {
 }
 
 /* Content Boxes */
-div.homePage,
-div.aboutPage,
-div.projectDetails,
-div.contactPage,
-.notFoundPage,
-.projectCard {
+
+div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .notFoundPage, .projectCard {
     width: auto;
     padding: 10px;
     height: auto;
@@ -35,13 +31,13 @@ div.contactPage,
 }
 
 /* Margin Fix */
-div.aboutPage,
-div.contactPage,
-.projectCard {
+
+div.aboutPage, div.contactPage, .projectCard {
     margin: auto 10px !important;
 }
 
 /* Content Box changes when width is below 574 pixels wide */
+
 @media screen and (max-width: 574px) {
     div.homePage {
         margin: auto 10px !important;
@@ -49,6 +45,7 @@ div.contactPage,
 }
 
 /* Content Box changes when width is below 1052 pixels wide */
+
 @media screen and (max-width: 1052px) {
     .programming-image {
         width: 100%;
@@ -59,19 +56,21 @@ div.contactPage,
 }
 
 /* Social Links */
-.githubLink,
-.devLink {
+
+.githubLink, .devLink {
     color: #000000;
     padding-right: 10px;
 }
-.githubLink:hover,
-.devLink:hover {
+
+.githubLink:hover, .devLink:hover {
     color: #4b5362;
 }
+
 .linkedinLink {
     color: #0077b5;
     padding-right: 10px;
 }
+
 .linkedinLink:hover {
     color: #0094e0;
 }
