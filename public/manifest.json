@@ -1,6 +1,8 @@
 {
   "short_name": "Portfolio",
   "name": "Nathan Hannon's Portfolio",
+  "theme_color": "#007bff",
+  "background-color": "#fefeff",
   "icons": [
     {
       "src": "favicon.ico",
@@ -23,6 +25,18 @@
   "start_url": ".",
   "display": "standalone",
   "orientation": "any",
-  "theme_color": "#007bff",
-  "background-color": "#fefeff"
+  "shortcuts": [
+    {
+      "name": "Projects",
+      "url": "/projects"
+    },
+    {
+      "name": "About Me",
+      "url": "."
+    },
+    {
+      "name": "Resume & Contact Info",
+      "url": "/contact"
+    }   
+  ]
 }
