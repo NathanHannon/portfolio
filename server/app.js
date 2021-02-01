@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('../node_modules/express');
 const path = require('path');
 const cookieParser = require('../node_modules/cookie-parser');
