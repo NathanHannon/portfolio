@@ -10,15 +10,15 @@ class About extends Component {
                     <h1>About Me</h1>
                 </header>
                 <p><b>My name is Nathan Hannon and I am a Computer Programming/Analysis graduate from Conestoga College.</b></p>
-                <h3><u>Interests</u></h3>
+                <h3>Interests</h3>
                 <p>
                     I have a wide variety of interests including reading books (both fiction and non-fiction), fishing, golfing, video games, programming, and technology. I also try to keep up with the latest trends in the technology space, even if I won't learn them directly.
                     I believe it is good to have an idea of the direction and developments in the industry and those that affect it and which we affect in return.
                 </p>
-                <h3><u>Skills</u></h3>
+                <h3>Skills</h3>
                 <p>
                     I am proficient with HTML5/CSS/JavaScript and React.js/Node.js, as well as C#, Python and Java. I am also proficient with various databases including
-                    Microsoft SQL, Oracle SQL, MySQL, and PostgreSQL. I am currently teaching myself TypeScript and the concept of Progressive Web Apps; to broaden my skillset.
+                    Microsoft SQL, Oracle SQL, MySQL, and PostgreSQL. I am currently practicing my Go programming and the concept of Progressive Web Apps; to broaden my skillset.
                 </p>
                 {/* <img src={programming} alt={programming} className='programming-image' /> */}
                 <p>
