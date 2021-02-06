@@ -1,6 +1,9 @@
 .projectCard {
     min-height: 400px !important;
     transition: all 0.2s ease-in-out;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 @media (hover: hover) and (pointer: fine) {
