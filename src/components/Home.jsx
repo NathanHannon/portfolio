@@ -7,7 +7,7 @@ class Home extends Component {
     return (
       <Container className='homePage'>
         <header className='homeHeader'>
-          <h1><u>Welcome!</u></h1>
+          <h1>Welcome!</h1>
         </header>
         <p>Hello curious viewer or potential employer! My name is Nathan Hannon and I am a Computer Programming/Analysis graduate from Conestoga College.</p>
         <p>

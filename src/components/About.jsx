@@ -7,7 +7,7 @@ class About extends Component {
         return (
             <div className='aboutPage'>
                 <header className='aboutHeader'>
-                    <h1><u>About Me</u></h1>
+                    <h1>About Me</h1>
                 </header>
                 <p><b>My name is Nathan Hannon and I am a Computer Programming/Analysis graduate from Conestoga College.</b></p>
                 <h3><u>Interests</u></h3>

@@ -7,7 +7,7 @@ class Contact extends Component {
         return (
             <div className='contactPage'>
                 <header className='contactHeader'>
-                    <h1><u>Resumé & Contact Info</u></h1>
+                    <h1>Resumé & Contact Info</h1>
                     <FontAwesomeIcon icon={['fas', 'phone']} />
                     <a href='tel:519-878-6227' className='contactLink' alt='Call 519-878-6227'> Call me!</a>
                     <FontAwesomeIcon icon={['fas', 'envelope']} />
