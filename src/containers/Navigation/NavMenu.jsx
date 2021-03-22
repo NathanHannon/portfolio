@@ -18,10 +18,6 @@ class NavMenu extends Component {
 	}
 	toggleNavbar = this.toggleNavbar.bind(this);
 
-	componentDidMount() {
-		console.log(this.props.status)
-	}
-
 	render() {
 		return (
 			<Navbar color='primary' dark className='navbar-expand-sm navbar-toggleable-sm box-shadow mb-3 navmenu'>
