@@ -20,7 +20,6 @@ class Projects extends Component {
   }
 
   render() {
-    console.log(this.state.projects)
     return (
       <div className='projects-method'>
         <ProjectList projectArray={this.state.projectArray} />
