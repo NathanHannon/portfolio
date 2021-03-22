@@ -5,14 +5,14 @@ class Projects extends Component {
 
   // Set state
   state = {
-    projects: []
+    projectArray: []
   };
 
   callAPI() {
     const api_url = 'https://portfolio-2-bggv2.ondigitalocean.app/api/projects';
     fetch(api_url)
       .then(res => res.json())
-      .then(data => this.setState({ projects: data }));
+      .then(data => this.setState({ projectArray: data }));
   }
   //pull data from the backend (database)
   componentDidMount() {
@@ -23,7 +23,7 @@ class Projects extends Component {
     console.log(this.state.projects)
     return (
       <div className='projects-method'>
-        <ProjectList projects={this.state.projects} />
+        <ProjectList projectArray={this.state.projectArray} />
       </div>
     );
   }

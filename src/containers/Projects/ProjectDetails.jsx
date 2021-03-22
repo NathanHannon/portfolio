@@ -14,7 +14,6 @@ class ProjectDetails extends Component {
         let top_url = 'https://portfolio-2-bggv2.ondigitalocean.app';
         const project_url = `${top_url}/api/projects/${project_id}`;
         fetch(project_url)
-            // loclahost:5000
             .then(res => res.json())
             .then(data => this.setState({ projectDetails: data[0] }))
     }

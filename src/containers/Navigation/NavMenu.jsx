@@ -28,9 +28,6 @@ class NavMenu extends Component {
 						<NavItem>
 							<NavLink href='/' className='text-white'>About Me</NavLink>
 						</NavItem>
-						{/* <NavItem>
-							<NavLink href='/about' className='text-white'>About Me</NavLink>
-						</NavItem> */}
 						<NavItem>
 							<NavLink href='/projects' className='text-white'>My Projects</NavLink>
 						</NavItem>
