@@ -14,7 +14,7 @@ router.get("/projects", (request, response, next) => {
 			return response.status(404).json('no projects found');
 		}
 		else {
-			console.log(response.status(200));
+			console.log(response.status(200).json(results.rows));
 			return response.status(200).json(results.rows);
 		}
 	});
@@ -34,7 +34,7 @@ router.get("/projects", (request, response, next) => {
 //         return response.status(404).json('project not found');
 //       }
 //       //return a single project
-//       console.log(response.status(200));
+//       console.log(response.status(200).json(results.rows));
 //       return response.status(200).json(results.rows);
 //     }
 //   );
