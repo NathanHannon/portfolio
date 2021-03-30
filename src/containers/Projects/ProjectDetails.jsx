@@ -11,7 +11,8 @@ class ProjectDetails extends Component {
 
     callAPI() {
         let project_id = this.props.location.pathname.split('/').pop();
-        let top_url = 'https://portfolio-2-bggv2.ondigitalocean.app';
+        let top_url = 'https://nathanhannon.dev';
+        // https://portfolio-2-bggv2.ondigitalocean.app  //Alt URL
         const project_url = `${top_url}/api/projects/${project_id}`;
         fetch(project_url)
             .then(res => res.json())
