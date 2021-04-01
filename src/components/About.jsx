@@ -12,7 +12,7 @@ class About extends Component {
                 <p><b>My name is Nathan Hannon and I am a Computer Programming/Analysis graduate from Conestoga College.</b></p>
                 <h3>Interests</h3>
                 <p>
-                    I have a wide variety of interests including reading books (both fiction and non-fiction), fishing, golfing, video games, programming, and technology. I also try to keep up with the latest trends in the technology space, even if I don't end up learn them directly.
+                    I have a wide variety of interests including reading books (both fiction and non-fiction), fishing, golfing, video games, programming, and technology. I also try to keep up with the latest trends in the technology space, even if I don't end up learning them directly.
                     I believe it is good to have an idea of the direction and developments in the industry and those that affect it and which we affect in return.
                 </p>
                 <h3>Skills</h3>
