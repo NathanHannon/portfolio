@@ -17,7 +17,7 @@ class Projects extends Component {
       top_url = 'https://www.nathanhannon.dev';
     }
     // https://portfolio-2-bggv2.ondigitalocean.app  //Alt URL
-    const api_url = `${top_url}/api/projects`;
+    let api_url = `${top_url}/api/projects`;
     fetch(api_url)
       .then(res => res.json())
       .then(data => this.setState({ projectArray: data }));
