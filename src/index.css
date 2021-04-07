@@ -18,14 +18,6 @@ a:hover {
 
 /* Navmenu */
 
-/* .navmenu {
-    width: 100% !important;
-    position: fixed !important;
-    z-index: 100;
-    top: 0;
-    border: none;
-} */
-
 /* Content Boxes */
 
 div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .notFoundPage, .projectCard {
