@@ -17,30 +17,29 @@ library.add(fab, fas);
 const history = createBrowserHistory();
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-        <Router history={history}>
-          <Layout />
-          <div className='App'>
-            <Switch>
-              {/* <Route path='/home' component={Home} /> */}
-              <Route exact path='/' component={About} />
-              <Route path='/about' component={About} />
-              <Route path='/projects' component={Projects} />
-              <Route path='/contact' component={Contact} />
-              {/* <Route path='/details' component={ProjectDetails} /> */}
-              <Route component={notFoundPage} />
-            </Switch>
-            {/* <br />
+	render() {
+		return (
+			<div>
+				<Router history={history}>
+					<Layout />
+					<div className='App'>
+						<Switch>
+							{/* <Route path='/home' component={Home} /> */}
+							<Route exact path='/' component={About} />
+							<Route path='/about' component={About} />
+							<Route path='/projects' component={Projects} />
+							<Route path='/contact' component={Contact} />
+							{/* <Route path='/details' component={ProjectDetails} /> */}
+							<Route component={notFoundPage} />
+						</Switch>
+						{/* <br />
             <span className="reference">Photo by <a href="https://unsplash.com/@goumbik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Lukas Blazek</a> on <a href="https://unsplash.com/s/visual/c2903a3e-a65b-4741-93eb-2e53358bbfec?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
             </span> */}
-          </div>
-
-        </Router>
-      </div>
-    );
-  }
+					</div>
+				</Router>
+			</div>
+		);
+	}
 }
 
 export default App;
