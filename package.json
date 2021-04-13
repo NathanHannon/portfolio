@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "react-scripts start",
-    "start": "serve -s build",
+    "start": "react-scripts start",
     "server": "node ./server/bin/www",
     "client": "cd client && npm run start",
     "build": "react-scripts build",
@@ -46,5 +46,8 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "serve": "^11.3.2"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
   }
 }
