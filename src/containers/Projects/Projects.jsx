@@ -11,7 +11,7 @@ class Projects extends Component {
   callAPI() {
     let top_url = 'https://nathanhannon.dev';
     // https://portfolio-2-bggv2.ondigitalocean.app  //Alt URL
-    const api_url = `${top_url}/api/projects`;
+    const api_url = `${process.env.SERVER_URL}/projects`;
     fetch(api_url)
       .then(res => res.json())
       .then(data => this.setState({ projectArray: data }));
