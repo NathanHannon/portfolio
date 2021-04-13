@@ -27,7 +27,7 @@ class About extends Component {
                     <a href='https://dev.to/nathanhannon' className='devLink' target='_blank' rel='noreferrer noopener' title='Dev.to Profile'><FontAwesomeIcon icon={['fab', 'dev']} size='2x' /></a>
                 </p>
                 <hr />
-                <p>NOTE: Due to issues allegedly with the cloud provider (this issue was not present when I put up this website last), the project page is NOT working as intended. Please visit <a href="https://github.com/NathanHannon">my GitHub profile</a> to see my projects. I apologize for any inconvenience</p>
+                <p>NOTE: Due to issues beyond my control (server-side database connection denied), the project page is NOT working as intended. Please visit <a href="https://github.com/NathanHannon">my GitHub profile</a> to see my projects. I apologize for any inconvenience</p>
             </div>
         );
     }
