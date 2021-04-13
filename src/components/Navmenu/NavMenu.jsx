@@ -29,7 +29,7 @@ class NavMenu extends Component {
 							<NavLink href='/' className='text-white'>About Me</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href={/*'/projects'*/} className='text-white'>My Projects</NavLink>
+							{/* <NavLink disabled href='/projects' className='text-white'>My Projects</NavLink> */}
 						</NavItem>
 						<NavItem>
 							<NavLink href='/contact' className='text-white'>Resumé & Contact Info</NavLink>
