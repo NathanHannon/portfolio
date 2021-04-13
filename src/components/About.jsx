@@ -28,6 +28,7 @@ class About extends Component {
                 </p>
                 <hr />
                 <p>NOTE: Due to issues beyond my control (server-side database connection denied), the project page is NOT working as intended. Please visit <a href="https://github.com/NathanHannon">my GitHub profile</a> to see my projects. I apologize for any inconvenience</p>
+                <p>Until further notice, the projects page link will be disabled.</p>
             </div>
         );
     }
