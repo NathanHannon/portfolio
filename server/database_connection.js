@@ -7,7 +7,10 @@ const pool = new Pool({
 	port: process.env.PORT,
 	ssl: {
 		rejectUnauthorized: true,
-		ca: process.env.CA_CERT
+		ca:
+			process.env.NODE_ENV === PRODUCTION
+				? process.env.CA_CERT
+				: fs.readFileSync("ca_cert.crt").toString(),
 	},
 })
 	.on('connect', () => {
