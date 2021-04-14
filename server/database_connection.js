@@ -1,15 +1,12 @@
-const { findSeries } = require('async');
-const fs = require("fs");
-
 const Pool = require('pg/lib').Pool;
 const pool = new Pool({
 	connectionString: process.env.DATABASE_URL,
 	ssl: {
-		// Reject unauthorized connections
-		rejectUnauthorized: true,
+		// Reject unauthorized connections set to false
+		rejectUnauthorized: false,
 
-		// Path to DigitalOcean cert
-		ca: process.env.CA_CERT
+		// // Path to DigitalOcean cert
+		// ca: process.env.CA_CERT
 	},
 })
 	.on('connect', () => {
