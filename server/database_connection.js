@@ -1,11 +1,12 @@
 const Pool = require('pg/lib').Pool;
 const pool = new Pool({
-	connectionString: process.env.DATABASE_URL,
+	user: process.env.USERNAME,
+	host: process.env.HOSTNAME,
+	database: process.env.DATABASE,
+	password: process.env.PASSWORD,
+	port: process.env.PORT,
 	ssl: {
-		// Reject unauthorized connections
-		rejectUnauthorized: false,
-
-		// Path to DigitalOcean cert
+		rejectUnauthorized: true,
 		ca: process.env.CA_CERT
 	},
 })
