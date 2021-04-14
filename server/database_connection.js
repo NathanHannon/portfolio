@@ -2,11 +2,11 @@ const Pool = require('pg/lib').Pool;
 const pool = new Pool({
 	connectionString: process.env.DATABASE_URL,
 	ssl: {
-		// Reject unauthorized connections set to false
-		rejectUnauthorized: false,
+		// Reject unauthorized connections
+		rejectUnauthorized: true,
 
-		// // Path to DigitalOcean cert
-		// ca: process.env.CA_CERT
+		// Path to DigitalOcean cert
+		ca: process.env.CA_CERT
 	},
 })
 	.on('connect', () => {
