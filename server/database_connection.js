@@ -3,7 +3,7 @@ const pool = new Pool({
 	connectionString: process.env.DATABASE_URL,
 	ssl: {
 		// Reject unauthorized connections
-		rejectUnauthorized: true,
+		rejectUnauthorized: false,
 
 		// Path to DigitalOcean cert
 		ca: process.env.CA_CERT
