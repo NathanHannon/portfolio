@@ -1,9 +1,0 @@
-/* CSS seems to be required, as it breaks the web app if removed? */
-
-.navmenu {
-    width: 100% !important;
-    position: fixed !important;
-    z-index: 100;
-    top: 0;
-    border: none;
-}
