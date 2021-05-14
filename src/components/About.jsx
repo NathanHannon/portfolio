@@ -22,12 +22,10 @@ class About extends Component {
                 </p>
                 {/* <img src={programming} alt={programming} className='programming-image' /> */}
                 <p>
-                    <a href='https://github.com/NathanHannon' className='githubLink' target='_blank' rel='noreferrer noopener' title='GitHub Profile'><FontAwesomeIcon icon={['fab', 'github']} size='2x' /></a>
-                    <a href='https://www.linkedin.com/in/nathan-hannon' className='linkedinLink' target='_blank' rel='noreferrer noopener' title='LinkedIn Profile'><FontAwesomeIcon icon={['fab', 'linkedin']} size='2x' /></a>
-                    <a href='https://dev.to/nathanhannon' className='devLink' target='_blank' rel='noreferrer noopener' title='Dev.to Profile'><FontAwesomeIcon icon={['fab', 'dev']} size='2x' /></a>
+                    <a href='https://github.com/NathanHannon' className='githubLink' target='_blank' rel='noreferrer noopener' title='GitHub Profile' tabindex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'github']} size='2x' /></a>
+                    <a href='https://www.linkedin.com/in/nathan-hannon' className='linkedinLink' target='_blank' rel='noreferrer noopener' title='LinkedIn Profile' tabindex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'linkedin']} size='2x' /></a>
+                    <a href='https://dev.to/nathanhannon' className='devLink' target='_blank' rel='noreferrer noopener' title='Dev.to Profile' tabindex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'dev']} size='2x' /></a>
                 </p>
-                {/* <hr />
-                <p>NOTE: Due to issues beyond my control, the project and contact pages are NOT working as intended. Please visit <a href="https://github.com/NathanHannon">my GitHub profile</a> to see my projects. I apologize for any inconvenience</p> */}
             </div>
         );
     }
