@@ -14,7 +14,7 @@ class Contact extends Component {
                     <a href='mailto:nathan@hannon.me' className='contactLink' alt='Send email to nathan@hannon.me' tabindex="-1" aria-disabled="true"> Send an email!</a>
                 </header>
                 <div class='iframe-container'>
-                    <iframe seamless='seamless' frameborder='0' src={'https://storage.googleapis.com/portfolio-file-bucket/Nathan%20Hannon%20Resume%20(Modern).pdf'} title='Resume' tabindex="-1" aria-disabled="true" />
+                    <iframe seamless='seamless' frameborder='0' src={'https://storage.googleapis.com/portfolio-file-bucket/Resumes/Nathan%20Hannon%20Resume%20(Modern).pdf'} title='Resume' tabindex="-1" aria-disabled="true" />
                 </div>
             </div>
         );
