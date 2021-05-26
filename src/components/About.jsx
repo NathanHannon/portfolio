@@ -17,7 +17,7 @@ class About extends Component {
                 </p>
                 <h3>Skills</h3>
                 <p>
-                    Fow Web development, I am proficient HTML/CSS/JavaScript, TypeScript, React, and Node.js. For application programming, I am skilled with C#, Java, Python, and Go. I am also proficient with various databases including
+                    I am skilled with HTML/CSS/JavaScript, TypeScript, React, and Node.js for web development; as well as C#, Java, Python, and Go for application development. I am also proficient with various databases including
                     Microsoft SQL, Oracle PL/SQL, MySQL, and PostgreSQL.
                 </p>
                 {/* <img src={programming} alt={programming} className='programming-image' /> */}
