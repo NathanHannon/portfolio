@@ -21,7 +21,7 @@ class NavMenu extends Component {
 	render() {
 		return (
 			<Navbar color='primary' dark className='navbar-expand-sm navbar-toggleable-sm box-shadow mb-3 fixed-top'>
-				<NavbarBrand href='/' className='mr-auto brand' tabindex="-1" aria-disabled="true"><img src="../assets/nathan-192.png" alt="Branding"></img></NavbarBrand>
+				<NavbarBrand href='/' className='mr-auto brand' tabindex="-1" aria-disabled="true"><h4>Nathan Hannon</h4></NavbarBrand>
 				<NavbarToggler onClick={this.toggleNavbar} className='mr-2' />
 				<Collapse className='d-sm-inline-flex flex-sm-row-reverse' isOpen={!this.state.collapsed} navbar>
 					<Nav navbar>
