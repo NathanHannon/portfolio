@@ -16,6 +16,11 @@ a:hover {
     cursor: pointer;
 }
 
+brand:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* Content Boxes */
 
 div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .notFoundPage, .projectCard {
