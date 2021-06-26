@@ -10,7 +10,7 @@ body {
     margin: 0;
     height: 100%;
     background-attachment: fixed;
-    background-image: url("../src/assets/Aqua.jpg");
+    background-image: url("../src/assets/Aqua.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
-import Logo from '../assets/nathan.png';
+import Logo from '../assets/nathan.webp';
 
 class NavMenu extends Component {
 	static displayName = NavMenu.name;
