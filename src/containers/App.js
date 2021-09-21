@@ -8,7 +8,7 @@ import { Route, Router, Switch } from 'react-router';
 import About from '../components/About';
 import Contact from '../components/Contact/Contact';
 import Layout from '../components/Layout/Layout';
-import notFoundPage from '../components/NotFoundPage';
+import NotFoundPage from '../components/NotFoundPage';
 import './App.css';
 import Projects from './Projects/Projects';
 
@@ -27,7 +27,7 @@ class App extends Component {
 							<Route path='/about' component={About} />
 							<Route path='/projects' component={Projects} />
 							<Route path='/contact' component={Contact} />
-							<Route component={notFoundPage} />
+							<Route component={NotFoundPage} />
 						</Switch>
 						{/* <br />
             <span className="reference">Photo by <a href="https://unsplash.com/@goumbik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Lukas Blazek</a> on <a href="https://unsplash.com/s/visual/c2903a3e-a65b-4741-93eb-2e53358bbfec?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
