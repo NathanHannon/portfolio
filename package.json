@@ -50,7 +50,7 @@
     "serve": "^11.3.2"
   },
   "optionalDependencies": {
-    "fsevents": "^2.3.2",
-    "babel-jest": "^26.6.3"
+    "babel-jest": "^26.6.3",
+    "fsevents": "^2.3.2"
   }
 }
