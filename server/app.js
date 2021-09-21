@@ -17,6 +17,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // routers
 app.use("/", projectRouter);
 
+// fallback for serving main page.
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));
 });
