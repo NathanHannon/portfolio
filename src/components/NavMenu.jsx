@@ -33,7 +33,7 @@ class NavMenu extends Component {
 							<NavLink href='/projects' className='text-white' tabindex="-1" aria-disabled="true">My Projects</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href='/contact' className='text-white' tabindex="-1" aria-disabled="true">Resumé & Contact Info</NavLink>
+							<NavLink href='/contact' className='text-white' tabindex="-1" aria-disabled="true">Resumé &amp; Contact Info</NavLink>
 						</NavItem>
 					</Nav>
 				</Collapse>
