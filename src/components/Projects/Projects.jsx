@@ -8,6 +8,7 @@ class Projects extends Component {
     projectArray: []
   };
 
+  // fetches the data from the projects API query and puts it in the projects array by changing the state
   callAPI() {
     let top_url = 'https://nathanhannon.dev';
     // https://portfolio-2-bggv2.ondigitalocean.app  //Alt URL
