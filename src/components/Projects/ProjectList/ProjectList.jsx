@@ -6,7 +6,7 @@ import './ProjectList.css';
 /**
  * This function maps the generated project cards to the project array, using the project ID as the key
  */
-export const ProjectList = props => (
+const ProjectList = props => (
     <Container className='projectList'>
         {
             props.projectArray.map((projects) => (
@@ -15,3 +15,5 @@ export const ProjectList = props => (
         }
     </Container>
 );
+
+export default ProjectList;
