@@ -12,7 +12,7 @@ import './App.css';
 import Projects from '../Projects/Projects';
 import { createBrowserHistory } from 'history';
 
-const history = createBrowserHistory
+const history = createBrowserHistory();
 library.add(fab, fas);
 class App extends Component {
 	render() {
