@@ -3,22 +3,20 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import React, { Component } from 'react';
-import { Router, Route, Switch } from 'react-router';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from '../About';
 import Contact from '../Contact/Contact';
 import Layout from '../Layout/Layout';
 import NotFoundPage from '../NotFoundPage';
 import './App.css';
 import Projects from '../Projects/Projects';
-import { createBrowserHistory } from 'history';
 
-const history = createBrowserHistory();
 library.add(fab, fas);
 class App extends Component {
 	render() {
 		return (
 			<div>
-				<Router history={history}>
+				<Router>
 					<Layout />
 					<div className='App'>
 						<Switch>
