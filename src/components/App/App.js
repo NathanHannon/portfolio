@@ -3,20 +3,21 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import About from './components/About';
-import Contact from './components/Contact/Contact';
-import Layout from './components/Layout/Layout';
-import NotFoundPage from './components/NotFoundPage';
+import { Route, Router, Switch } from 'react-router-dom';
+import About from '../About';
+import Contact from '../Contact/Contact';
+import Layout from '../Layout/Layout';
+import NotFoundPage from '../NotFoundPage';
 import './App.css';
-import Projects from './components/Projects/Projects';
+import Projects from '../Projects/Projects';
+import history from '../../history';
 
 library.add(fab, fas);
 class App extends Component {
 	render() {
 		return (
 			<div>
-				<Router>
+				<Router history={history}>
 					<Layout />
 					<div className='App'>
 						<Switch>
@@ -30,6 +31,7 @@ class App extends Component {
             <span className="reference">Photo by <a href="https://unsplash.com/@goumbik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Lukas Blazek</a> on <a href="https://unsplash.com/s/visual/c2903a3e-a65b-4741-93eb-2e53358bbfec?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
             </span> */}
 					</div>
+
 				</Router>
 			</div>
 		);
