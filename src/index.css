@@ -52,6 +52,16 @@ div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .notFoundPage,
     overflow: hidden;
 }
 
+/* Nav-content margins */
+.Content {
+    margin-top: 72px;
+}
+
+/* Main App styling */
+.App {
+    text-align: center;
+}
+
 /* Margin Fix */
 
 div.aboutPage, div.contactPage, .projectCard {

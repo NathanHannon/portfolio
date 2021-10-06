@@ -4,12 +4,11 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import About from '../About';
-import Contact from '../Contact/Contact';
-import Layout from '../Layout/Layout';
-import NotFoundPage from '../NotFoundPage';
-import './App.css';
-import Projects from '../Projects/Projects';
+import About from './About';
+import Contact from './Contact/Contact';
+import NavMenu from './NavMenu';
+import NotFoundPage from './NotFoundPage';
+import Projects from './Projects/Projects';
 
 library.add(fab, fas);
 class App extends Component {
@@ -17,7 +16,9 @@ class App extends Component {
 		return (
 			<div>
 				<Router>
-					<Layout />
+					<div className='Content'>
+						<NavMenu />
+					</div>
 					<div className='App'>
 						<Switch>
 							<Route exact path='/' component={About} />
