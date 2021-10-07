@@ -1,6 +1,4 @@
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-// import { Link } from 'react-router-dom'
 import { Card, CardBody, CardImg, CardText, CardTitle } from 'reactstrap';
 import './ProjectCard.css';
 
@@ -15,6 +13,5 @@ export const ProjectCard = props => {
                 </CardBody>
             </Card>
         </a>
-        // {'/details/' + props.projects.project_id} className='text-dark' id='project-link'
     );
 }
