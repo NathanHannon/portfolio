@@ -27,13 +27,13 @@ class NavMenu extends Component {
 				<Collapse className='d-sm-inline-flex flex-sm-row-reverse' isOpen={!this.state.collapsed} navbar>
 					<Nav navbar>
 						<NavItem>
-							<NavLink href='/' className='text-white' tabindex="-1" aria-disabled="true">About Me</NavLink>
+							<NavLink href='/' className='text-white nav-link' tabindex="-1" aria-disabled="true">About Me</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href='/projects' className='text-white' tabindex="-1" aria-disabled="true">My Projects</NavLink>
+							<NavLink href='/projects' className='text-white nav-link' tabindex="-1" aria-disabled="true">My Projects</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href='/contact' className='text-white' tabindex="-1" aria-disabled="true">Resumé &amp; Contact Info</NavLink>
+							<NavLink href='/contact' className='text-white nav-link' tabindex="-1" aria-disabled="true">Resumé &amp; Contact Info</NavLink>
 						</NavItem>
 					</Nav>
 				</Collapse>

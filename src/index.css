@@ -17,10 +17,18 @@ body {
     /*  background-image: linear-gradient(to bottom right, #007bff, #756ae7, #9b58cb, #b048ad, #ba3c8f); */
 }
 
-/* Mouse hover decoration */
+/* NavMenu */
 a:hover, .brand:hover {
     text-decoration: none;
     cursor: pointer;
+}
+
+.nav-link, .brand {
+    outline: none !important;
+}
+
+.NavContainer {
+    margin-top: 72px;
 }
 
 /* Content Boxes */
@@ -46,11 +54,6 @@ div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .notFoundPage,
     box-shadow: var(--frosted-shadow);
     border: var(--frosted-border);
     overflow: hidden;
-}
-
-/* Nav-content margins */
-.Content {
-    margin-top: 72px;
 }
 
 /* Main App styling */
