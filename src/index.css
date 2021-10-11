@@ -17,12 +17,8 @@ body {
     /*  background-image: linear-gradient(to bottom right, #007bff, #756ae7, #9b58cb, #b048ad, #ba3c8f); */
 }
 
-a:hover {
-    text-decoration: none;
-    cursor: pointer;
-}
-
-brand:hover {
+/* Mouse hover decoration */
+a:hover, .brand:hover {
     text-decoration: none;
     cursor: pointer;
 }
