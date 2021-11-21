@@ -3,7 +3,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import About from './About';
 import Contact from './Contact/Contact';
 import NavMenu from './NavMenu';
@@ -20,13 +20,13 @@ class App extends Component {
 						<NavMenu />
 					</div>
 					<div className='App'>
-						<Switch>
-							<Route exact path='/' component={About} />
-							<Route path='/about' component={About} />
-							<Route path='/projects' component={Projects} />
-							<Route path='/contact' component={Contact} />
-							<Route component={NotFoundPage} />
-						</Switch>
+						<Routes>
+							<Route exact path='/' element={<About />} />
+							<Route path='/about' element={<About />} />
+							<Route path='/projects' element={<Projects />} />
+							<Route path='/contact' element={<Contact />} />
+							<Route element={<NotFoundPage />} />
+						</Routes>
 					</div>
 				</Router>
 			</div>
