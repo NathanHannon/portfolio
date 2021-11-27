@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import not_found_image from '../assets/pictures/sarah-kilian-unsplash.jpg'
-import { Container } from 'reactstrap';
+import { Container } from 'react-bootstrap';
 
 class NotFoundPage extends Component {
     render() {
