@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
+import { Nav, Navbar, NavDropdown, Button } from 'react-bootstrap';
 import Logo from '../assets/nathan.png';
 
 class NavMenu extends Component {
@@ -21,22 +21,16 @@ class NavMenu extends Component {
 
 	render() {
 		return (
-			<Navbar color='primary' dark className='navbar-expand-sm navbar-toggleable-sm box-shadow mb-3 fixed-top'>
-				<NavbarBrand href='/' className='mr-auto brand' tabindex="-1" aria-disabled="true" alt="Home Page"><img src={Logo} alt="Branding" /></NavbarBrand>
-				<NavbarToggler onClick={this.toggleNavbar} className='mr-2' />
-				<Collapse className='d-sm-inline-flex flex-sm-row-reverse' isOpen={!this.state.collapsed} navbar>
+			<Navbar bg='primary' variant='dark' fixed='top'>
+				<Navbar.Brand href='/' className='mr-auto brand' tabindex="-1" aria-disabled="true" alt="Home Page"><img src={Logo} alt="Branding" /></Navbar.Brand>
+				<Navbar.Toggle onClick={this.toggleNavbar} className='mr-2' />
+				<Navbar.Collapse className='d-sm-inline-flex flex-sm-row-reverse' isOpen={!this.state.collapsed} navbar>
 					<Nav navbar>
-						<NavItem>
-							<NavLink href='/' className='text-white nav-link' tabindex="-1" aria-disabled="true">About Me</NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href='/projects' className='text-white nav-link' tabindex="-1" aria-disabled="true">My Projects</NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href='/contact' className='text-white nav-link' tabindex="-1" aria-disabled="true">Resumé &amp; Contact Info</NavLink>
-						</NavItem>
+						<Nav.Link href='/' className='text-white nav-link' tabindex="-1" aria-disabled="true">About Me</Nav.Link>
+						<Nav.Link href='/projects' className='text-white nav-link' tabindex="-1" aria-disabled="true">My Projects</Nav.Link>
+						<Nav.Link href='/contact' className='text-white nav-link' tabindex="-1" aria-disabled="true">Resumé &amp; Contact Info</Nav.Link>
 					</Nav>
-				</Collapse>
+				</Navbar.Collapse>
 			</Navbar>
 		);
 	}
