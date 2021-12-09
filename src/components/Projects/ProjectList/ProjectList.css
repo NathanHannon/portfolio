@@ -4,9 +4,10 @@
     .projectList {
         display: block;
         padding: 2rem !important;
+        justify-content: space-between;
     }
     .projectCard {
-        row-gap: 1rem !important;
+        margin-bottom: 15px !important;
     }
 }
 
