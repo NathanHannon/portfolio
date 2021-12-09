@@ -5,7 +5,7 @@ import './ProjectCard.css';
 export const ProjectCard = props => {
     return (
         <a href={props.projects.repo_url} target='_blank' rel='noreferrer noopener' title={props.projects.name + ' GitHub Page'}>
-            <Card className='projectCard'>
+            <Card outline className='projectCard'>
                 <Card.Img className='projectCardImage' variant='top' src={props.projects.image_url} width='300px' height='200px' />
                 <Card.Body>
                     <Card.Title className='cardTitle text-dark'>{props.projects.name}</Card.Title>
