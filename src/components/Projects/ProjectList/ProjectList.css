@@ -5,8 +5,8 @@
         display: block;
         padding: 2rem !important;
     }
-    .projectCard, .projectAnchor {
-        margin-bottom: 15px !important;
+    .projectCard {
+        row-gap: 1rem !important;
     }
 }
 
