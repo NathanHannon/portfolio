@@ -5,7 +5,7 @@
         display: block;
         padding: 2rem !important;
     }
-    .projectCard {
+    .projectCard, .projectAnchor {
         margin-bottom: 15px !important;
     }
 }
