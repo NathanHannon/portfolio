@@ -4,10 +4,9 @@
     .projectList {
         display: block;
         padding: 2rem !important;
-        justify-content: space-between;
     }
     .projectCard {
-        margin-bottom: 15px !important;
+        /* margin-bottom: 15px !important; */
     }
 }
 
@@ -15,10 +14,10 @@
 
 @media screen and (min-width: 768px) {
     .projectList {
-        display: inline-grid;
+        /* display: inline-grid;
         grid-template-columns: 0.5fr 0.5fr 0.5fr;
         gap: 2rem;
-        margin: 1% 0 1% 0;
+        margin: 1% 0 1% 0; */
         position: relative;
         box-sizing: border-box;
     }
