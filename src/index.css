@@ -63,7 +63,7 @@ div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .notFoundPage,
 
 /* Margin Fix */
 
-div.aboutPage, div.contactPage, .projectCard {
+div.aboutPage, div.contactPage{
     margin: 15px;
 }
 
