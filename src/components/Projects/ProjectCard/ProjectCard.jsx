@@ -1,19 +1,18 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, CardBody, CardImg, CardText, CardTitle } from 'reactstrap';
+// import { Card } from 'react-bootstrap';
 import './ProjectCard.css';
 
 export const ProjectCard = props => {
     return (
         <a href={props.projects.repo_url} target='_blank' rel='noreferrer noopener' title={props.projects.name + ' GitHub Page'}>
-            <div className='card-deck'>
-                <Card outline className='projectCard mb-4'>
-                    <Card.Img className='projectCardImage' variant='top' src={props.projects.image_url} width='300px' height='200px' />
-                    <Card.Body>
-                        <Card.Title className='cardTitle text-dark'>{props.projects.name}</Card.Title>
-                        <Card.Text className='cardContent text-dark'>{props.projects.description}</Card.Text>
-                    </Card.Body>
-                </Card>
-            </div>
+            <Card outline className='projectCard'>
+                <CardImg className='projectCardImage' src={props.projects.image_url} width='300px' height='200px' />
+                <CardBody>
+                    <CardTitle className='text-dark' id='cardTitle'>{props.projects.name}</CardTitle>
+                    <CardText className='text-dark'>{props.projects.description}</CardText>
+                </CardBody>
+            </Card>
         </a>
     );
-}
+};
