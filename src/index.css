@@ -64,14 +64,14 @@ div.homePage, div.aboutPage, div.projectDetails, div.contactPage, .notFoundPage,
 /* Margin Fix */
 
 div.aboutPage, div.contactPage, .projectCard {
-    margin: auto 10px !important;
+    margin: 15px;
 }
 
 /* Content Box changes when width is below 574 pixels wide */
 
 @media screen and (max-width: 574px) {
     div.homePage {
-        margin: auto 10px !important;
+        margin: auto 15px !important;
     }
 }
 
