@@ -9,7 +9,7 @@ class About extends Component {
                 <header className='aboutHeader'>
                     <h1>About Me</h1>
                 </header>
-                <p><b>My name is Nathan Hannon and I am a Computer Programming/Analysis graduate from Conestoga College.</b></p>
+                <p><b>My name is Nathan Hannon and I am a Programmer/Web Developer at Woodstock Hospital.</b></p>
                 <h3>Interests</h3>
                 <p>
                     I have a wide variety of interests including reading books (both fiction and non-fiction), fishing, golfing, video games, programming, and technology. I try to keep up with the latest trends in the technology space and I believe it is good to have an idea of the direction and developments in the industry.
