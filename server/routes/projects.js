@@ -8,6 +8,8 @@ const allProjects = "SELECT * FROM projects ORDER BY project_id ASC";
 router.get("/projects", (req, res, next) => {
 	res.setHeader("X-Frame-Options", "DENY");
 	res.setHeader("Content-Security-Policy", "frame-ancestors 'none'");
+	// cache control
+	res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 	db_connection.query(allProjects, (error, results) => {
 		if (error) {
 			console.log('no projects found', error, res.status(404))
