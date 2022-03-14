@@ -1,0 +1,116 @@
+$frosted: rgba(255, 255, 255, 0.7);
+$frosted-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.7);
+$frosted-border: 1px solid rgba(255, 255, 255, 0.7);
+$squircle: 24px;
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+body {
+    font-family: "IBM Plex Sans", sans-serif !important;
+    margin: 0;
+    height: 100%;
+    background-attachment: fixed;
+    background-image: url("../src/assets/patterns/hexagons.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*  background-image: linear-gradient(to bottom right, #007bff, #756ae7, #9b58cb, #b048ad, #ba3c8f); */
+}
+
+/* NavMenu */
+a:hover,
+.brand:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-link,
+.brand {
+    outline: none !important;
+}
+
+.NavContainer {
+    margin-top: 72px;
+}
+
+/* Content Boxes */
+
+div.homePage,
+div.aboutPage,
+div.projectDetails,
+div.contactPage,
+.notFoundPage,
+.projectCard {
+    width: auto;
+    padding: 10px;
+    height: auto;
+    border-radius: $squircle;
+    background: $frosted;
+    box-shadow: $frosted-shadow;
+    border: $frosted-border;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.reference {
+    width: auto;
+    padding: 10px;
+    height: auto;
+    border-radius: 10px;
+    background: $frosted;
+    box-shadow: $frosted-shadow;
+    border: $frosted-border;
+    overflow: hidden;
+}
+
+/* Main App styling */
+.App {
+    text-align: center;
+}
+
+/* Margin Fix */
+
+div.aboutPage,
+div.contactPage {
+    margin: 15px;
+}
+
+/* Content Box changes when width is below 574 pixels wide */
+
+@media screen and (max-width: 574px) {
+    div.homePage {
+        margin: auto 15px !important;
+    }
+}
+
+/* Content Box changes when width is below 1052 pixels wide */
+
+@media screen and (max-width: 1052px) {
+    .programming-image {
+        width: 100%;
+    }
+    div.contactPage {
+        margin: auto 10px !important;
+    }
+}
+
+/* Social Links */
+
+.githubLink,
+.devLink {
+    color: #000000;
+    padding-right: 10px;
+}
+
+.githubLink:hover,
+.devLink:hover {
+    color: #4b5362;
+}
+
+.linkedinLink {
+    color: #0077b5;
+    padding-right: 10px;
+}
+
+.linkedinLink:hover {
+    color: #0094e0;
+}

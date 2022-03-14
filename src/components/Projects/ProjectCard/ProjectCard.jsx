@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import './ProjectCard.css';
+import './ProjectCard.scss';
 
 export const ProjectCard = props => {
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { ProjectCard } from '../ProjectCard/ProjectCard';
-import './ProjectList.css';
+import './ProjectList.scss';
 
 /**
  * This function maps the generated project cards to the project array, using the project ID as the key

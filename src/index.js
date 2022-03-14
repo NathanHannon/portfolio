@@ -4,7 +4,7 @@ import App from './components/App';
 import { register as registerServiceWorker } from './serviceWorkerRegistration';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './custom.scss';
-import './index.css';
+import './index.scss';
 
 ReactDOM.render(
   <React.StrictMode>
