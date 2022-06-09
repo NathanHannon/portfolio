@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import Logo from '../assets/nathan.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class NavMenu extends Component {
 	static displayName = NavMenu.name;
