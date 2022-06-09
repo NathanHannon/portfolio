@@ -26,9 +26,14 @@ class NavMenu extends Component {
 				<Navbar.Toggle onClick={this.toggleNavbar} aria-controls='responsive-navbar-nav' />
 				<Navbar.Collapse className='d-sm-inline-flex flex-sm-row-reverse' id='responsive-navbar-nav' isOpen={!this.state.collapsed} navbar>
 					<Nav>
-						<Nav.Link href='/' className='text-white nav-link' tabindex="-1" aria-disabled="true">About Me</Nav.Link>
-						<Nav.Link href='/projects' className='text-white nav-link' tabindex="-1" aria-disabled="true">My Projects</Nav.Link>
-						<Nav.Link href='/contact' className='text-white nav-link' tabindex="-1" aria-disabled="true">Resumé &amp; Contact Info</Nav.Link>
+						<Nav.Link href='/' className='text-white nav-link' tabindex="-1" aria-disabled="true">
+							<FontAwesomeIcon icon={['fas', 'address-card']}/> About Me</Nav.Link>
+						<Nav.Link href='/projects' className='text-white nav-link' tabindex="-1" aria-disabled="true">
+							<FontAwesomeIcon icon={['fas', 'code']}/> My Projects
+						</Nav.Link>
+						<Nav.Link href='/contact' className='text-white nav-link' tabindex="-1" aria-disabled="true">
+							<FontAwesomeIcon icon={['fas', 'file']}/> Resumé &amp; Contact Info
+						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Navbar>
