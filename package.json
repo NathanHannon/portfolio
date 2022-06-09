@@ -50,7 +50,8 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "sass": "^1.44.0",
-    "serve": "^11.3.2"
+    "serve": "^11.3.2",
+    "type-fest": "^0.13.1"
   },
   "optionalDependencies": {
     "babel-jest": "^26.6.3",
