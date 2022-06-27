@@ -22,7 +22,7 @@ class NavMenu extends Component {
 
 	render() {
 		return (
-			<Navbar bg='primary' variant='dark' fixed='top' expand='sm' className='nav-tabs'>
+			<Navbar bg='primary' variant='dark' fixed='top' expand='sm'>
 				<Navbar.Brand href='/' className='mr-auto brand' tabindex="-1" aria-disabled="true" alt="Home Page"><img src={Logo} alt="Branding" /></Navbar.Brand>
 				<Navbar.Toggle onClick={this.toggleNavbar} aria-controls='responsive-navbar-nav' />
 				<Navbar.Collapse className='d-sm-inline-flex flex-sm-row-reverse' id='responsive-navbar-nav' isOpen={!this.state.collapsed} navbar>
