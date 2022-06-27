@@ -29,7 +29,10 @@ a:hover,
     background-color: #fff;
 }
 
-.nav-link,
+.nav-link {
+    border-radius: $rounded-corner;
+}
+
 .brand {
     outline: none !important;
 }
