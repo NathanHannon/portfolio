@@ -20,7 +20,7 @@ class Projects extends Component {
       .then(data => this.setState({ projectArray: data }));
   }
   /**
-   * pull data from the backend (database) after the component mounts
+   * pull data from the backend express (database) after the component mounts
    */
   componentDidMount() {
     this.fetchProjectData();
