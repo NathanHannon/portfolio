@@ -18,28 +18,29 @@ body {
     //         rgba(152, 68, 183, 1) 51%,
     //         rgba(255, 53, 127, 1) 100%);
     // animation: AnimateBG 30s ease infinite;
-    background: #43cea2;
+    // background: #43cea2;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #185a9d, #43cea2);
+    // background: -webkit-linear-gradient(to right, #185a9d, #43cea2);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #185a9d, #43cea2);
+    // background: linear-gradient(to right, #185a9d, #43cea2);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #FBFBFD
 
 }
 
-@keyframes AnimateBG {
-    0% {
-        background-position: 0% 50%
-    }
+// @keyframes AnimateBG {
+//     0% {
+//         background-position: 0% 50%
+//     }
 
-    50% {
-        background-position: 100% 50%
-    }
+//     50% {
+//         background-position: 100% 50%
+//     }
 
-    100% {
-        background-position: 0% 50%
-    }
-}
+//     100% {
+//         background-position: 0% 50%
+//     }
+// }
 
 /* NavMenu */
 a:hover,
@@ -78,10 +79,10 @@ div.contactPage,
     padding: 10px;
     height: auto;
     border-radius: $rounded-corner;
-    background: $glass;
+    background: #FFFFFF;
     backdrop-filter: blur(4px);
-    box-shadow: $frosted-shadow;
-    border: $frosted-border;
+    box-shadow: 0 11px 34px 0 rgb(0 0 0 / 20%);
+    border: #FFFFFF;
     overflow: hidden;
     font-weight: 500;
 }
