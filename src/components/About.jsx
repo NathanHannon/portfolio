@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Helmet } from 'react-helmet';
 // import programming from '../assets/programming.svg';
 
 class About extends Component {
     render() {
+        const pageTitle = 'About Me';
         return (
             <div className='aboutPage'>
+                <Helmet>
+                    <title>Nathan Hannon | {pageTitle}</title>
+                </Helmet>
                 <header className='aboutHeader'>
-                    <h1>About Me</h1>
+                    <h1>{pageTitle}</h1>
                 </header>
                 <p><b>My name is Nathan Hannon and I am a Programmer/Web Developer at Woodstock Hospital.</b></p>
                 <h3>Interests</h3>

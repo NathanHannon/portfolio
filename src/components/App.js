@@ -10,12 +10,13 @@ import Contact from './Contact/Contact';
 import NavMenu from './NavMenu';
 import NotFoundPage from './NotFoundPage';
 import Projects from './Projects/Projects';
+import { Helmet } from 'react-helmet';
 
 library.add(fab, fas);
 class App extends Component {
 	render() {
 		return (
-			<div>
+			<div className='app'>
 				<Router>
 					<div className='NavContainer'>
 						<NavMenu />

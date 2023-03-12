@@ -2,8 +2,10 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import './ProjectCard.scss';
 
-export const ProjectCard = props => {
+export const ProjectCard = (props) => {
     return (
+        // This is the link to the GitHub page for the project
+        // Project details are mapped from the project array
         <a href={props.projects.repo_url} target='_blank' rel='noreferrer noopener' title={props.projects.name + ' GitHub Page'}>
             <Card outline className='projectCard'>
                 <Card.Img className='projectCardImage' variant='top' src={props.projects.image_url} width='300px' height='200px' />

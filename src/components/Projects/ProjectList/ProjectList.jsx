@@ -6,7 +6,7 @@ import './ProjectList.scss';
 /**
  * This function maps the generated project cards to the project array, using the project ID as the key
  */
-const ProjectList = props => (
+const ProjectList = (props) => (
     <Container className='projectList'>
         {
             props.projectArray.map((projects) => (

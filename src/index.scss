@@ -1,7 +1,7 @@
 $glass: rgba(255, 255, 255, 0.25);
 $frosted-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.7);
 $frosted-border: 1px solid rgba(255, 255, 255, 0.18);
-$rounded-corner: 8px;
+$rounded-corner: 16px;
 
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
@@ -24,8 +24,7 @@ body {
     /* Chrome 10-25, Safari 5.1-6 */
     // background: linear-gradient(to right, #185a9d, #43cea2);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-color: #FBFBFD
-
+    background-color: #FBFBFD !important;
 }
 
 // @keyframes AnimateBG {
@@ -80,11 +79,10 @@ div.contactPage,
     height: auto;
     border-radius: $rounded-corner;
     background: #FFFFFF;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 11px 34px 0 rgb(0 0 0 / 20%);
-    border: #FFFFFF;
+    box-shadow: 0 11px 16px 0 rgba(0, 0, 0, .2);
     overflow: hidden;
     font-weight: 500;
+    backdrop-filter: blur(10px);
 }
 
 .reference {
@@ -117,6 +115,17 @@ div.contactPage {
     div.homePage {
         margin: auto 15px !important;
     }
+
+    .navbar-link,
+    .nav-link {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .iframe-container {
+        // make the height of the iframe 100% of the screen
+        height: 62vh;
+    }
 }
 
 /* Content Box changes when width is below 1052 pixels wide */
@@ -128,6 +137,17 @@ div.contactPage {
 
     div.contactPage {
         margin: auto 10px !important;
+    }
+
+    .navbar-link,
+    .nav-link {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .iframe-container {
+        // make the height of the iframe 100% of the screen
+        height: 62vh;
     }
 }
 

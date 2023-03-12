@@ -1,13 +1,18 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import './Contact.scss';
 
 class Contact extends Component {
     render() {
+        const pageTitle = 'Resumé & Contact Info';
         return (
             <div className='contactPage'>
+                <Helmet>
+                    <title>Nathan Hannon | {pageTitle}</title>
+                </Helmet>
                 <header className='contactHeader'>
-                    <h1>Resumé &amp; Contact Info</h1>
+                    <h1>{pageTitle}</h1>
                     <FontAwesomeIcon icon={['fas', 'phone']} />
                     <a href='tel:519-878-6227' className='contactLink' alt='Call 519-878-6227' tabindex="-1" aria-disabled="true"> Call me!</a>
                     <FontAwesomeIcon icon={['fas', 'envelope']} />
