@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import ProjectList from './ProjectList/ProjectList';
 
 class Projects extends Component {
@@ -27,9 +28,18 @@ class Projects extends Component {
   }
 
   render() {
+    const pageTitle = 'My Projects';
     return (
-      <div className='projects-method'>
-        <ProjectList projectArray={this.state.projectArray} />
+      <div className="projectPage">
+        <Helmet>
+          <title>Nathan Hannon | {pageTitle}</title>
+        </Helmet>
+        <header className='projectHeader'>
+          <h1>{pageTitle}</h1>
+        </header>
+        <div className='projects-method'>
+          <ProjectList projectArray={this.state.projectArray} />
+        </div>
       </div>
     );
   }
