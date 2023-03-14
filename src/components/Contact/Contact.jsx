@@ -8,11 +8,7 @@ class Contact extends Component {
     render() {
         const pageTitle = 'Resumé & Contact Info';
         return (
-            <motion.div
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                className='contactPage'>
+            <div className='contactPage'>
                 <Helmet>
                     <title>Nathan Hannon | {pageTitle}</title>
                 </Helmet>
@@ -26,7 +22,7 @@ class Contact extends Component {
                 <div class='iframe-container'>
                     <iframe frameborder='0' src={'https://portfolio-file-bucket.nyc3.digitaloceanspaces.com/Resumes/Nathan%20Hannon_Resume.pdf'} title='Resume' tabindex="-1" aria-disabled="true" />
                 </div>
-            </motion.div>
+            </div>
         );
     }
 }
