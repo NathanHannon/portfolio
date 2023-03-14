@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { ProjectCard } from '../ProjectCard/ProjectCard';
+import { motion } from 'framer-motion';
 import './ProjectList.scss';
 
 /**
@@ -10,7 +11,14 @@ const ProjectList = (props) => (
     <Container className='projectList'>
         {
             props.projectArray.map((projects) => (
-                <ProjectCard key={projects.project_id} projects={projects} />
+                // have each card fade in from the bottom
+                <motion.div
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <ProjectCard key={projects.project_id} projects={projects} />
+                </motion.div>
             ))
         }
     </Container>
