@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import ProjectList from './ProjectList/ProjectList';
+import { motion } from 'framer-motion';
+import { Modal } from 'react-bootstrap';
 
 class Projects extends Component {
 

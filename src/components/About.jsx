@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Helmet } from 'react-helmet';
+import { motion } from 'framer-motion';
 // import programming from '../assets/programming.svg';
 
 class About extends Component {
     render() {
         const pageTitle = 'About Me';
         return (
-            <div className='aboutPage'>
+            <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className='aboutPage'>
                 <Helmet>
                     <title>Nathan Hannon | {pageTitle}</title>
                 </Helmet>
@@ -28,7 +33,7 @@ class About extends Component {
                     <a href='https://www.linkedin.com/in/nathan-hannon' className='linkedinLink' target='_blank' rel='noreferrer noopener' title='LinkedIn Profile' tabindex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'linkedin']} size='2x' /></a>
                     <a href='https://dev.to/nathanhannon' className='devLink' target='_blank' rel='noreferrer noopener' title='Dev.to Profile' tabindex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'dev']} size='2x' /></a>
                 </p>
-            </div>
+            </motion.div>
         );
     }
 }
