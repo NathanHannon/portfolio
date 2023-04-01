@@ -4,7 +4,7 @@ const db_connection = require("../database_connection");
 
 // -----------------------------------------------------------------------
 //get all projects
-const allProjects = "SELECT * FROM projects ORDER BY project_id ASC";
+const allProjects = "SELECT * FROM projects ORDER BY position ASC";
 router.get("/projects", (req, res, next) => {
 	res.setHeader("X-Frame-Options", "DENY");
 	res.setHeader("Content-Security-Policy", "frame-ancestors 'none'");
@@ -23,7 +23,7 @@ router.get("/projects", (req, res, next) => {
 });
 // --------------------Keep this around in case a solution for the details page bug is found---------------------------------------------
 // get a project by Id
-// const singleProject = "SELECT * FROM projects WHERE project_id=$1";
+// const singleProject = "SELECT * FROM projects WHERE id=$1";
 // router.get("/projects/:id", (req, res, next) => {
 //   const id = parseInt(req.params.id);
 //   db_connection.query(
