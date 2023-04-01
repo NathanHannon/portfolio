@@ -17,7 +17,7 @@ const ProjectList = (props) => (
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <ProjectCard key={projects.project_id} projects={projects} />
+                    <ProjectCard key={projects.id} projects={projects} />
                 </motion.div>
             ))
         }
