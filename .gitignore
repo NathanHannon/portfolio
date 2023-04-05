@@ -2,7 +2,7 @@
 
 # dependencies
 ##Node Module wizardry
-/node_modules
+*/node_modules
 # !/node_modules/bootstrap/
 # /node_modules/bootstrap/*
 # !/node_modules/bootstrap/dist/
@@ -14,7 +14,7 @@
 /backup
 # testing
 /coverage
-
+*/dist
 # production
 /build
 *.env
@@ -33,3 +33,4 @@ yarn-error.log*
 
 server/ssl/*
 server/.babelrc
+node_modules
