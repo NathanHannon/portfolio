@@ -9,8 +9,10 @@
   "scripts": {
     "start": "react-scripts start",
     "server": "node ./server/bin/www",
+    "build:server": "npm install && npm run build",
     "client": "cd client && npm run start",
     "build": "react-scripts build",
+    "build:client": "npm run build && mv build _static",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
