@@ -14,7 +14,7 @@
 /backup
 # testing
 /coverage
-
+*/dist
 # production
 /build
 *.env
