@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bfc78d0a.css",
+    "main.js": "/static/js/main.646ac54f.js",
+    "static/media/sarah-kilian-unsplash.jpg": "/static/media/sarah-kilian-unsplash.72788ed9e9c1c3c0ead5.jpg",
+    "static/media/NH-Initials.svg": "/static/media/NH-Initials.96bd4c7e8d63901095e7d095d10ac435.svg",
+    "service-worker.js": "/service-worker.js",
+    "index.html": "/index.html",
+    "main.bfc78d0a.css.map": "/static/css/main.bfc78d0a.css.map",
+    "main.646ac54f.js.map": "/static/js/main.646ac54f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bfc78d0a.css",
+    "static/js/main.646ac54f.js"
+  ]
+}
