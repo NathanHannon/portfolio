@@ -83,6 +83,8 @@ div.contactPage,
     overflow: hidden;
     font-weight: 500;
     backdrop-filter: blur(10px);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .reference {
