@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "build": "tsc",
-    "build:digitalocean": "npm install && npm run build && mv dist ../portfolio_build/dist && mv package.json ../portfolio_build/package.json && npm install",
+    "build:digitalocean": "npm install && npm run build && mv dist ../portfolio_build/dist && cp package.json ../portfolio_build/dist/ && cd ../portfolio_build/dist && npm install",
     "start": "node dist/app.js"
   },
   "author": "",
