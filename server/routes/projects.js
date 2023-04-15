@@ -4,7 +4,7 @@ const db_connection = require("../database_connection");
 
 // -----------------------------------------------------------------------
 //get all projects
-const allProjects = "SELECT * FROM projects ORDER BY position ASC";
+const allProjects = "SELECT * FROM project ORDER BY position ASC";
 router.get("/projects", (req, res, next) => {
 	res.setHeader("X-Frame-Options", "DENY");
 	res.setHeader("Content-Security-Policy", "frame-ancestors 'none'");
