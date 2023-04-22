@@ -6,7 +6,7 @@ import './Contact.scss';
 
 class Contact extends Component {
     render() {
-        const pageTitle = 'Resumé & Contact Info';
+        const pageTitle = 'Contact Info & Socials';
         return (
             <div className='contactPage'>
                 <Helmet>
@@ -19,8 +19,12 @@ class Contact extends Component {
                     <FontAwesomeIcon icon={['fas', 'envelope']} />
                     <a href='mailto:nathan@hannon.me' className='contactLink' alt='Send email to nathan@hannon.me' tabindex="-1" aria-disabled="true"> Send an email!</a>
                 </header>
-                <div class='iframe-container'>
-                    <iframe frameborder='0' src={'https://portfolio-file-bucket.nyc3.digitaloceanspaces.com/Resumes/Nathan%20Hannon_Resume.pdf'} title='Resume' tabindex="-1" aria-disabled="true" />
+                <div className='socialLinks'>
+                    <p>
+                        <a href='https://github.com/NathanHannon' className='githubLink' target='_blank' rel='noreferrer noopener' title='GitHub Profile' tabindex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'github']} size='2x' /></a>
+                        <a href='https://www.linkedin.com/in/nathan-hannon' className='linkedinLink' target='_blank' rel='noreferrer noopener' title='LinkedIn Profile' tabindex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'linkedin']} size='2x' /></a>
+                        <a href='https://dev.to/nathanhannon' className='devLink' target='_blank' rel='noreferrer noopener' title='Dev.to Profile' tabindex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'dev']} size='2x' /></a>
+                    </p>
                 </div>
             </div>
         );

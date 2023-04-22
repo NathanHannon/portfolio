@@ -7,6 +7,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import About from './About';
 import Contact from './Contact/Contact';
+import Resume from './Resume/Resume';
 import NavMenu from './NavMenu';
 import NotFoundPage from './NotFoundPage';
 import Projects from './Projects/Projects';
@@ -26,6 +27,7 @@ class App extends Component {
 							<Route exact path='/' element={<About />} />
 							<Route path='/about' element={<About />} />
 							<Route path='/projects' element={<Projects />} />
+							<Route path='/resume' element={<Resume />} />
 							<Route path='/contact' element={<Contact />} />
 							<Route element={<NotFoundPage />} />
 						</Routes>

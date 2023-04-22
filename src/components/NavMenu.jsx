@@ -32,8 +32,11 @@ class NavMenu extends Component {
 						<Nav.Link href='/projects' className='text-white nav-link' tabindex="-1" aria-disabled="true">
 							<FontAwesomeIcon icon={['fas', 'code']} /> My Projects
 						</Nav.Link>
+						<Nav.Link href='/resume' className='text-white nav-link' tabindex="-1" aria-disabled="true">
+							<FontAwesomeIcon icon={['fas', 'file']} /> Resumé
+						</Nav.Link>
 						<Nav.Link href='/contact' className='text-white nav-link' tabindex="-1" aria-disabled="true">
-							<FontAwesomeIcon icon={['fas', 'file']} /> Resumé &amp; Contact Info
+							<FontAwesomeIcon icon={['fas', 'users']} /> Contact Info & Socials
 						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
