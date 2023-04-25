@@ -50,6 +50,7 @@ a:hover,
 
 .nav-link:hover {
     color: #004aad !important;
+    transition: all ease-in-out 0.2s;
     background-color: #fff;
 }
 
@@ -165,16 +166,22 @@ div.contactPage {
     padding-right: 10px;
 }
 
-.githubLink:hover,
-.devLink:hover {
-    color: #4b5362;
-}
-
 .linkedinLink {
     color: #0077b5;
     padding-right: 10px;
 }
 
-.linkedinLink:hover {
-    color: #0094e0;
+@media (hover: hover) and (pointer: fine) {
+    .linkedinLink:hover {
+        color: #0094e0;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    .githubLink:hover,
+    .devLink:hover {
+        color: #4b5362;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
 }
