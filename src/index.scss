@@ -68,13 +68,14 @@ a:hover,
 
 /* Content Boxes */
 
-div.homePage,
-div.aboutPage,
-div.projectDetails,
-div.contactPage,
-div.resumePage,
+.homePage,
+.aboutPage,
+.projectDetails,
+.contactPage,
+.resumePage,
 .notFoundPage,
-.projectCard {
+.projectCard,
+.techCard {
     width: auto;
     padding: 10px;
     height: auto;

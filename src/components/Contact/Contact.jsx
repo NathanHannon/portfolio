@@ -6,7 +6,7 @@ import './Contact.scss';
 
 class Contact extends Component {
     render() {
-        const pageTitle = 'Contact Info & Socials';
+        const pageTitle = 'Contact Me';
         return (
             <div className='contactPage'>
                 <Helmet>
@@ -14,16 +14,39 @@ class Contact extends Component {
                 </Helmet>
                 <header className='contactHeader'>
                     <h1>{pageTitle}</h1>
-                    <FontAwesomeIcon icon={['fas', 'phone']} />
-                    <a href='tel:519-878-6227' className='contactLink' alt='Call 519-878-6227' tabindex="-1" aria-disabled="true"> Call me!</a>
-                    <FontAwesomeIcon icon={['fas', 'envelope']} />
-                    <a href='mailto:nathan@hannon.me' className='contactLink' alt='Send email to nathan@hannon.me' tabindex="-1" aria-disabled="true"> Send an email!</a>
                 </header>
+
+                {/* mailto link placeholder */}
+                <div className='emailLink'>
+                    <p>
+                        <a href='mailto: nathan@hannon.me' className='emailLink btn btn-primary' target='_blank' rel='noreferrer noopener' title='Email Me' tabIndex="-1" aria-disabled="true">
+                            <FontAwesomeIcon icon='envelope' /> Send me an email
+                        </a>
+                    </p>
+                </div>
+
+                {/* <div class="container">
+                    <form id="contact" action="" method="post">
+                        <div className="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" className='form-control' placeholder="Name" required />
+                            <br />
+                            <label for="email">Email</label>
+                            <input type="email" className='form-control' name="email" placeholder="Email" required />
+                            <br />
+                            <label for="message">Message</label>
+                            <textarea className='form-control' name="message" placeholder="Message" required ></textarea>
+                            <br />
+                            <button type="submit" id="contact-submit" className='btn btn-primary'>Submit</button>
+                        </div>
+                    </form>
+                </div> */}
+                <br />
                 <div className='socialLinks'>
                     <p>
-                        <a href='https://github.com/NathanHannon' className='githubLink' target='_blank' rel='noreferrer noopener' title='GitHub Profile' tabindex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'github']} size='2x' /></a>
-                        <a href='https://www.linkedin.com/in/nathan-hannon' className='linkedinLink' target='_blank' rel='noreferrer noopener' title='LinkedIn Profile' tabindex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'linkedin']} size='2x' /></a>
-                        <a href='https://dev.to/nathanhannon' className='devLink' target='_blank' rel='noreferrer noopener' title='Dev.to Profile' tabindex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'dev']} size='2x' /></a>
+                        <a href='https://github.com/NathanHannon' className='githubLink' target='_blank' rel='noreferrer noopener' title='GitHub Profile' tabIndex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'github']} size='2x' /></a>
+                        <a href='https://www.linkedin.com/in/nathan-hannon' className='linkedinLink' target='_blank' rel='noreferrer noopener' title='LinkedIn Profile' tabIndex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'linkedin']} size='2x' /></a>
+                        <a href='https://dev.to/nathanhannon' className='devLink' target='_blank' rel='noreferrer noopener' title='Dev.to Profile' tabIndex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'dev']} size='2x' /></a>
                     </p>
                 </div>
             </div>

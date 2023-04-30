@@ -16,7 +16,7 @@ class Contact extends Component {
                     <h1>{pageTitle}</h1>
                 </header>
                 <div class='iframe-container'>
-                    <iframe frameborder='0' src={'https://portfolio-file-bucket.nyc3.digitaloceanspaces.com/Resumes/Nathan%20Hannon_Resume.pdf'} title='Resume' tabindex="-1" aria-disabled="true" />
+                    <iframe frameborder='0' src={'https://portfolio-file-bucket.nyc3.cdn.digitaloceanspaces.com/Resumes/Nathan%20Hannon_Resume_Exp.pdf'} title='Resume' tabIndex="-1" aria-disabled="true" />
                 </div>
             </div>
         );

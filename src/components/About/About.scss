@@ -1,0 +1,45 @@
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+    gap: 10px;
+    padding: 5px;
+    list-style: none !important;
+}
+
+.grid-item {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    list-style: none !important;
+}
+
+p {
+    text-align: center !important;
+}
+
+.techCard {
+    min-height: fit-content !important;
+    min-width: fit-content !important;
+    transition: all 0.2s ease-in-out;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    padding-bottom: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .techCard:hover {
+        transform: scale(1.015);
+    }
+}
+
+// when in mobile add padding below the description div
+@media screen and (max-width: 767px) {
+    .description {
+        padding-bottom: 1rem !important;
+    }
+}
+
+#cardTitle {
+    font-weight: bold;
+}
