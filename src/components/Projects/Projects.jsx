@@ -17,6 +17,7 @@ class Projects extends Component {
   fetchProjectData() {
     let top_url = 'https://nathanhannon.dev';
     // https://portfolio-2-bggv2.ondigitalocean.app  //Alt URL
+    // dev url: http://localhost:3001
     const api_url = `${top_url}/api/projects`;
     fetch(api_url)
       .then(res => res.json())
