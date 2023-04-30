@@ -51,9 +51,9 @@ class About extends Component {
                         <p>
                             I am confident in my abilities to handle front and back end development, as well as the design and implementation of databases. I am able to adapt to new languages and paradigms, allowing me to quickly learn and apply new skills to my work. I am also a strong communicator, and I enjoy working with others to solve problems and create solutions.
                         </p>
-                        <button href='/projects' type='button' className='btn btn-primary'>
+                        <a href='/projects' type='button' className='btn btn-primary'>
                             View My Projects
-                        </button>
+                        </a>
                     </div>
                     <div className="col-sm">
                         <div className='tech-grid'>

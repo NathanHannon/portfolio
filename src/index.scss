@@ -176,14 +176,14 @@ div.contactPage {
 @media (hover: hover) and (pointer: fine) {
     .linkedinLink:hover {
         color: #0094e0;
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
+        -webkit-transform: scale(1.050);
+        transform: scale(1.050);
     }
 
     .githubLink:hover,
     .devLink:hover {
         color: #4b5362;
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
+        -webkit-transform: scale(1.050);
+        transform: scale(1.050);
     }
 }
