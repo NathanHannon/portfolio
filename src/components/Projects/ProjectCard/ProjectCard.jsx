@@ -11,14 +11,8 @@ export const ProjectCard = (props) => {
                 <Card.Img className='projectCardImage' variant='top' src={props.projects.image_url} width='300px' height='200px' />
                 <Card.Body>
                     <Card.Title className='cardTitle text-dark'>{props.projects.name}</Card.Title>
-                    {/* <div className="row">
-                        <div className="col"> */}
                     <Card.Text className='cardContent text-dark'>{props.projects.description}</Card.Text>
-                    {/* </div>
-                        <div className="col"> */}
-                    {/* <Card.Text className='cardContent text-dark'>{props.projects.technologies}</Card.Text> */}
-                    {/* </div> */}
-                    {/* </div> */}
+                    {/* TODO: Separate buttons for GitHub and live? */}
                 </Card.Body>
             </Card>
         </a >
