@@ -49,9 +49,13 @@ a:hover,
 }
 
 .nav-link:hover {
-    color: #000000 !important;
+    color: #004aad !important;
     transition: all ease-in-out 0.2s;
     background-color: #fff;
+}
+
+.text-white:hover {
+   color: #004aad !important;
 }
 
 .nav-link {
