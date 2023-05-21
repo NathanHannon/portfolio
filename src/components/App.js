@@ -4,7 +4,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
 import About from './About/About';
 import Contact from './Contact/Contact';
 import Resume from './Resume/Resume';
@@ -18,7 +18,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className='app'>
-				<Router>
+				<BrowserRouter>
 					<div className='NavContainer'>
 						<NavMenu />
 					</div>
@@ -32,7 +32,7 @@ class App extends Component {
 							<Route element={<NotFoundPage />} />
 						</Routes>
 					</div>
-				</Router>
+				</BrowserRouter>
 			</div>
 		);
 	}
