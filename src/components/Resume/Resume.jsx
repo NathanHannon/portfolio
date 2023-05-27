@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import './Resume.scss';
 
-class Contact extends Component {
+class Resume extends Component {
     render() {
         const pageTitle = 'Resumé';
         return (
@@ -22,4 +22,4 @@ class Contact extends Component {
         );
     }
 }
-export default Contact;
+export default Resume;
