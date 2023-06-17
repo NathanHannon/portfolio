@@ -13,6 +13,12 @@ RUN npm install --production
 # Copy the built application from the build stage
 COPY build ./build
 
+# Copy the public directory to the container
+COPY public ./public
+
+# Copy the src directory to the container
+COPY src ./src
+
 # Set NODE_ENV to production
 ENV NODE_ENV=production
 
