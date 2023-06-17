@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.13.15",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
     "@fortawesome/free-regular-svg-icons": "^6.3.0",
@@ -39,6 +40,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@simplewebauthn/browser": "^7.2.0",
     "@simplewebauthn/server": "^7.2.0",
+    "@vitejs/plugin-react": "^4.0.0",
     "bootstrap": "^4.6.0",
     "concurrently": "^6.0.2",
     "dotenv": "^8.6.0",
@@ -69,8 +71,7 @@
     "fsevents": "^2.3.2"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@types/pg": "^8.6.6",
-    "@vitejs/plugin-react": "^4.0.0"
+    "@types/node": "^20.3.1",
+    "@types/pg": "^8.6.6"
   }
 }
