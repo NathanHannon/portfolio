@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Card } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
-import { Container } from 'react-bootstrap';
+import { TypeAnimation } from 'react-type-animation';
+import { motion } from 'framer-motion';
 import programming from '../../assets/SVGs/programming.svg';
 import html5 from '../../assets/tech-logos/html.svg';
 import css3 from '../../assets/tech-logos/css.svg';
@@ -30,6 +31,12 @@ class About extends Component {
                 </header>
                 <div className="row about-me">
                     <div className="col-sm">
+                        {/* <TypeAnimation
+                            cursor={true}
+                            sequence={["Hi, I'm Nathan."]}
+                            wrapper='h4'
+                            repeat={false}
+                            speed={50} /> */}
                         <h4>Hi, I'm Nathan.</h4>
                         <h5>Who am I?</h5>
                         <p>
@@ -46,7 +53,13 @@ class About extends Component {
                 <hr />
                 <div className="row what-do">
                     <div className="col-sm order-sm-last description">
-                        <h4>Full Stack Developer</h4>
+                        {/* <TypeAnimation
+                            cursor={true}
+                            sequence={["I am a full-stack developer."]}
+                            wrapper='h4'
+                            repeat={false}
+                            speed={50} /> */}
+                        <h4>I'm a full-stack web developer.</h4>
                         <h5>What can I do?</h5>
                         <p>
                             I am confident in my abilities to handle front and back end development, as well as the design and implementation of databases. I am able to adapt to new languages and paradigms, allowing me to quickly learn and apply new skills to my work. I am also a strong communicator, and I enjoy working with others to solve problems and create solutions.
@@ -164,7 +177,7 @@ class About extends Component {
                         </div>
                     </div>
                 </div>
-            </div >
+            </div>
         );
     }
 }

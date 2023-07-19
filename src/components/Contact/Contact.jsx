@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin, faDev } from '@fortawesome/free-brands-svg-icons';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
-import { motion } from 'framer-motion';
+import { Button } from 'react-bootstrap';
 import './Contact.scss';
 
 class Contact extends Component {
@@ -44,9 +45,15 @@ class Contact extends Component {
                 <br />
                 <div className='socialLinks'>
                     <p>
-                        <a href='https://github.com/NathanHannon' className='githubLink' target='_blank' rel='noreferrer noopener' title='GitHub Profile' tabIndex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'github']} size='2x' /></a>
-                        <a href='https://www.linkedin.com/in/nathan-hannon' className='linkedinLink' target='_blank' rel='noreferrer noopener' title='LinkedIn Profile' tabIndex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'linkedin']} size='2x' /></a>
-                        <a href='https://dev.to/nathanhannon' className='devLink' target='_blank' rel='noreferrer noopener' title='Dev.to Profile' tabIndex="-1" aria-disabled="true"><FontAwesomeIcon icon={['fab', 'dev']} size='2x' /></a>
+                        <Button className='contact-button' href='https://github.com/NathanHannon' target='_blank' rel='noreferrer noopener' title='GitHub Profile' variant='none'>
+                            <FontAwesomeIcon icon={faGithub} size='2x' className='github-icon' />
+                        </Button>
+                        <Button className='contact-button' href='https://www.linkedin.com/in/nathan-hannon' target='_blank' rel='noreferrer noopener' title='LinkedIn Profile' variant='none'>
+                            <FontAwesomeIcon icon={faLinkedin} size='2x' className='linkedIn-icon' />
+                        </Button>
+                        <Button className='contact-button' href='https://dev.to/nathanhannon' target='_blank' rel='noreferrer noopener' title='Dev.to Profile' variant='none'>
+                            <FontAwesomeIcon icon={faDev} size='2x' className='dev-icon' />
+                        </Button>
                     </p>
                 </div>
             </div>
