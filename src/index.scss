@@ -163,3 +163,20 @@ div.contactPage {
         height: 62vh;
     }
 }
+
+.contact-button {
+    border-radius: 50% !important;
+    background-color: $glass !important;
+    color: inherit;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    transition: all 0.2s ease-in-out;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transform: translateZ(0);
+    box-shadow: $frosted-shadow;
+    border: $frosted-border
+}
+
+.contact-button:hover {
+    transform: scale(1.050);
+}
