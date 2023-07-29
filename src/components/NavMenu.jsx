@@ -25,7 +25,7 @@ class NavMenu extends Component {
 			<Navbar className='navbar-custom' variant='dark' fixed='top' expand='sm' bg='primary'>
 				<Navbar.Brand href='/' className='mr-auto brand' tabIndex="-1" aria-disabled="true" alt="Home Page"><Image rounded={true} src={Logo} alt="Branding" height={'40'} width={'auto'} /></Navbar.Brand>
 				<Navbar.Toggle onClick={this.toggleNavbar} aria-controls='responsive-navbar-nav' />
-				<Navbar.Collapse className='d-sm-inline-flex flex-sm-row-reverse' id='responsive-navbar-nav' isOpen={!this.state.collapsed}>
+				<Navbar.Collapse className='d-sm-inline-flex flex-sm-row-reverse' id='responsive-navbar-nav' isopen={(!this.state.collapsed).toString()}>
 					<Nav>
 						<Nav.Link href='/' className='text-white nav-link' tabIndex="-1" aria-disabled="true">
 							<FontAwesomeIcon icon={['fas', 'address-card']} /> About Me</Nav.Link>
