@@ -1,3 +1,9 @@
+$glass: rgba(255, 255, 255, 0.25);
+$frosted-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.5);
+$frosted-border: 1px solid rgba(255, 255, 255, 0.18);
+$rounded-corner: 0.5rem;
+
+
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
