@@ -153,7 +153,7 @@ class About extends Component {
                                 <Card outline className='techCard'>
                                     <Card.Img className='projectCardImage' variant='top' src={spring} width='60px' height='60px' />
                                     <Card.Body>
-                                        <Card.Text className='cardContent text-dark'>Spring Framework</Card.Text>
+                                        <Card.Text className='cardContent text-dark'>Spring</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </li>
