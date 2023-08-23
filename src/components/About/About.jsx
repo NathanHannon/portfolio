@@ -14,6 +14,7 @@ import react from '../../assets/tech-logos/react.svg';
 import nodejs from '../../assets/tech-logos/nodejs.svg';
 import csharp from '../../assets/tech-logos/csharp.svg';
 import java from '../../assets/tech-logos/java.svg';
+import spring from '../../assets/tech-logos/spring.svg'
 import mongodb from '../../assets/tech-logos/mongodb.svg';
 import postgresql from '../../assets/tech-logos/postgresql.svg';
 import './About.scss'
@@ -144,6 +145,15 @@ class About extends Component {
                                     <Card.Img className='projectCardImage' variant='top' src={java} width='60px' height='60px' />
                                     <Card.Body>
                                         <Card.Text className='cardContent text-dark'>Java</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </li>
+                            {/*spring*/}
+                            <li className="grid-item">
+                                <Card outline className='techCard'>
+                                    <Card.Img className='projectCardImage' variant='top' src={spring} width='60px' height='60px' />
+                                    <Card.Body>
+                                        <Card.Text className='cardContent text-dark'>Spring Framework</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </li>
