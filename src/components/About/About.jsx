@@ -13,6 +13,7 @@ import angular from '../../assets/tech-logos/angular.svg';
 import react from '../../assets/tech-logos/react.svg';
 import nodejs from '../../assets/tech-logos/nodejs.svg';
 import csharp from '../../assets/tech-logos/csharp.svg';
+import go from '../../assets/tech-logos/go.svg';
 import java from '../../assets/tech-logos/java.svg';
 import spring from '../../assets/tech-logos/spring.svg'
 import mongodb from '../../assets/tech-logos/mongodb.svg';
@@ -136,6 +137,15 @@ class About extends Component {
                                     <Card.Img className='projectCardImage' variant='top' src={csharp} width='60px' height='60px' />
                                     <Card.Body>
                                         <Card.Text className='cardContent text-dark'>C#</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </li>
+                            <li className="grid-item">
+                                {/* Go */}
+                                <Card outline className='techCard'>
+                                    <Card.Img className='projectCardImage' variant='top' src={go} width='60px' height='60px' />
+                                    <Card.Body>
+                                        <Card.Text className='cardContent text-dark'>Go</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </li>
