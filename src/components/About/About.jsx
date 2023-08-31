@@ -141,7 +141,7 @@ class About extends Component {
                                 </Card>
                             </li>
                             <li className="grid-item">
-                                {/* Go */}
+                                {/* go */}
                                 <Card outline className='techCard'>
                                     <Card.Img className='projectCardImage' variant='top' src={go} width='60px' height='60px' />
                                     <Card.Body>
@@ -159,14 +159,14 @@ class About extends Component {
                                 </Card>
                             </li>
                             {/*spring*/}
-                            <li className="grid-item">
+                            {/* <li className="grid-item">
                                 <Card outline className='techCard'>
                                     <Card.Img className='projectCardImage' variant='top' src={spring} width='60px' height='60px' />
                                     <Card.Body>
                                         <Card.Text className='cardContent text-dark'>Spring</Card.Text>
                                     </Card.Body>
                                 </Card>
-                            </li>
+                            </li> */}
                             {/* linux */}
                             <li className="grid-item">
                                 <Card outline className='techCard'>
