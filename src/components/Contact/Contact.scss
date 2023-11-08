@@ -47,9 +47,10 @@ div.contactPage {
     margin: 0.5rem;
     transition: all 0.2s ease-in-out;
     -webkit-font-smoothing: subpixel-antialiased;
-    transform: translateZ(0);
-    box-shadow: $frosted-shadow;
-    border: $frosted-border
+    // transform: translateZ(0);
+    border: 1px solid black !important;
+    // box-shadow: $frosted-shadow;
+    // border: $frosted-border;
 }
 
 .contact-button:hover {
@@ -57,14 +58,19 @@ div.contactPage {
 }
 
 .dev-icon,
-.github-icon {
+.github-icon,
+.x-icon,
+.threads-icon {
     color: #000000 !important;
+    width: 28px !important;
 }
 
-.fa-github {
+.mastodon-icon {
+    color: #563ACC !important;
     width: 28px !important;
 }
 
 .linkedIn-icon {
     color: #0077B5 !important;
+    width: 28px !important;
 }

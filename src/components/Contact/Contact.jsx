@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faDev } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faDev, faXTwitter, faMastodon, faThreads } from '@fortawesome/free-brands-svg-icons';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { Button } from 'react-bootstrap';
@@ -54,6 +54,15 @@ class Contact extends Component {
                         <Button className='contact-button' href='https://dev.to/nathanhannon' target='_blank' rel='noreferrer noopener' title='Dev.to Profile' variant='none'>
                             <FontAwesomeIcon icon={faDev} size='2x' className='dev-icon' />
                         </Button>
+                        {/* <Button className='contact-button' href='https://x.com/nate_hannon' target='_blank' rel='noreferrer noopener' title='X/Twitter Profile' variant='none'>
+                            <FontAwesomeIcon icon={faXTwitter} size='2x' className='x-icon' />
+                        </Button> */}
+                        {/* <Button className='contact-button' href='https://mastodon.online/@nate_hannon' target='_blank' rel='noreferrer noopener' title='Mastodon Profile' variant='none'>
+                            <FontAwesomeIcon icon={faMastodon} size='2x' className='mastodon-icon' />
+                        </Button> */}
+                        {/* <Button className='contact-button' href='https://www.threads.net/@nate.hannon' target='_blank' rel='noreferrer noopener' title='Threads Profile' variant='none'>
+                            <FontAwesomeIcon icon={faThreads} size='2x' className='threads-icon' />
+                        </Button> */}
                     </p>
                 </div>
             </div>
