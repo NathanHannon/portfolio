@@ -13,9 +13,11 @@ export const ProjectCard = (props) => {
                 <Card.Title className='cardTitle text-dark'>{props.projects.name}</Card.Title>
                 <Card.Text className='cardContent text-dark'>{props.projects.description}</Card.Text>
                 {/* TODO: Separate buttons for GitHub and live? */}
-                <Button href={props.projects.repo_url} className='github-url-button'>GitHub</Button>
-                {/* only show the demo button if the project has a demo_url */}
-                {props.projects.demo_url && <Button href={props.projects.demo_url} className='demo-url-button'>Demo</Button>}
+                <div className='btn-group' role='group'>
+                    <Button href={props.projects.repo_url} className='github-url-button'>GitHub</Button>
+                    {/* only show the demo button if the project has a demo_url */}
+                    {props.projects.demo_url && <Button href={props.projects.demo_url} className='demo-url-button'>Demo</Button>}
+                </div>
             </Card.Body>
         </Card>
         // </a >
