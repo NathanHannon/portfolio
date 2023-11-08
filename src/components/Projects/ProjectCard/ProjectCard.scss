@@ -2,13 +2,13 @@
     min-height: 400px !important;
     transition: all 0.2s ease-in-out;
     -webkit-font-smoothing: subpixel-antialiased;
-    transform: translateZ(0);
+    transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
 }
 
 @media (hover: hover) and (pointer: fine) {
     .projectCard:hover {
-        transform: scale(1.050);
+        transform: scale(1.050) translate3d(0, 0, 0);
     }
 }
 

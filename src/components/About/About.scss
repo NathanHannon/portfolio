@@ -28,14 +28,16 @@ p {
     min-width: fit-content !important;
     transition: all 0.2s ease-in-out;
     -webkit-font-smoothing: subpixel-antialiased;
-    transform: translateZ(0);
+    transform: translate3d(0, 0, 0);
+    ;
     backface-visibility: hidden;
     padding-bottom: 0;
 }
 
 @media (hover: hover) and (pointer: fine) {
     .techCard:hover {
-        transform: scale(1.050);
+        transform: scale(1.050) translate3d(0, 0, 0);
+        ;
     }
 }
 
@@ -62,13 +64,13 @@ p {
 //     margin: 0.5rem;
 //     transition: all 0.2s ease-in-out;
 //     -webkit-font-smoothing: subpixel-antialiased;
-//     transform: translateZ(0);
+//     transform: translate3d(0, 0, 0);;
 //     box-shadow: $frosted-shadow;
 //     border: $frosted-border
 // }
 
 // .contact-button:hover {
-//     transform: scale(1.050);
+//     transform: scale(1.050) translate3d(0, 0, 0);;
 // }
 
 .dev-icon,
