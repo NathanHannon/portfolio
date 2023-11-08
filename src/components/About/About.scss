@@ -56,35 +56,6 @@ p {
     border-radius: 0.5rem;
 }
 
-// .contact-button {
-//     border-radius: 50% !important;
-//     background-color: $glass !important;
-//     color: inherit;
-//     padding: 0.5rem;
-//     margin: 0.5rem;
-//     transition: all 0.2s ease-in-out;
-//     -webkit-font-smoothing: subpixel-antialiased;
-//     transform: translate3d(0, 0, 0);;
-//     box-shadow: $frosted-shadow;
-//     border: $frosted-border
-// }
-
-// .contact-button:hover {
-//     transform: scale(1.050) translate3d(0, 0, 0);;
-// }
-
-.dev-icon,
-.github-icon,
-.x-icon {
-    color: #000000 !important;
-    width: 28px !important;
-}
-
-.linkedIn-icon {
-    color: #0077B5 !important;
-    width: 28px !important;
-}
-
 #typing-text::after {
     content: '|';
     animation: blink 0.7s infinite;
