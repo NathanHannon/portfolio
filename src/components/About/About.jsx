@@ -9,6 +9,7 @@ import css3 from '../../assets/tech-logos/css.svg';
 import javascript from '../../assets/tech-logos/javascript.svg';
 import linux from '../../assets/tech-logos/linux.svg';
 import typescript from '../../assets/tech-logos/typescript.svg';
+import angular_old from '../../assets/tech-logos/angular-old.svg';
 import angular from '../../assets/tech-logos/angular.svg';
 import react from '../../assets/tech-logos/react.svg';
 import nodejs from '../../assets/tech-logos/nodejs.svg';
