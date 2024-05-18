@@ -3,6 +3,4 @@
 
 # My Portfolio #
 
-My personal portfolio site. It is built with React, Node/Express, and PostgreSQL.
-
-THIS REPOSITORY IS NOW ARCHIVED
+My personal portfolio site. It is built with React, Express.js, and PostgreSQL.
