@@ -7,12 +7,10 @@ const pool = new Pool({
 	password: process.env.DATABASE_PASSWORD,
 	host: process.env.DATABASE_HOST,
 	port: process.env.DATABASE_PORT,
-	// connectionString: process.env.DATABASE_URL,
+	connectionString: process.env.DATABASE_URL,
 	ssl: {
 		rejectUnauthorized: false
 	}
 });
-
-console.log('Database connection established', pool.options.database, pool.options.user, pool.options.host, pool.options.port);
 
 module.exports = pool;
