@@ -57,7 +57,7 @@ class Contact extends Component {
                         {/* <Button className='contact-button' href='https://x.com/nate_hannon' target='_blank' rel='noreferrer noopener' title='X/Twitter Profile' variant='none'>
                             <FontAwesomeIcon icon={faXTwitter} size='2x' className='x-icon' />
                         </Button> */}
-                        {/* <Button className='contact-button' href='https://bsky.app/profile/nathanhannon.dev' target='_blank' rel='noreferrer noopener' title='Bluesky Profile' variant='none'>
+                        {/* <Button className='contact-button' href='https://mastodon.online/@nate_hannon' target='_blank' rel='noreferrer noopener' title='Mastodon Profile' variant='none'>
                             <FontAwesomeIcon icon={faMastodon} size='2x' className='mastodon-icon' />
                         </Button> */}
                         {/* <Button className='contact-button' href='https://bsky.app/profile/nathanhannon.dev' target='_blank' rel='noreferrer noopener' title='Bluesky Profile' variant='none'>
