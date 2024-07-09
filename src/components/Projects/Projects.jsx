@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import ProjectList from './ProjectList/ProjectList';
-import { environment } from '../../environments/environement.prod';
+import { environment } from '../../environments/environment.prod';
 class Projects extends Component {
 
   // Set state
