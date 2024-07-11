@@ -1,24 +1,67 @@
 
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { Image, Nav, Navbar } from 'react-bootstrap';
 import Logo from '../assets/SVGs/brand-logo/NH-Initials.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Form } from 'react-bootstrap';
+import { DarkModeToggle } from 'react-dark-mode-toggle-2';
 
 class NavMenu extends Component {
 	static displayName = NavMenu.name;
 
-	// Set state
 	state = {
-		collapsed: true
+		collapsed: true,
+		darkMode: localStorage.getItem('darkMode') === 'enabled' || window.matchMedia('(prefers-color-scheme: dark)').matches,
 	};
 
-	//Toggle for navbar collapsing
-	toggleNavbar() {
-		this.setState({
-			collapsed: !this.state.collapsed
-		});
+	toggleLightMode = () => {
+		const body = document.body;
+		const isDarkMode = body.classList.contains('dark-mode');
+		const isForcedLightMode = body.classList.contains('force-light-mode');
+
+		if (isDarkMode || isForcedLightMode) {
+			body.classList.remove('dark-mode');
+			body.classList.toggle('force-light-mode');
+		} else {
+			body.classList.remove('force-light-mode');
+		}
 	}
-	toggleNavbar = this.toggleNavbar.bind(this);
+
+	componentDidMount() {
+		this.darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+		this.darkModeMediaQuery.addListener(this.handleSystemDarkModeChange);
+
+		if (this.state.darkMode) {
+			document.body.classList.add('dark-mode');
+		} else {
+			document.body.classList.remove('dark-mode');
+		}
+	}
+
+	componentWillUnmount() {
+		this.darkModeMediaQuery.removeEventListener('change', this.handleSystemDarkModeChange);
+	}
+
+	handleSystemDarkModeChange = (e) => {
+		const prefersDark = e.matches;
+		this.setState({ darkMode: prefersDark });
+		localStorage.setItem('darkMode', prefersDark ? 'enabled' : 'disabled');
+		document.body.classList.toggle('dark-mode', prefersDark);
+	};
+
+	toggleDarkMode = () => {
+		const newMode = !this.state.darkMode;
+		localStorage.setItem('darkMode', newMode ? 'enabled' : 'disabled');
+		this.setState({ darkMode: newMode });
+		document.body.classList.toggle('dark-mode', newMode);
+	};
+
+	toggleNavbar = () => {
+		this.setState({
+			collapsed: !this.state.collapsed,
+		});
+	};
+
 
 	render() {
 		return (
@@ -40,6 +83,11 @@ class NavMenu extends Component {
 							<FontAwesomeIcon icon={['fas', 'users']} /> Contact Me
 						</Nav.Link>
 					</Nav>
+					<DarkModeToggle
+						isDarkMode={localStorage.getItem('darkMode') === 'enabled'}
+						onChange={this.toggleDarkMode}
+						size={50}
+					/>
 				</Navbar.Collapse>
 			</Navbar>
 		);

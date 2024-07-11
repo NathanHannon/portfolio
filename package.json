@@ -54,6 +54,7 @@
     "pg": "^8.6.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.0.2",
+    "react-dark-mode-toggle-2": "^2.0.9",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-redux": "^7.2.3",
