@@ -75,9 +75,9 @@ class NavMenu extends Component {
 						<Nav.Link href='/projects' className='text-white nav-link' tabIndex="-1" aria-disabled="true">
 							<FontAwesomeIcon icon={['fas', 'code']} /> My Projects
 						</Nav.Link>
-						<Nav.Link href='/resume' className='text-white nav-link' tabIndex="-1" aria-disabled="true">
+						{/* <Nav.Link href='/resume' className='text-white nav-link' tabIndex="-1" aria-disabled="true">
 							<FontAwesomeIcon icon={['fas', 'file']} /> Resumé
-						</Nav.Link>
+						</Nav.Link> */}
 						{/* TODO: Add Modal Here for Contact Me */}
 						<Nav.Link href='/contact' className='text-white nav-link' tabIndex="-1" aria-disabled="true">
 							<FontAwesomeIcon icon={['fas', 'users']} /> Contact Me
