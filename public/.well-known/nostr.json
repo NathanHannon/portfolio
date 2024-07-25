@@ -1,0 +1,14 @@
+{
+    "names": {
+        "nathan": "90ddf3cb485dc9cdbc9157df200184b711358261f7091ecbeae7a53a979125d3"
+    },
+    "relays": {
+        "90ddf3cb485dc9cdbc9157df200184b711358261f7091ecbeae7a53a979125d3": [
+            "wss://relay.damus.io",
+            "wss://nostr.land",
+            "wss://nos.lol",
+            "wss://nostr.wine",
+            "wss://relay.snort.social"
+        ]
+    }
+}
