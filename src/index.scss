@@ -5,13 +5,37 @@ $rounded-corner: 0.5rem;
 
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
+// Base styles
 body {
-    font-family: "IBM Plex Sans", sans-serif !important;
-    margin: 0;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
     background-color: #FBFBFD !important;
+    color: #1a1a1a !important;
+}
+
+// Dark mode styles
+body.dark-mode {
+    background-color: #1a1a1a !important;
+    color: #FBFBFD !important;
+}
+
+// Force light mode
+body.force-light-mode {
+    background-color: #FBFBFD !important;
+    color: #1a1a1a !important;
+}
+
+// Media queries for system preference
+@media (prefers-color-scheme: dark) {
+    body:not([class]) {
+        background-color: #1a1a1a !important;
+        color: #FBFBFD !important;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body:not(.dark-mode) {
+        background-color: #FBFBFD !important;
+        color: #1a1a1a !important;
+    }
 }
 
 /* NavMenu */
@@ -50,12 +74,12 @@ a:hover,
 
 /* Content Boxes */
 
-.homePage,
-.aboutPage,
-.projectDetails,
-.contactPage,
-.resumePage,
-.notFoundPage,
+// .homePage,
+// .aboutPage,
+// .projectDetails,
+// .contactPage,
+// .resumePage,
+// .notFoundPage,
 .projectCard,
 .techCard {
     width: auto;

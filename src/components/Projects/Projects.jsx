@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import ProjectList from './ProjectList/ProjectList';
-import { motion } from 'framer-motion';
-import { Modal } from 'react-bootstrap';
-
+import { environment } from '../../environments/environment.prod';
 class Projects extends Component {
 
   // Set state
@@ -15,11 +13,8 @@ class Projects extends Component {
    * fetches the data from the projects API query and puts it in the projects array by changing the state
    */
   fetchProjectData() {
-    let top_url = 'https://nathanhannon.dev';
-    // https://portfolio-2-bggv2.ondigitalocean.app  //Alt URL
-    // dev url: http://localhost:3001
-    const api_url = `${top_url}/api/projects`;
-    fetch(api_url)
+    const api_url = `${environment.api}/api`;
+    fetch(`${api_url}/projects`)
       .then(res => res.json())
       .then(data => this.setState({ projectArray: data }));
   }

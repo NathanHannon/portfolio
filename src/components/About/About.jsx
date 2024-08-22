@@ -40,10 +40,10 @@ class About extends Component {
                             wrapper='h4'
                             repeat={false}
                             speed={50} /> */}
-                        <h4>Hi, I'm Nathan.</h4>
+                        <h4>Hi, I'm Nathan. 👋</h4>
                         <h5>Who am I?</h5>
                         <p>
-                            As a programmer and web developer, I am passionate about leveraging technology to create innovative solutions that make a meaningful impact on people's lives. With years of experience in the industry, I have honed my skills in a variety of programming languages and tools, allowing me to tackle complex challenges and deliver high-quality results.
+                            As a software developer, I am passionate about leveraging technology to create innovative solutions that make a meaningful impact on people's lives. With years of experience in the industry, I have honed my skills in a variety of programming languages and tools, allowing me to tackle complex challenges and deliver high-quality results.
                         </p>
                     </div>
                     <div className="col-sm">
