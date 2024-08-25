@@ -60,12 +60,12 @@ class Contact extends Component {
                         {/* <Button className='contact-button' href='https://mastodon.online/@nate_hannon' target='_blank' rel='noreferrer noopener' title='Mastodon Profile' variant='none'>
                             <FontAwesomeIcon icon={faMastodon} size='2x' className='mastodon-icon' />
                         </Button> */}
-                        {/* <Button className='contact-button' href='https://bsky.app/profile/nathanhannon.dev' target='_blank' rel='noreferrer noopener' title='Bluesky Profile' variant='none'>
+                        <Button className='contact-button' href='https://bsky.app/profile/nathanhannon.dev' target='_blank' rel='noreferrer noopener' title='Bluesky Profile' variant='none'>
                             <FontAwesomeIcon icon={faBluesky} size='2x' className='bluesky-icon' />
-                        </Button> */}
-                        {/* <Button className='contact-button' href='https://www.threads.net/@nate.hannon' target='_blank' rel='noreferrer noopener' title='Threads Profile' variant='none'>
+                        </Button>
+                        <Button className='contact-button' href='https://www.threads.net/@nate.hannon' target='_blank' rel='noreferrer noopener' title='Threads Profile' variant='none'>
                             <FontAwesomeIcon icon={faThreads} size='2x' className='threads-icon' />
-                        </Button> */}
+                        </Button>
                     </p>
                 </div>
             </div>
