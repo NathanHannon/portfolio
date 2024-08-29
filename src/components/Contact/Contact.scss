@@ -39,7 +39,7 @@ div.contactPage {
     max-width: 1200px;
 }
 
-.contact-button body.dark-mode {
+.contact-button {
     border-radius: 50% !important;
     background-color: white;
     color: inherit;
@@ -51,6 +51,11 @@ div.contactPage {
     border: 1px solid black !important;
     // box-shadow: $frosted-shadow;
     // border: $frosted-border;
+}
+
+body.dark-mode .contact-button {
+    background-color: white !important;
+    color: black !important; // Adjust text color for contrast
 }
 
 .contact-button:hover {
