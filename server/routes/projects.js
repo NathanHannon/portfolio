@@ -26,4 +26,20 @@ router.get("/projects", async (req, res, next) => {
 
 module.exports = router;
 
-module.exports = router;
+//!! SQL Query version
+// router.get("/projects", (req, res, next) => {
+// 	res.setHeader("X-Frame-Options", "DENY");
+// 	res.setHeader("Content-Security-Policy", "frame-ancestors 'none'");
+// 	// cache control
+// 	res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+// 	db_connection.query(allProjects, (error, results) => {
+// 		if (error) {
+// 			console.log('no projects found', error, res.status(404))
+// 			return res.status(404).json('no projects found');
+// 		}
+// 		else {
+// 			console.log(res.status(200));
+// 			return res.status(200).json(results.rows);
+// 		}
+// 	});
+// });
