@@ -13,9 +13,10 @@
     "build:server": "npm install && npm run build",
     "client": "npm run start",
     "serve": "vite preview",
-    "build": "npx prisma generate && vite build",
+    "build": "npm run prisma && vite build",
     "build:client": "npm run build && mv build _static",
     "build:digitalocean": "npm install --production=false && npm run build && npm ci",
+    "prisma": "npx prisma db pull && npx prisma generate",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
