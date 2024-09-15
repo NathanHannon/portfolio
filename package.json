@@ -13,7 +13,7 @@
     "build:server": "npm install && npm run build",
     "client": "npm run start",
     "serve": "vite preview",
-    "build": "vite build",
+    "build": "prisma generate && vite build",
     "build:client": "npm run build && mv build _static",
     "build:digitalocean": "npm install --production=false && npm run build && npm ci",
     "test": "react-scripts test",
