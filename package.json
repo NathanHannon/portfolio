@@ -4,7 +4,7 @@
   "private": true,
   "proxy": "http://localhost:5000",
   "engines": {
-    "node": "16 || 18"
+    "node": "16 || 18 || 20"
   },
   "scripts": {
     "start": "vite",
@@ -13,9 +13,10 @@
     "build:server": "npm install && npm run build",
     "client": "npm run start",
     "serve": "vite preview",
-    "build": "vite build",
+    "build": "npm run prisma && vite build",
     "build:client": "npm run build && mv build _static",
     "build:digitalocean": "npm install --production=false && npm run build && npm ci",
+    "prisma": "npx prisma generate",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -39,6 +40,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@prisma/client": "^5.19.1",
     "@simplewebauthn/browser": "^7.2.0",
     "@simplewebauthn/server": "^7.2.0",
     "@vitejs/plugin-react": "^4.0.0",
@@ -50,7 +52,6 @@
     "history": "^5.0.1",
     "morgan": "^1.10.0",
     "nodemailer": "^6.9.9",
-    "openai": "^3.2.1",
     "pg": "^8.6.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.0.2",
