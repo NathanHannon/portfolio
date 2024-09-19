@@ -201,7 +201,7 @@ class About extends Component {
                                 <Card outline className='techCard'>
                                     <Card.Img className='projectCardImage' variant='top' src={mssql} width='60px' height='60px' />
                                     <Card.Body>
-                                        <Card.Text className='cardContent text-dark'>Microsoft SQL Server</Card.Text>
+                                        <Card.Text className='cardContent text-dark'>SQL Server</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </li>
