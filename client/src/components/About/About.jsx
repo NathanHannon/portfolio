@@ -19,6 +19,7 @@ import java from '../../assets/tech-logos/java.svg';
 import spring from '../../assets/tech-logos/spring.svg'
 import mongodb from '../../assets/tech-logos/mongodb.svg';
 import postgresql from '../../assets/tech-logos/postgresql.svg';
+import mssql from '../../assets/tech-logos/microsoft-sql-server.svg';
 import './About.scss'
 
 class About extends Component {
@@ -192,6 +193,15 @@ class About extends Component {
                                     <Card.Img className='projectCardImage' variant='top' src={postgresql} width='60px' height='60px' />
                                     <Card.Body>
                                         <Card.Text className='cardContent text-dark'>PostgreSQL</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </li>
+                            {/* microsoft sql server */}
+                            <li className="grid-item">
+                                <Card outline className='techCard'>
+                                    <Card.Img className='projectCardImage' variant='top' src={mssql} width='60px' height='60px' />
+                                    <Card.Body>
+                                        <Card.Text className='cardContent text-dark'>Microsoft SQL Server</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </li>
