@@ -25,23 +25,6 @@ class Contact extends Component {
                         </a>
                     </p>
                 </div>
-
-                {/* <div class="container">
-                    <form id="contact" action="" method="post">
-                        <div className="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" className='form-control' placeholder="Name" required />
-                            <br />
-                            <label for="email">Email</label>
-                            <input type="email" className='form-control' name="email" placeholder="Email" required />
-                            <br />
-                            <label for="message">Message</label>
-                            <textarea className='form-control' name="message" placeholder="Message" required ></textarea>
-                            <br />
-                            <button type="submit" id="contact-submit" className='btn btn-primary'>Submit</button>
-                        </div>
-                    </form>
-                </div> */}
                 <br />
                 <div className='socialLinks'>
                     <p>
@@ -53,15 +36,6 @@ class Contact extends Component {
                         </Button>
                         <Button className='contact-button' href='https://dev.to/nathanhannon' target='_blank' rel='noreferrer noopener' title='Dev.to Profile' variant='none'>
                             <FontAwesomeIcon icon={faDev} size='2x' className='dev-icon' />
-                        </Button>
-                        {/* <Button className='contact-button' href='https://x.com/nate_hannon' target='_blank' rel='noreferrer noopener' title='X/Twitter Profile' variant='none'>
-                            <FontAwesomeIcon icon={faXTwitter} size='2x' className='x-icon' />
-                        </Button> */}
-                        {/* <Button className='contact-button' href='https://mastodon.online/@nate_hannon' target='_blank' rel='noreferrer noopener' title='Mastodon Profile' variant='none'>
-                            <FontAwesomeIcon icon={faMastodon} size='2x' className='mastodon-icon' />
-                        </Button> */}
-                        <Button className='contact-button' href='https://bsky.app/profile/nathanhannon.dev' target='_blank' rel='noreferrer noopener' title='Bluesky Profile' variant='none'>
-                            <FontAwesomeIcon icon={faBluesky} size='2x' className='bluesky-icon' />
                         </Button>
                         <Button className='contact-button' href='https://www.threads.net/@nate.hannon' target='_blank' rel='noreferrer noopener' title='Threads Profile' variant='none'>
                             <FontAwesomeIcon icon={faThreads} size='2x' className='threads-icon' />
