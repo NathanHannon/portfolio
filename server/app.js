@@ -14,7 +14,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 // Serve .well-known/nostr.json directly from the root
-app.use('/.well-known', express.static(path.join(__dirname, 'public/.well-known')));
+// app.use('/.well-known', express.static(path.join(__dirname, 'public/.well-known')));
+
+// Serve the .well-known directory
+app.use('/.well-known', express.static(path.join(__dirname, 'client/public/.well-known')));
 
 // routers
 app.use("/", projectRouter);
