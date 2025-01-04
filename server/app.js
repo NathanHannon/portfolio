@@ -14,21 +14,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 // Serve .well-known/nostr.json directly from the root
-app.use('/.well-known', (req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-}, express.static(path.join(__dirname, 'public/.well-known')));
-
-app.get('/.well-known/nostr.json', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/.well-known/nostr.json'));
-});
+app.use('/.well-known', express.static(path.join(__dirname, '/.well-known')));
 
 // routers
 app.use("/", projectRouter);
 
 // fallback for serving main page.
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
-});
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../public/index.html'));
+// });
 
 module.exports = app;
