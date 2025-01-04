@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
-
+const projectRouter = require("./routes/projects")
 const app = express();
 app.enable('trust proxy');
 
