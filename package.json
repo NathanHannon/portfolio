@@ -13,7 +13,7 @@
     "build:server": "npm install && npm run build",
     "client": "npm run start",
     "serve": "vite preview",
-    "build": "npm run prisma && vite build",
+    "build": "npm run prisma && vite build && && cp -r client/public/.well-known build/",
     "build:client": "npm run build && mv build _static",
     "build:digitalocean": "npm install --production=false && npm run build && npm ci",
     "prisma": "npx prisma init",

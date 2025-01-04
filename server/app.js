@@ -12,9 +12,10 @@ app.enable('trust proxy');
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "public")));
-// Serve .well-known/nostr.json directly from the root
-app.use('/.well-known', express.static(path.join(__dirname, 'public/.well-known')));
+app.use(express.static(path.join(__dirname, "../build")));
+app.get('/.well-known/nostr.json', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/.well-known/nostr.json'));
+});
 
 // routers
 app.use("/", projectRouter);
