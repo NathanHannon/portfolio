@@ -21,13 +21,27 @@ const limiter = rateLimit({
 app.use(helmet());
 app.use(limiter);
 
-// CORS with environment variables
-const allowedOrigins = process.env.ALLOWED_ORIGINS
-    ? process.env.ALLOWED_ORIGINS.split(',')
-    : ['https://nathanhannon.dev'];
+/**
+ * Validates if the given origin matches any of the predefined valid domain patterns.
+ *
+ * @param {string} origin - The origin URL to be validated.
+ * @returns {boolean} - Returns true if the origin matches any of the valid domain patterns, otherwise false.
+ */
+const validateDomain = (origin) => {
+    const validDomains = [
+        /^https:\/\/(portfolio\.|[\w-]+\.)?nathanhannon\.(dev|xyz|com)$/
+    ];
+    return validDomains.some(pattern => pattern.test(origin));
+};
 
 app.use(cors({
-    origin: allowedOrigins,
+    origin: function (origin, callback) {
+        if (!origin || validateDomain(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true,
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization']
