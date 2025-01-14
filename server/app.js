@@ -19,14 +19,6 @@ app.get('/.well-known/nostr.json', (req, res) => {
 
 // routers
 app.use("/", projectRouter);
-app.use(cors({
-    origin: [
-        'https://nathanhannon.dev',
-        'https://nathanhannon.com',
-        'https://nathanhannon.xyz'
-    ],
-    credentials: true
-}));
 
 // fallback for serving main page.
 // app.get('*', (req, res) => {
