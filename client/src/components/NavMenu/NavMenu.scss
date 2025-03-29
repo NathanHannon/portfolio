@@ -1,0 +1,30 @@
+// NavMenu.scss
+
+.navbar-custom {
+    transition: background-color 0.3s ease;
+
+    .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 8px; // Space between icon and text
+    }
+
+    .dark-mode-toggle {
+        margin-left: 15px;
+    }
+}
+
+// Adjust navbar for dark mode
+body.dark-mode {
+    .navbar-custom {
+        background-color: #2a2a2a !important;
+
+        .nav-link {
+            color: #e0e0e0 !important;
+
+            &:hover {
+                color: #00ddeb !important; // Neon accent for hover
+            }
+        }
+    }
+}

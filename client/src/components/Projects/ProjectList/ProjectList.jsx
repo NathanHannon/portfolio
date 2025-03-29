@@ -1,26 +1,44 @@
+// src/Projects/ProjectList/ProjectList.jsx
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { ProjectCard } from '../ProjectCard/ProjectCard';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import './ProjectList.scss';
 
-/**
- * This function maps the generated project cards to the project array, using the project ID as the key
- */
-const ProjectList = (props) => (
-    <Container className='projectList'>
-        {
-            props.projectArray.map((projects) => (
-                // have each card fade in from the bottom
-                <motion.div
-                    initial={{ y: 50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <ProjectCard key={projects.id} projects={projects} />
-                </motion.div>
-            ))
-        }
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2, // Stagger the animation of each child
+        },
+    },
+};
+
+const cardVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+};
+
+const ProjectList = ({ projectArray }) => (
+    <Container className="projectList">
+        <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+        >
+            <AnimatePresence>
+                {projectArray.map((project) => (
+                    <motion.div
+                        key={project.id}
+                        variants={cardVariants}
+                        layout
+                    >
+                        <ProjectCard projects={project} />
+                    </motion.div>
+                ))}
+            </AnimatePresence>
+        </motion.div>
     </Container>
 );
 

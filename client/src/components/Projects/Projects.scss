@@ -1,0 +1,100 @@
+// src/Projects/Projects.scss
+
+// Frosted glass variables (consistent with index.scss and About.scss)
+$glass: rgba(255, 255, 255, 0.25);
+$frosted-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.5);
+$frosted-border: 1px solid rgba(255, 255, 255, 0.18);
+$rounded-corner: 0.5rem;
+
+// Base styles for the page
+.projectPage {
+    padding: 20px;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Dark mode styles
+body.dark-mode {
+    .projectPage {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+
+        .projectHeader h1,
+        .cardTitle,
+        .cardContent {
+            color: #e0e0e0;
+        }
+
+        .projectCard {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            box-shadow: $frosted-shadow;
+        }
+
+        hr {
+            border-color: #444;
+        }
+    }
+}
+
+// Header styles
+.projectHeader {
+    text-align: center;
+    padding: 20px 0;
+
+    h1 {
+        font-size: 2.5rem;
+        color: #333;
+        transition: color 0.3s ease;
+    }
+}
+
+// Project list styles
+.projectList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+// Project card styles (already defined in index.scss, but we can override or extend here if needed)
+.projectCard {
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+
+    .projectCardImage {
+        object-fit: cover;
+    }
+
+    .cardTitle {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .cardContent {
+        font-size: 0.9rem;
+    }
+}
+
+.project-card-link {
+    text-decoration: none;
+    display: block;
+
+    &:hover {
+        .projectCard {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+// Mobile adjustments
+@media screen and (max-width: 767px) {
+    .projectList {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .projectPage {
+        padding: 15px;
+    }
+}

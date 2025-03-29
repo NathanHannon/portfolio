@@ -1,61 +1,202 @@
+// About.scss
+
+// Frosted glass variables
 $glass: rgba(255, 255, 255, 0.25);
 $frosted-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.5);
 $frosted-border: 1px solid rgba(255, 255, 255, 0.18);
 $rounded-corner: 0.5rem;
 
-
-.tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    padding: 5px;
-    list-style: none !important;
+// Base styles for the page
+.aboutPage {
+    padding: 20px;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.grid-item {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    list-style: none !important;
-}
+// Dark mode styles
+body.dark-mode {
+    .aboutPage {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
 
-p {
-    text-align: center !important;
-}
+        .aboutHeader h1,
+        .about-me h4,
+        .about-me h5,
+        .what-do h4,
+        .what-do h5,
+        .cardContent {
+            color: #e0e0e0;
+        }
 
-.techCard {
-    min-height: fit-content !important;
-    min-width: fit-content !important;
-    transition: all 0.2s ease-in-out;
-    -webkit-font-smoothing: subpixel-antialiased;
-    transform: translate3d(0, 0, 0);
-    ;
-    backface-visibility: hidden;
-    padding-bottom: 0;
-}
+        .techCard {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            box-shadow: $frosted-shadow;
+        }
 
-@media (hover: hover) and (pointer: fine) {
-    .techCard:hover {
-        transform: scale(1.050) translate3d(0, 0, 0);
-        ;
+        hr {
+            border-color: #444;
+        }
+
+        .about-me {
+            background: linear-gradient(135deg, #2a2a2a 0%, #4a4a4a 100%);
+        }
     }
 }
 
-// when in mobile add padding below the description div
+// Header styles
+.aboutHeader {
+    text-align: center;
+    padding: 20px 0;
+
+    h1 {
+        font-size: 2.5rem;
+        color: #333;
+        transition: color 0.3s ease;
+    }
+}
+
+// About Me section with gradient background
+.about-me {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 40px;
+    border-radius: $rounded-corner;
+    margin-bottom: 20px;
+    transition: background 0.3s ease;
+
+    h4 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #fff;
+        transition: color 0.3s ease;
+    }
+
+    h5 {
+        font-size: 1.3rem;
+        color: #ddd;
+        margin-top: 10px;
+        transition: color 0.3s ease;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: left !important;
+    }
+
+    svg {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+// What I Do section
+.what-do {
+    padding: 20px 0;
+
+    .description {
+        h4 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        h5 {
+            font-size: 1.3rem;
+            color: #555;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            text-align: left !important;
+        }
+
+        .project-button {
+            background: linear-gradient(90deg, #007bff, #00ddeb);
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: $rounded-corner;
+            transition: transform 0.3s ease;
+            color: white;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+// Tech grid styles
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 20px 0;
+    list-style: none !important;
+
+    .grid-item {
+        display: block;
+        text-align: center;
+        list-style: none !important;
+    }
+
+    .techCard {
+        min-height: fit-content !important;
+        min-width: fit-content !important;
+        background: #fff;
+        border: $frosted-border;
+        border-radius: $rounded-corner;
+        text-align: center;
+        transition: all 0.2s ease-in-out, background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+        -webkit-font-smoothing: subpixel-antialiased;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        padding-bottom: 0;
+        box-shadow: $frosted-shadow;
+
+        .projectCardImage {
+            margin: 10px auto;
+        }
+
+        .cardContent {
+            font-size: 0.9rem;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+    }
+}
+
+// Hover effects for tech cards
+@media (hover: hover) and (pointer: fine) {
+    .techCard:hover {
+        transform: scale(1.1) translate3d(0, 0, 0);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+}
+
+// Mobile adjustments
 @media screen and (max-width: 767px) {
     .description {
         padding-bottom: 1rem !important;
     }
+
+    .about-me,
+    .what-do {
+        padding: 20px;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
 }
 
-#cardTitle {
-    font-weight: bold;
-}
-
-.project-button {
-    border-radius: 0.5rem;
-}
-
+// Typing animation cursor
 #typing-text::after {
     content: '|';
     animation: blink 0.7s infinite;
