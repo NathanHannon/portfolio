@@ -11,6 +11,7 @@ $rounded-corner: 0.5rem;
     padding: 20px;
     background-color: #f8f9fa;
     transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh; // Ensure the page takes up the full viewport height
 }
 
 // Dark mode styles
@@ -54,25 +55,34 @@ body.dark-mode {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    padding: 20px 0;
+    padding: 20px;
+    justify-items: center; // Center the cards horizontally
 }
 
-// Project card styles (already defined in index.scss, but we can override or extend here if needed)
+// Project card styles
 .projectCard {
     transition: transform 0.2s ease-in-out, background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; // Ensure the card takes up the full width of its grid cell
+    max-width: 350px; // Limit the maximum width for consistency
 
     .projectCardImage {
         object-fit: cover;
+        width: 100%;
+        height: 200px; // Fixed height for consistency
     }
 
     .cardTitle {
         font-size: 1.2rem;
         font-weight: bold;
         margin-bottom: 10px;
+        color: #333;
+        transition: color 0.3s ease;
     }
 
     .cardContent {
         font-size: 0.9rem;
+        color: #555;
+        transition: color 0.3s ease;
     }
 }
 
@@ -91,10 +101,15 @@ body.dark-mode {
 // Mobile adjustments
 @media screen and (max-width: 767px) {
     .projectList {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: 1fr; // 1 column on mobile
+        padding: 15px;
     }
 
     .projectPage {
         padding: 15px;
+    }
+
+    .projectCard {
+        max-width: 100%; // Full width on mobile
     }
 }

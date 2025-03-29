@@ -23,8 +23,8 @@ export const ProjectCard = ({ projects }) => {
                     alt={`Screenshot of ${projects.name} project`}
                 />
                 <Card.Body>
-                    <Card.Title className="cardTitle text-dark">{projects.name}</Card.Title>
-                    <Card.Text className="cardContent text-dark">{projects.description}</Card.Text>
+                    <Card.Title className="cardTitle">{projects.name}</Card.Title>
+                    <Card.Text className="cardContent">{projects.description}</Card.Text>
                 </Card.Body>
             </Card>
         </a>
