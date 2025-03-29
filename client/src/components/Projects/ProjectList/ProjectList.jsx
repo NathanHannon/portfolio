@@ -1,5 +1,6 @@
 // src/Projects/ProjectList/ProjectList.jsx
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import { ProjectCard } from '../ProjectCard/ProjectCard';
 import { motion, AnimatePresence } from 'framer-motion';
 import './ProjectList.scss';
@@ -20,11 +21,12 @@ const cardVariants = {
 };
 
 const ProjectList = ({ projectArray }) => (
-    <div className="projectList">
+    <Container className="projectList">
         <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
+            className="projectList-grid"
         >
             <AnimatePresence>
                 {projectArray.map((project) => (
@@ -39,7 +41,7 @@ const ProjectList = ({ projectArray }) => (
                 ))}
             </AnimatePresence>
         </motion.div>
-    </div>
+    </Container>
 );
 
 export default ProjectList;
