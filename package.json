@@ -16,7 +16,7 @@
     "build": "npm run prisma && vite build && cp -r client/public/ build/",
     "build:client": "npm run build && mv build _static",
     "build:digitalocean": "npm install --production=false && npm run build && npm ci",
-    "prisma": "npx prisma generate --schema=./server/prisma/schema.prisma && npx prisma migrate deploy --schema=./server/prisma/schema.prisma",
+    "prisma": "npx prisma generate --schema=./server/prisma/schema.prisma",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
