@@ -1,29 +1,4 @@
+// src/Projects/ProjectCard/ProjectCard.scss
 .projectCard {
-    min-height: 400px !important;
-    transition: all 0.2s ease-in-out;
-    -webkit-font-smoothing: subpixel-antialiased;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .projectCard:hover {
-        transform: scale(1.050) translate3d(0, 0, 0);
-    }
-}
-
-#cardTitle {
-    font-weight: bold;
-}
-
-.demo-url-button {
-    border-radius: 0.5rem;
-    color: white;
-    background-color: #004aad;
-}
-
-.github-url-button {
-    border-radius: 0.5rem;
-    color: white;
-    background-color: #000000 !important;
+    // Styles are now in Projects.scss, but we can add specific overrides here if needed
 }
