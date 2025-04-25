@@ -1,24 +1,4 @@
-/* List Mode */
-
-@media screen and (max-width: 767px) {
-    .projectList {
-        display: block;
-        padding: 2rem !important;
-    }
-    .projectCard {
-        margin-bottom: 15px !important;
-    }
-}
-
-/* Grid Mode */
-
-@media screen and (min-width: 768px) {
-    .projectList {
-        display: inline-grid;
-        grid-template-columns: 0.5fr 0.5fr 0.5fr;
-        gap: 2rem;
-        margin: 1% 0 1% 0;
-        position: relative;
-        box-sizing: border-box;
-    }
+// src/Projects/ProjectList/ProjectList.scss
+.projectList {
+    // Styles are now in Projects.scss, but we can add specific overrides here if needed
 }
