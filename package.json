@@ -4,7 +4,7 @@
   "private": true,
   "proxy": "http://localhost:5000",
   "engines": {
-    "node": "16 || 18 || 20"
+    "node": "16 || 18 || 20 || 22"
   },
   "scripts": {
     "start": "vite",
@@ -40,7 +40,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@prisma/client": "^5.22.0",
+    "@prisma/client": "^6.6.0",
     "@simplewebauthn/browser": "^7.2.0",
     "@simplewebauthn/server": "^7.2.0",
     "@vitejs/plugin-react": "^4.0.0",
@@ -79,6 +79,6 @@
   "devDependencies": {
     "@types/node": "^20.3.1",
     "@types/pg": "^8.11.6",
-    "prisma": "^5.22.0"
+    "prisma": "^6.6.0"
   }
 }
