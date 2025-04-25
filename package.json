@@ -13,10 +13,10 @@
     "build:server": "npm install && npm run build",
     "client": "npm run start",
     "serve": "vite preview",
-    "build": "npm run prisma && vite build && cp -r client/public/ build/",
+    "build": "vite build && cp -r client/public/ build/",
     "build:client": "npm run build && mv build _static",
     "build:digitalocean": "npm install --production=false && npm run build && npm ci",
-    "prisma": "npx prisma init",
+    "prisma": "npx prisma generate --schema=./server/prisma/schema.prisma",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
