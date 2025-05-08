@@ -38,7 +38,7 @@ const skills = [
     { name: 'MongoDB', icon: mongodb },
     { name: 'PostgreSQL', icon: postgresql },
     { name: 'SQL Server', icon: mssql },
-    { name: 'Python', icon: 'python'}
+    { name: 'Python', icon: python }
 ];
 
 // Animation variants for Framer Motion
