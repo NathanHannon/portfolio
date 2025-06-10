@@ -181,10 +181,9 @@ body.dark-mode {
             border-radius: $rounded-corner;
             text-align: center;
             transition: transform 0.2s ease-in-out;
-            min-height: 150px;
+            min-height: 150px; // Maintain unified height
             display: flex;
             flex-direction: column;
-            justify-content: center;
 
             &:hover,
             &:focus-within {
@@ -208,9 +207,11 @@ body.dark-mode {
                 color: #333;
                 transition: color 0.3s ease;
                 padding: 5px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
+                flex-grow: 1; // Allow content to grow vertically
+                display: flex;
+                align-items: center;
+                justify-content: center; // Center text vertically
+                text-align: center; // Center text horizontally
             }
         }
     }
