@@ -1,29 +1,25 @@
 // src/index.scss
 
-// Frosted glass variables (consistent with Projects.scss, About.scss, and NavMenu.scss)
+// Frosted glass variables (subtle for legibility and lensing)
 $glass: rgba(255, 255, 255, 0.15);
-$frosted-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.5);
-$frosted-border: 1px solid rgba(255, 255, 255, 0.2);
+$frosted-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+$frosted-border: 1px solid rgba(255, 255, 255, 0.1);
 $rounded-corner: 0.5rem;
 
-// Import Google Fonts
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
-// Base styles for the body
 body {
-    background-color: #fbfbfd;
-    color: #1a1a1a;
+    background: linear-gradient(to bottom, #f8f9fa, #f0f0f0);
+    color: #333;
     font-family: "IBM Plex Sans", sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    transition: background 0.3s ease, color 0.3s ease;
 
     &.dark-mode {
-        background-color: #1a1a1a;
-        color: #fbfbfd;
-    }
-
-    &.force-light-mode {
-        background-color: #fbfbfd;
-        color: #1a1a1a;
+        background: linear-gradient(to bottom, #1a1a1a, #222222);
+        color: #e0e0e0;
     }
 }
 
@@ -37,40 +33,52 @@ h6 {
     margin-bottom: 10px;
 }
 
-p {
+p,
+table,
+pre,
+code {
     margin-bottom: 15px;
+    background: transparent; // No glass on content
 }
 
-// Content box styles with Liquid Glass effect
+// Structural elements with Liquid Glass
+.navbar-custom,
 .projectCard,
-.techCard {
-    width: auto;
-    padding: 10px;
-    height: auto;
+.techCard,
+.reference {
     border-radius: $rounded-corner;
     border: $frosted-border;
-    background: $glass;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    transition: transform 0.2s ease-in-out;
+}
+
+.projectCard,
+.techCard,
+.reference {
+    background: $glass;
     box-shadow: $frosted-shadow;
-    overflow: hidden;
-    font-weight: 500;
-    backface-visibility: hidden;
-    -webkit-font-smoothing: subpixel-antialiased;
-    transition: transform 0.2s ease-in-out, background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
 
     &:hover {
-        transform: scale(1.05);
-        background-color: rgba(255, 255, 255, 0.2);
+        transform: scale(1.02); // Fluid motion
     }
 }
 
+// Content areas remain clear
 .aboutPage,
 .projectPage,
-.contactPage {
-    padding-top: 80px; // Space below navbar (adjust based on navbar height)
+.contactPage,
+.data-table,
+.content-block {
+    background: transparent;
+    padding-top: 80px; // Space below navbar
     margin: 15px;
-    transition: padding-top 0.3s ease, background 0.3s ease, color 0.3s ease;
+    transition: padding-top 0.3s ease;
+}
+
+.NavContainer {
+    position: relative;
+    z-index: 1000;
 }
 
 // Main App styling
@@ -78,33 +86,20 @@ p {
     text-align: center;
 }
 
-// Responsive adjustments
 @media screen and (max-width: 574px) {
 
     .aboutPage,
     .projectPage,
     .contactPage {
-        padding-top: 70px; // Reduced for mobile navbar height
-    }
-
-    .iframe-container {
-        height: 62vh;
+        padding-top: 70px;
     }
 }
 
 @media screen and (max-width: 1052px) {
 
-    div.contactPage {
-        margin: auto 10px !important;
-    }
-
     .aboutPage,
     .projectPage,
     .contactPage {
-        padding-top: 75px; // Adjusted for medium screens
-    }
-
-    .iframe-container {
-        height: 62vh;
+        padding-top: 75px;
     }
 }

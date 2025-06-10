@@ -1,15 +1,14 @@
 // src/About/About.scss
 
 $glass: rgba(255, 255, 255, 0.15);
-$frosted-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.5);
-$frosted-border: 1px solid rgba(255, 255, 255, 0.2);
+$frosted-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+$frosted-border: 1px solid rgba(255, 255, 255, 0.1);
 $rounded-corner: 0.5rem;
 
 .aboutPage {
     padding: 20px;
     background: linear-gradient(to bottom, #f8f9fa, #f0f0f0);
     transition: background 0.3s ease, color 0.3s ease;
-    min-height: 100vh;
 }
 
 body.dark-mode {
@@ -30,18 +29,10 @@ body.dark-mode {
             background-color: rgba(0, 0, 0, 0.15);
             border: $frosted-border;
             box-shadow: $frosted-shadow;
-
-            &:before {
-                background: none; // Removed shimmer
-            }
         }
 
         .about-me {
             background: linear-gradient(135deg, #2a2a2a, #4a4a4a);
-
-            &:before {
-                background: none; // Removed shimmer
-            }
         }
 
         hr {
@@ -67,26 +58,12 @@ body.dark-mode {
     padding: 40px;
     border-radius: $rounded-corner;
     margin-bottom: 20px;
-    position: relative;
-    overflow: hidden;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    transition: transform 0.2s ease-in-out;
 
-    &:before {
-        content: '';
-        background: none; // Removed shimmer
-    }
-
-    &:hover,
-    &:focus-within {
-        transform: translateY(-5px); // Subtle lift
-        box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.6);
-        background-color: rgba(255, 255, 255, 0.2); // Solid hover effect
-    }
-
-    &:focus-within {
-        outline: 2px solid #00ddeb;
-        outline-offset: 2px;
+    &:hover {
+        transform: scale(1.02); // Fluid motion
     }
 
     h4 {
@@ -112,6 +89,7 @@ body.dark-mode {
     svg {
         max-width: 100%;
         height: auto;
+        background: transparent;
     }
 }
 
@@ -145,7 +123,7 @@ body.dark-mode {
             padding: 10px 20px;
             font-weight: 600;
             border-radius: $rounded-corner;
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease;
             color: white;
 
             &:hover {
@@ -173,45 +151,38 @@ body.dark-mode {
         }
 
         .techCard {
-            background-color: $glass;
+            background: $glass;
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             border: $frosted-border;
             box-shadow: $frosted-shadow;
             border-radius: $rounded-corner;
-            text-align: center;
             transition: transform 0.2s ease-in-out;
-            min-height: 150px; // Maintain unified height
+            min-height: 150px;
             display: flex;
             flex-direction: column;
 
-            &:hover,
-            &:focus-within {
-                transform: scale(1.05);
-                background-color: rgba(255, 255, 255, 0.2); // Solid hover effect
-            }
-
-            &:focus-within {
-                outline: 2px solid #00ddeb;
-                outline-offset: 2px;
+            &:hover {
+                transform: scale(1.02); // Fluid motion
             }
 
             .projectCardImage {
                 margin: 10px auto;
                 width: 60px;
                 height: 60px;
+                background: transparent;
             }
 
             .cardContent {
                 font-size: 0.9rem;
                 color: #333;
-                transition: color 0.3s ease;
                 padding: 5px;
-                flex-grow: 1; // Allow content to grow vertically
+                flex-grow: 1;
                 display: flex;
                 align-items: center;
-                justify-content: center; // Center text vertically
-                text-align: center; // Center text horizontally
+                justify-content: center;
+                text-align: center;
+                word-break: break-word; // Allow wrapping
             }
         }
     }
@@ -233,16 +204,5 @@ body.dark-mode {
         .techCard {
             min-height: 130px;
         }
-    }
-}
-
-#typing-text::after {
-    content: '|';
-    animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
     }
 }

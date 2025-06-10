@@ -1,23 +1,52 @@
-$glass: rgba(255, 255, 255, 0.25);
-$frosted-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.5);
-$frosted-border: 1px solid rgba(255, 255, 255, 0.18);
+// src/Contact/contactPage.scss (full updated version)
+
+// Liquid Glass variables (consistent with other files)
+$glass: rgba(255, 255, 255, 0.15);
+$frosted-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+$frosted-border: 1px solid rgba(255, 255, 255, 0.1);
 $rounded-corner: 0.5rem;
-
-/* Contact Page */
-
-.contactLink {
-    padding-right: 1rem;
-}
 
 .contactPage {
     box-sizing: border-box;
+    background: linear-gradient(to bottom, #f8f9fa, #f0f0f0);
+    padding: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+    text-align: center; // Center all text by default
+}
+
+body.dark-mode {
+    .contactPage {
+        background: linear-gradient(to bottom, #1a1a1a, #222222);
+        color: #e0e0e0;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 1200px;
+    background: $glass;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: $rounded-corner;
+    border: $frosted-border;
+    box-shadow: $frosted-shadow;
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center; // Center children horizontally
+    justify-content: center; // Center children vertically
+    min-height: 70vh; // Ensure enough vertical space
 }
 
 .iframe-container {
     overflow: hidden;
-    /* 16:9 aspect ratio */
     padding-top: 56.25%;
+    /* 16:9 aspect ratio */
     position: relative;
+    margin: 1rem 0;
+    max-width: 100%; // Ensure it fits within container
 }
 
 .iframe-container iframe {
@@ -27,59 +56,122 @@ $rounded-corner: 0.5rem;
     position: absolute;
     top: 0;
     width: 100%;
+    background: transparent; // No glass on iframe
 }
 
-div.contactPage {
-    margin: auto 10px !important;
+.contactLink {
+    padding-right: 1rem;
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    display: inline-block; // Ensure proper spacing
 }
 
-.container {
-    margin: 0 auto;
-    padding: 0 1rem;
-    max-width: 1200px;
+.contactLink:hover {
+    color: #00ddeb;
 }
 
 .contact-button {
     border-radius: 50% !important;
-    background-color: white;
-    color: inherit;
+    background: $glass;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: #333;
     padding: 0.5rem;
     margin: 0.5rem;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; // Ensure transition is applied to background-color and color
-    -webkit-font-smoothing: subpixel-antialiased;
-    border: 1px solid black !important;
+    border: $frosted-border;
+    box-shadow: $frosted-shadow;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center; // Center button content
+    width: 55px; // Fixed width for circular shape
+    height: 55px; // Fixed height for circular shape
+
+    &:hover {
+        transform: scale(1.05); // Fluid motion
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #00ddeb;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 body.dark-mode .contact-button {
-    background-color: white !important;
-    color: black !important; // Adjust text color for contrast
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; // Ensure transition is applied to background-color and color
+    color: #e0e0e0;
+    background: rgba(0, 0, 0, 0.15); // Dark mode glass
 }
 
-.contact-button:hover {
-    transform: scale(1.050) translate3d(0, 0, 0);
-    ;
-}
-
-.dev-icon,
-.github-icon,
-.x-icon,
-.threads-icon {
-    color: #000000 !important;
-    width: 28px !important;
-}
-
-.mastodon-icon {
-    color: #563ACC !important;
-    width: 28px !important;
-}
-
-.bluesky-icon {
-    color: #0085FF !important;
-    width: 28px !important;
+// Platform-specific icon colors
+.email-icon {
+    color: #0078D4; // Outlook/Email blue
 }
 
 .linkedIn-icon {
-    color: #0077B5 !important;
-    width: 28px !important;
+    color: #0077B5; // LinkedIn blue
+}
+
+.github-icon {
+    color: #181717; // GitHub dark gray
+}
+
+.dev-icon {
+    color: #000000; // Dev.to black
+}
+
+.x-icon {
+    color: #000000; // X black (adjust if branded color changes)
+}
+
+.threads-icon {
+    color: #000000; // Threads black (adjust if branded)
+}
+
+.mastodon-icon {
+    color: #563ACC; // Mastodon purple
+}
+
+.bluesky-icon {
+    color: #0085FF; // Bluesky blue
+}
+
+body.dark-mode {
+    .email-icon {
+        color: #00A1F1; // Adjusted for dark mode contrast
+    }
+
+    .linkedIn-icon {
+        color: #33AADD; // Adjusted for dark mode contrast
+    }
+
+    .github-icon {
+        color: #FFFFFF; // White for dark mode
+    }
+
+    .dev-icon {
+        color: #FFFFFF; // White for dark mode
+    }
+
+    .x-icon {
+        color: #FFFFFF; // White for dark mode
+    }
+
+    .threads-icon {
+        color: #FFFFFF; // White for dark mode
+    }
+
+    .mastodon-icon {
+        color: #8A4AF3; // Adjusted for dark mode contrast
+    }
+
+    .bluesky-icon {
+        color: #66B3FF; // Adjusted for dark mode contrast
+    }
 }
