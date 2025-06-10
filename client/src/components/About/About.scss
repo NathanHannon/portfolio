@@ -22,6 +22,7 @@ body.dark-mode {
         .what-do h4,
         .what-do h5,
         .cardContent {
+            // General dark mode color for cardContent
             color: #e0e0e0;
         }
 
@@ -29,6 +30,12 @@ body.dark-mode {
             background-color: rgba(0, 0, 0, 0.15);
             border: $frosted-border;
             box-shadow: $frosted-shadow;
+
+            // color: #e0e0e0; // This color applies to text directly in .techCard or is inherited.
+            // It will be overridden for .cardContent by the rule below.
+            .cardContent {
+                color: #ffffff; // Set tech card text to white for contrast in dark mode
+            }
         }
 
         .about-me {

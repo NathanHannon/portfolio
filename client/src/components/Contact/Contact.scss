@@ -22,23 +22,19 @@ body.dark-mode {
     }
 }
 
-.container {
-    margin: 0 auto;
-    padding: 0 1rem;
-    max-width: 1200px;
+.contact-button {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; // Ensure transition is applied to background-color and color
+    -webkit-font-smoothing: subpixel-antialiased;
     background: $glass;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border-radius: $rounded-corner;
     border: $frosted-border;
     box-shadow: $frosted-shadow;
-    transition: transform 0.2s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    align-items: center; // Center children horizontally
-    justify-content: center; // Center children vertically
-    min-height: 70vh; // Ensure enough vertical space
 }
+
 
 .iframe-container {
     overflow: hidden;
