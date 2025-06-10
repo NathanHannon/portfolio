@@ -13,10 +13,10 @@
     "build:server": "npm install && npm run build",
     "client": "npm run start",
     "serve": "vite preview",
-    "build": "npm run prisma && vite build && cp -r client/public/ build/",
+    "build": "vite build && cp -r client/public/ build/",
     "build:client": "npm run build && mv build _static",
     "build:digitalocean": "npm install --production=false && npm run build && npm ci",
-    "prisma": "npx prisma init",
+    "prisma": "npx prisma generate --schema=./server/prisma/schema.prisma",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -40,7 +40,6 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@prisma/client": "^5.19.1",
     "@simplewebauthn/browser": "^7.2.0",
     "@simplewebauthn/server": "^7.2.0",
     "@vitejs/plugin-react": "^4.0.0",
@@ -56,7 +55,7 @@
     "history": "^5.0.1",
     "morgan": "^1.10.0",
     "nodemailer": "^6.9.9",
-    "pg": "^8.6.0",
+    "pg": "^8.15.5",
     "react": "^18.2.0",
     "react-bootstrap": "^2.0.2",
     "react-dark-mode-toggle-2": "^2.0.9",
@@ -81,6 +80,6 @@
   },
   "devDependencies": {
     "@types/node": "^20.3.1",
-    "@types/pg": "^8.11.6"
+    "@types/pg": "^8.11.14"
   }
 }

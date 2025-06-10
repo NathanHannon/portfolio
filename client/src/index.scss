@@ -1,4 +1,4 @@
-// index.scss
+// src/index.scss
 
 // Frosted glass variables
 $glass: rgba(255, 255, 255, 0.25);
@@ -27,7 +27,7 @@ body {
     }
 }
 
-// Navbar styles
+// Navbar styles (moved to NavMenu.scss)
 a:hover,
 .brand:hover {
     text-decoration: none;

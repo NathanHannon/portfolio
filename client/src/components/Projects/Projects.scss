@@ -52,6 +52,11 @@ body.dark-mode {
 
 // Project list styles
 .projectList {
+    padding: 0; // Override Container's default padding
+    max-width: 100%; // Override Container's max-width to allow full control
+}
+
+.projectList-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
@@ -106,7 +111,7 @@ body.dark-mode {
 
 // Mobile adjustments
 @media screen and (max-width: 767px) {
-    .projectList {
+    .projectList-grid {
         grid-template-columns: 1fr;
         padding: 15px;
     }
