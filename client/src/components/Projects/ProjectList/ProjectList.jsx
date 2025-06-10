@@ -16,8 +16,8 @@ const containerVariants = {
 };
 
 const cardVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+    hidden: { y: 50, opacity: 0, scale: 0.95 },
+    visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.5 } },
 };
 
 const ProjectList = ({ projectArray }) => (

@@ -44,11 +44,7 @@ const skills = [
 // Animation variants for Framer Motion
 const cardVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
-        opacity: 1,
-        y: 0,
-        transition: { delay: i * 0.1, duration: 0.5 },
-    }),
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
 const About = () => {

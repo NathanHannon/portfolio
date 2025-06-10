@@ -1,7 +1,7 @@
 // src/components/NavMenu.js
 import React, { useState, useContext } from 'react';
 import { Image, Nav, Navbar } from 'react-bootstrap';
-import Logo from '../../assets/SVGs/brand-logo/NH-Initials.svg';
+import Logo from '../../assets/SVGs/brand-logo/NH-Initials.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { DarkModeToggle } from 'react-dark-mode-toggle-2';
 import { ThemeContext } from '../../context/ThemeContext';
@@ -17,7 +17,7 @@ const NavMenu = () => {
 
   return (
     <Navbar className="navbar-custom" variant="dark" fixed="top" expand="sm" bg="primary">
-      <Navbar.Brand href="/" className="mr-auto brand" tabIndex="-1" aria-disabled="true" alt="Home Page">
+      <Navbar.Brand href="/" className="mr-auto brand" tabIndex="-1" aria-disabled="true">
         <Image rounded={true} src={Logo} alt="Branding" height={'40'} width={'auto'} />
       </Navbar.Brand>
       <Navbar.Toggle onClick={toggleNavbar} aria-controls="responsive-navbar-nav" />
@@ -28,13 +28,19 @@ const NavMenu = () => {
       >
         <Nav>
           <Nav.Link href="/" className="text-white nav-link" tabIndex="-1" aria-disabled="true">
-            <FontAwesomeIcon icon={['fas', 'address-card']} /> About Me
+            <span className="nav-link-text">
+              <FontAwesomeIcon icon={['fas', 'address-card']} /> About Me
+            </span>
           </Nav.Link>
           <Nav.Link href="/projects" className="text-white nav-link" tabIndex="-1" aria-disabled="true">
-            <FontAwesomeIcon icon={['fas', 'code']} /> My Projects
+            <span className="nav-link-text">
+              <FontAwesomeIcon icon={['fas', 'code']} /> My Projects
+            </span>
           </Nav.Link>
           <Nav.Link href="/contact" className="text-white nav-link" tabIndex="-1" aria-disabled="true">
-            <FontAwesomeIcon icon={['fas', 'users']} /> Contact Me
+            <span className="nav-link-text">
+              <FontAwesomeIcon icon={['fas', 'users']} /> Contact Me
+            </span>
           </Nav.Link>
         </Nav>
         <DarkModeToggle

@@ -1,29 +1,81 @@
 // src/components/NavMenu.scss
 
-.navbar-custom {
-    transition: background-color 0.3s ease;
+$glass: rgba(255, 255, 255, 0.15);
+$frosted-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.5);
+$frosted-border: 1px solid rgba(255, 255, 255, 0.2);
+$rounded-corner: 0.5rem;
 
-    .nav-link {
-        display: flex;
-        align-items: center;
-        gap: 8px; // Space between icon and text
+.navbar-custom {
+    background: linear-gradient(to bottom, #004aad, #003d82);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-bottom: $frosted-border;
+    box-shadow: $frosted-shadow;
+    transition: background 0.3s ease, transform 0.3s ease;
+
+    body.dark-mode & {
+        background: linear-gradient(to bottom, #2a2a2a, #333333);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     }
 
-    .dark-mode-toggle {
-        margin-left: 15px;
+    &:before {
+        content: '';
+        background: none; // Removed shimmer
+    }
+
+    &:hover,
+    &:focus-within {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.6);
+    }
+}
+
+.nav-link {
+    position: relative;
+    color: #ffffff;
+    padding: 10px 15px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover,
+    &:focus {
+        transform: translateY(-2px);
+        background-color: rgba(255, 255, 255, 0.2); // Solid hover effect
+        border-radius: $rounded-corner;
+
+        .nav-link-text {
+            color: #00ddeb;
+        }
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #00ddeb;
+    }
+
+    .nav-link-text {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.2s ease-in-out;
     }
 }
 
 body.dark-mode {
-    .navbar-custom {
-        background-color: #2a2a2a !important;
+    .nav-link {
+        color: #e0e0e0;
 
-        .nav-link {
-            color: #e0e0e0 !important;
+        &:hover,
+        &:focus {
+            background-color: rgba(0, 0, 0, 0.2);
 
-            &:hover {
-                color: #00ddeb !important; // Neon accent for hover
+            .nav-link-text {
+                color: #00ddeb;
             }
         }
     }
+}
+
+.NavContainer {
+    position: relative;
+    z-index: 1000;
 }
