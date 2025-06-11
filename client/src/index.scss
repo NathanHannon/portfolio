@@ -42,26 +42,32 @@ code {
     background: transparent; // No glass on content
 }
 
-// Structural elements with Liquid Glass
 .navbar-custom,
 .projectCard,
-.techCard,
-.reference {
+.techCard {
     border-radius: $rounded-corner;
-    border: $frosted-border;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    transition: transform 0.2s ease-in-out;
+    border: $frosted-border; // Use the updated frosted_border
+    backdrop-filter: blur(8px) saturate(130%); // Enhanced blur and saturation for refraction effect
+    -webkit-backdrop-filter: blur(8px) saturate(130%);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease; // Added box-shadow to transition
 }
 
 .projectCard,
-.techCard,
-.reference {
-    background: $glass;
-    box-shadow: $frosted-shadow;
+.techCard {
+    background: $glass; // Use updated glass background
+    // Combine outer shadow with inner shadows for a more 3D glass effect
+    box-shadow:
+        $frosted-shadow, // Main outer shadow
+        inset 0px 1px 1px rgba(255, 255, 255, 0.3), // Subtle inner top highlight for edge
+        inset 0px -1px 1px rgba(0, 0, 0, 0.1); // Subtle inner bottom shadow for depth
 
     &:hover {
         transform: scale(1.02); // Fluid motion
+        // Enhance shadow on hover for more interactivity
+        box-shadow:
+            0 12px 32px 0 rgba(0, 0, 0, 0.3), // Enhanced outer shadow on hover
+            inset 0px 1px 2px rgba(255, 255, 255, 0.4), // Stronger inner top highlight
+            inset 0px -1px 2px rgba(0, 0, 0, 0.15); // Stronger inner bottom shadow
     }
 }
 
