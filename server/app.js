@@ -55,7 +55,7 @@ app.get('/.well-known/nostr.json', (req, res) => {
 });
 
 // routers
-app.use("/", projectRouter);
+app.use("/api", projectRouter);
 
 // fallback for serving main page.
 // app.get('*', (req, res) => {
