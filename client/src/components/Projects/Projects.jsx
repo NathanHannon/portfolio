@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import ProjectList from './ProjectList/ProjectList';
-import { environment } from '../../environments/environment.prod';
+import { environment } from '../../environments/environment';
 import './Projects.scss';
 
 const Projects = () => {

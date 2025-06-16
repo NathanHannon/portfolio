@@ -1,9 +1,9 @@
 // src/About/About.scss
 
-$glass: rgba(255, 255, 255, 0.15);
-$frosted-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-$frosted-border: 1px solid rgba(255, 255, 255, 0.1);
-$rounded-corner: 0.5rem;
+$glass: rgba(255, 255, 255, 0.08); // More transparent for liquid feel
+$frosted-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); // Softer, more diffused outer shadow
+$frosted-border: 1px solid rgba(255, 255, 255, 0.25); // A slightly more visible border to catch highlights
+$rounded-corner: 0.75rem; // Slightly more rounded for a softer, liquid shape
 
 .aboutPage {
     padding: 20px;
@@ -27,9 +27,9 @@ body.dark-mode {
         }
 
         .techCard {
-            background-color: rgba(0, 0, 0, 0.15);
-            border: $frosted-border;
-            box-shadow: $frosted-shadow;
+            // background-color: rgba(0, 0, 0, 0.15); // Removed to inherit global liquid glass styles
+            border: $frosted-border; // This is consistent with index.scss, can remain
+            // box-shadow: $frosted-shadow; // Removed to inherit global liquid glass styles
 
             // color: #e0e0e0; // This color applies to text directly in .techCard or is inherited.
             // It will be overridden for .cardContent by the rule below.
@@ -69,9 +69,6 @@ body.dark-mode {
     -webkit-backdrop-filter: blur(5px);
     transition: transform 0.2s ease-in-out;
 
-    &:hover {
-        transform: scale(1.02); // Fluid motion
-    }
 
     h4 {
         font-size: 1.8rem;
@@ -81,7 +78,6 @@ body.dark-mode {
     }
 
     h5 {
-        font-size: 1.3rem;
         color: #ddd;
         margin-top: 10px;
         transition: color 0.3s ease;
@@ -125,21 +121,45 @@ body.dark-mode {
         }
 
         .project-button {
-            background: linear-gradient(90deg, #007bff, #00ddeb);
-            border: none;
+            // Translucent "stained glass" background
+            background: linear-gradient(90deg, rgba(0, 123, 255, 0.65), rgba(0, 221, 235, 0.65)); // Gradient with alpha
+            border: $frosted-border; // Use frosted border
             padding: 10px 20px;
             font-weight: 600;
             border-radius: $rounded-corner;
-            transition: transform 0.2s ease;
-            color: white;
+            color: white; // Keep text color white, should contrast well
+            text-decoration: none; // Ensure no underline if it's an <a> tag styled as a button
+            display: inline-block; // For proper padding and layout
+
+            // Liquid glass properties
+            backdrop-filter: blur(8px) saturate(120%);
+            -webkit-backdrop-filter: blur(8px) saturate(120%);
+            box-shadow:
+                $frosted-shadow,
+                inset 4px 4px 8px rgba(255, 255, 255, 0.2), // Adjusted highlight for colored bg
+                inset -4px -4px 8px rgba(0, 0, 0, 0.2), // Adjusted shadow for colored bg
+                inset 0 0 2px 1px rgba(255, 255, 255, 0.15);
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
 
             &:hover {
                 transform: scale(1.05);
+                // Enhanced liquid effect on hover
+                box-shadow:
+                    0 15px 35px rgba(0, 0, 0, 0.25),
+                    inset 5px 5px 10px rgba(255, 255, 255, 0.3),
+                    inset -5px -5px 10px rgba(0, 0, 0, 0.25),
+                    inset 0 0 3px 1px rgba(255, 255, 255, 0.2);
             }
 
             &:focus {
-                outline: 2px solid #00ddeb;
-                outline-offset: 2px;
+                outline: none; // Remove default outline
+                // Apply hover box-shadow and a custom focus ring
+                box-shadow:
+                    0 15px 35px rgba(0, 0, 0, 0.25),
+                    inset 5px 5px 10px rgba(255, 255, 255, 0.3),
+                    inset -5px -5px 10px rgba(0, 0, 0, 0.25),
+                    inset 0 0 3px 1px rgba(255, 255, 255, 0.2),
+                    0 0 0 2px rgba(0, 221, 235, 0.7); // Focus ring using one of the gradient colors
             }
         }
     }
@@ -158,19 +178,30 @@ body.dark-mode {
         }
 
         .techCard {
-            background: $glass;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border: $frosted-border;
-            box-shadow: $frosted-shadow;
-            border-radius: $rounded-corner;
-            transition: transform 0.2s ease-in-out;
+            background: $glass; // Use local $glass variable
+            backdrop-filter: blur(10px) saturate(140%); // Enhanced liquid effect
+            -webkit-backdrop-filter: blur(10px) saturate(140%); // Enhanced liquid effect
+            border: $frosted-border; // Use local $frosted-border
+            border-radius: $rounded-corner; // Use local $rounded-corner
+            // Liquid glass box-shadow using local $frosted-shadow and inset shadows
+            box-shadow:
+                $frosted-shadow,
+                inset 4px 4px 8px rgba(255, 255, 255, 0.3),
+                inset -4px -4px 8px rgba(0, 0, 0, 0.1),
+                inset 0 0 2px 1px rgba(255, 255, 255, 0.15);
+            transition: transform 0.2s ease-in-out, box-shadow 0.3s ease; // Added box-shadow to transition
             min-height: 150px;
             display: flex;
             flex-direction: column;
 
             &:hover {
-                transform: scale(1.02); // Fluid motion
+                transform: scale(1.02); // Keep specific transform for these cards
+                // Enhanced liquid effect on hover for box-shadow
+                box-shadow:
+                    0 15px 35px rgba(0, 0, 0, 0.2),
+                    inset 5px 5px 10px rgba(255, 255, 255, 0.45),
+                    inset -5px -5px 10px rgba(0, 0, 0, 0.15),
+                    inset 0 0 3px 1px rgba(255, 255, 255, 0.25);
             }
 
             .projectCardImage {

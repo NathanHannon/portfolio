@@ -1,9 +1,9 @@
 // src/components/NavMenu.scss
 
-$glass: rgba(255, 255, 255, 0.15);
-$frosted-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-$frosted-border: 1px solid rgba(255, 255, 255, 0.1);
-$rounded-corner: 0.5rem;
+$glass: rgba(255, 255, 255, 0.08); // More transparent for liquid feel
+$frosted-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); // Softer, more diffused outer shadow
+$frosted-border: 1px solid rgba(255, 255, 255, 0.25); // A slightly more visible border to catch highlights
+$rounded-corner: 0.75rem; // Slightly more rounded for a softer, liquid shape
 
 .navbar-custom {
     background: linear-gradient(to bottom, #004aad, #003d82);

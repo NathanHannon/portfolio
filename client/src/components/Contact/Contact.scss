@@ -1,10 +1,10 @@
 // src/Contact/contactPage.scss (full updated version)
 
 // Liquid Glass variables (consistent with other files)
-$glass: rgba(255, 255, 255, 0.15);
-$frosted-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-$frosted-border: 1px solid rgba(255, 255, 255, 0.1);
-$rounded-corner: 0.5rem;
+$glass: rgba(255, 255, 255, 0.08); // More transparent for liquid feel
+$frosted-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); // Softer, more diffused outer shadow
+$frosted-border: 1px solid rgba(255, 255, 255, 0.25); // A slightly more visible border to catch highlights
+$rounded-corner: 0.75rem; // Slightly more rounded for a softer, liquid shape
 
 .contactPage {
     box-sizing: border-box;
@@ -15,24 +15,59 @@ $rounded-corner: 0.5rem;
     text-align: center; // Center all text by default
 }
 
-body.dark-mode {
-    .contactPage {
-        background: linear-gradient(to bottom, #1a1a1a, #222222);
-        color: #e0e0e0;
+.emailLink {
+    text-align: center; // Center the button within the div
+    margin-bottom: 1rem; // Add some space below
+}
+
+a.glass-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em; // Space between icon and text
+    padding: 0.6em 1.2em; // Button padding
+    text-decoration: none;
+    font-weight: 500;
+    color: #333; // Default text color for light mode
+
+    // Liquid glass effects (mirroring .projectCard from index.scss)
+    border-radius: $rounded-corner;
+    border: $frosted-border;
+    background: $glass;
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    box-shadow:
+        $frosted-shadow,
+        inset 4px 4px 8px rgba(255, 255, 255, 0.3),
+        inset -4px -4px 8px rgba(0, 0, 0, 0.1),
+        inset 0 0 2px 1px rgba(255, 255, 255, 0.15);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        transform: scale(1.03);
+        box-shadow:
+            0 15px 35px rgba(0, 0, 0, 0.2),
+            inset 5px 5px 10px rgba(255, 255, 255, 0.45),
+            inset -5px -5px 10px rgba(0, 0, 0, 0.15),
+            inset 0 0 3px 1px rgba(255, 255, 255, 0.25);
+        // color: #000; // Optional: Darker text on hover in light mode
+    }
+
+    svg {
+        // Ensure icon color matches text
+        margin-right: 0.1em; // Slight adjustment if needed
     }
 }
 
-.contact-button {
-    padding: 0.5rem;
-    margin: 0.5rem;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; // Ensure transition is applied to background-color and color
-    -webkit-font-smoothing: subpixel-antialiased;
-    background: $glass;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border-radius: $rounded-corner;
-    border: $frosted-border;
-    box-shadow: $frosted-shadow;
+body.dark-mode {
+    .contactPage {
+        a.glass-button {
+            color: #e0e0e0; // Text color for dark mode
+
+            &:hover {
+                // color: #ffffff; // Optional: Brighter text on hover in dark mode
+            }
+        }
+    }
 }
 
 
@@ -68,41 +103,58 @@ body.dark-mode {
 }
 
 .contact-button {
-    border-radius: 50% !important;
+    border-radius: 50% !important; // Keep circular shape
     background: $glass;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    color: #333;
-    padding: 0.5rem;
+    backdrop-filter: blur(10px) saturate(140%); // Liquid effect
+    -webkit-backdrop-filter: blur(10px) saturate(140%); // Liquid effect
+    color: #333; // Icon color for light mode
+    padding: 0; // Remove padding if fixed width/height centers icon
     margin: 0.5rem;
     border: $frosted-border;
-    box-shadow: $frosted-shadow;
-    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-    display: flex;
+    // Liquid glass box-shadow
+    box-shadow:
+        $frosted-shadow,
+        inset 4px 4px 8px rgba(255, 255, 255, 0.3),
+        inset -4px -4px 8px rgba(0, 0, 0, 0.1),
+        inset 0 0 2px 1px rgba(255, 255, 255, 0.15);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    display: inline-flex; // Changed from flex to inline-flex
     align-items: center;
-    justify-content: center; // Center button content
-    width: 55px; // Fixed width for circular shape
-    height: 55px; // Fixed height for circular shape
+    justify-content: center;
+    width: 54px; // Adjusted for a good circular size with 2x icons
+    height: 48px; // Adjusted for a good circular size with 2x icons
+    line-height: 0; // Helps with icon centering in some cases
 
     &:hover {
         transform: scale(1.05); // Fluid motion
+        // Enhanced liquid effect on hover
+        box-shadow:
+            0 15px 35px rgba(0, 0, 0, 0.2),
+            inset 5px 5px 10px rgba(255, 255, 255, 0.45),
+            inset -5px -5px 10px rgba(0, 0, 0, 0.15),
+            inset 0 0 3px 1px rgba(255, 255, 255, 0.25);
+        color: #000; // Optional: Darker icon on hover in light mode
     }
 
     &:focus {
         outline: none;
-        box-shadow: 0 0 0 2px #00ddeb;
+        box-shadow: // Keep hover shadows and add focus ring
+            0 15px 35px rgba(0, 0, 0, 0.2),
+            inset 5px 5px 10px rgba(255, 255, 255, 0.45),
+            inset -5px -5px 10px rgba(0, 0, 0, 0.15),
+            inset 0 0 3px 1px rgba(255, 255, 255, 0.25),
+            0 0 0 2px #00ddeb; // Focus ring
     }
 
-    span {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+    // Removed span styling as it's not used by FontAwesomeIcon directly in Button
 }
 
 body.dark-mode .contact-button {
-    color: #e0e0e0;
-    background: rgba(0, 0, 0, 0.15); // Dark mode glass
+    color: #e0e0e0; // Icon color for dark mode
+
+    &:hover {
+        color: #ffffff; // Optional: Brighter icon on hover in dark mode
+    }
 }
 
 // Platform-specific icon colors
@@ -116,6 +168,8 @@ body.dark-mode .contact-button {
 
 .github-icon {
     color: #181717; // GitHub dark gray
+    width: 28px !important; // Ensure consistent size
+    height: 32px !important; // Ensure consistent size
 }
 
 .dev-icon {

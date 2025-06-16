@@ -17,10 +17,12 @@ class Contact extends Component {
                     <h1>{pageTitle}</h1>
                 </header>
 
-                {/* mailto link placeholder */}
                 <div className='emailLink'>
                     <p>
-                        <a href='mailto: nathan@hannon.me' className='emailLink btn btn-primary' target='_blank' rel='noreferrer noopener' title='Email Me' tabIndex="-1" aria-disabled="true">
+                        {/* Changed classes, removed btn & btn-primary, added glass-button */}
+                        {/* Removed tabIndex and aria-disabled to make it a functional link */}
+                        {/* Updated FontAwesomeIcon to use the imported faEnvelope object */}
+                        <a href='mailto:nathan@hannon.me' className='btn glass-button' target='_blank' rel='noreferrer noopener' title='Email Me'>
                             <FontAwesomeIcon icon='envelope' /> Send me an email
                         </a>
                     </p>
