@@ -22,15 +22,34 @@ $rounded-corner: 0.75rem; // Slightly more rounded for a softer, liquid shape
 .nav-link {
     color: #ffffff;
     padding: 10px 15px;
-    transition: transform 0.2s ease-in-out;
+    margin: 0 5px; // Add some space between the links
+    border-radius: $rounded-corner;
+    border: $frosted-border;
+    background: $glass;
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    box-shadow:
+        $frosted-shadow,
+        inset 4px 4px 8px rgba(255, 255, 255, 0.3),
+        inset -4px -4px 8px rgba(0, 0, 0, 0.1),
+        inset 0 0 2px 1px rgba(255, 255, 255, 0.15);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        background-color 0.3s ease,
+        color 0.3s ease;
 
     &:hover,
     &:focus {
-        transform: translateY(-2px); // Fluid motion on links
-        background-color: rgba(255, 255, 255, 0.1);
+        transform: scale(1.02); // Fluid motion on links, matches tech cards
+        box-shadow:
+            0 15px 35px rgba(0, 0, 0, 0.2),
+            inset 5px 5px 10px rgba(255, 255, 255, 0.45),
+            inset -5px -5px 10px rgba(0, 0, 0, 0.15),
+            inset 0 0 3px 1px rgba(255, 255, 255, 0.25);
 
         .nav-link-text {
-            color: #00ddeb;
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
         }
     }
 
@@ -43,7 +62,7 @@ $rounded-corner: 0.75rem; // Slightly more rounded for a softer, liquid shape
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        transition: color 0.2s ease-in-out;
+        transition: color 0.3s ease, text-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 }
 
@@ -53,10 +72,11 @@ body.dark-mode {
 
         &:hover,
         &:focus {
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: transparent;
 
             .nav-link-text {
-                color: #00ddeb;
+                color: #ffffff;
+                text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
             }
         }
     }
