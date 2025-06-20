@@ -220,7 +220,7 @@ body.dark-mode {
                 align-items: center;
                 justify-content: center;
                 text-align: center;
-                word-break: break-word; // Allow wrapping
+                white-space: nowrap; // Prevent text from wrapping to a new line
             }
         }
     }
