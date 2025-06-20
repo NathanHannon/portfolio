@@ -166,7 +166,7 @@ body.dark-mode {
 
     .tech-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-template-columns: repeat(5, 1fr);
         gap: 15px;
         padding: 20px 0;
         list-style: none;
@@ -226,6 +226,18 @@ body.dark-mode {
     }
 }
 
+@media screen and (max-width: 1440px) {
+    .what-do .tech-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .what-do .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media screen and (max-width: 767px) {
     .description {
         padding-bottom: 1rem;
@@ -237,10 +249,17 @@ body.dark-mode {
     }
 
     .tech-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
 
         .techCard {
             min-height: 130px;
         }
+    }
+}
+
+// Media Query for Mobile Phones
+@media screen and (max-width: 576px) {
+    .what-do .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

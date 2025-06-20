@@ -6,7 +6,7 @@ $frosted-border: 1px solid rgba(255, 255, 255, 0.25); // A slightly more visible
 $rounded-corner: 0.75rem; // Slightly more rounded for a softer, liquid shape
 
 // Import project card styles
-@import "./ProjectCard/ProjectCard.scss";
+@use "ProjectCard/ProjectCard.scss";
 
 .projectPage {
     padding: 20px;
