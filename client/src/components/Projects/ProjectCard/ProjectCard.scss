@@ -1,95 +1,26 @@
-// src/Projects/Projects.scss
-
-// Frosted glass variables (consistent with index.scss and About.scss)
-$glass: rgba(255, 255, 255, 0.25);
+// Frosted glass variables
 $frosted-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.5);
-$frosted-border: 1px solid rgba(255, 255, 255, 0.18);
-$rounded-corner: 0.5rem;
-
-// Base styles for the page
-.projectPage {
-    padding: 20px;
-    background-color: #f8f9fa;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    min-height: 100vh;
-}
-
-// Dark mode styles
-body.dark-mode {
-    .projectPage {
-        background-color: #1a1a1a;
-        color: #e0e0e0;
-
-        .projectHeader h1,
-        .cardTitle,
-        .cardContent {
-            color: #e0e0e0;
-        }
-
-        .projectCard {
-            background-color: #2a2a2a;
-            border: 1px solid #444;
-            box-shadow: $frosted-shadow;
-        }
-
-        hr {
-            border-color: #444;
-        }
-    }
-}
-
-// Header styles
-.projectHeader {
-    text-align: center;
-    padding: 20px 0;
-
-    h1 {
-        font-size: 2.5rem;
-        color: #333;
-        transition: color 0.3s ease;
-    }
-}
-
-// Project list styles
-.projectList {
-    padding: 0; // Override Container's default padding
-    max-width: 100%; // Override Container's max-width to allow full control
-}
-
-.projectList-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px; // Limit the maximum width of the grid
-    margin: 0 auto; // Center the grid horizontally
-}
-
-.projectList-item {
-    display: flex;
-    justify-content: center; // Center the card within its grid cell
-}
 
 // Project card styles
 .projectCard {
     transition: transform 0.2s ease-in-out, background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
-    max-width: 350px; // Limit the maximum width for consistency
-    min-height: 400px; // Set a unified height for all cards
+    max-width: 350px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
 
     .projectCardImage {
         object-fit: cover;
         width: 100%;
-        height: 200px; // Fixed height for the image
+        height: 200px;
     }
 
     .card-body {
-        flex: 1; // Allow the card body to take up remaining space
+        flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: space-between; // Space out the title and content
+        justify-content: space-between;
         padding: 15px;
     }
 
@@ -101,7 +32,7 @@ body.dark-mode {
         transition: color 0.3s ease;
         overflow: hidden;
         text-overflow: ellipsis;
-        white-space: nowrap; // Prevent title from wrapping
+        white-space: nowrap;
     }
 
     .cardContent {
@@ -111,12 +42,13 @@ body.dark-mode {
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 3; // Limit description to 3 lines
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
-        flex-grow: 1; // Allow the content to grow within the card body
+        flex-grow: 1;
     }
 }
 
+// Link wrapper for hover effects
 .project-card-link {
     text-decoration: none;
     display: block;
@@ -129,23 +61,28 @@ body.dark-mode {
     }
 }
 
-// Mobile adjustments
+// Dark mode styles for the card
+body.dark-mode {
+    .projectCard {
+        background-color: #2a2a2a;
+        border: 1px solid #444;
+        box-shadow: $frosted-shadow;
+
+        .cardTitle,
+        .cardContent {
+            color: #e0e0e0;
+        }
+    }
+}
+
+// Mobile adjustments for the card
 @media screen and (max-width: 767px) {
-    .projectList-grid {
-        grid-template-columns: 1fr;
-        padding: 15px;
-    }
-
-    .projectPage {
-        padding: 15px;
-    }
-
     .projectCard {
         max-width: 100%;
-        min-height: 350px; // Slightly smaller height on mobile
+        min-height: 350px;
     }
 
     .projectCardImage {
-        height: 180px; // Slightly smaller image height on mobile
+        height: 180px;
     }
 }
