@@ -55,7 +55,7 @@ $rounded-corner: 0.75rem; // Slightly more rounded for a softer, liquid shape
 
     &:focus {
         outline: none;
-        box-shadow: 0 0 0 2px #00ddeb;
+        box-shadow: none;
     }
 
     .nav-link-text {
@@ -80,6 +80,10 @@ body.dark-mode {
             }
         }
     }
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
 }
 
 .NavContainer {
