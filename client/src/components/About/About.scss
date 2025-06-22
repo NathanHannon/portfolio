@@ -199,7 +199,7 @@ body.dark-mode {
     }
 
     .tech-grid {
-        grid-template-columns: repeat(auto-fit, 100px);
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
 }
 
