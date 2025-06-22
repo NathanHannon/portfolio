@@ -63,7 +63,7 @@ body.dark-mode {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    padding: 20px;
+    padding: 20px 0; // Vertical padding only
     max-width: 1200px; // Limit the maximum width of the grid
     margin: 0 auto; // Center the grid horizontally
 }
@@ -116,7 +116,7 @@ body.dark-mode {
 @media screen and (max-width: 767px) {
     .projectList-grid {
         grid-template-columns: 1fr;
-        padding: 15px;
+        padding: 15px 0; // Vertical padding only
     }
 
     .projectPage {

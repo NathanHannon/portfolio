@@ -135,7 +135,8 @@ body.dark-mode {
 // Tech grid styles
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, 120px);
+    justify-content: center;
     gap: 15px;
     padding: 20px 0;
     list-style: none !important;
@@ -198,7 +199,7 @@ body.dark-mode {
     }
 
     .tech-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, 100px);
     }
 }
 
