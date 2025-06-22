@@ -135,8 +135,7 @@ body.dark-mode {
 // Tech grid styles
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 120px);
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 15px;
     padding: 20px 0;
     list-style: none !important;
