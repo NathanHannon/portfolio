@@ -14,7 +14,7 @@ $rounded-corner: 0.5rem;
 body {
     background-color: #fbfbfd;
     color: #1a1a1a;
-    font-family: "IBM Plex Serif", serif;
+    font-family: "IBM Plex Sans", sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
 
     &.dark-mode {
@@ -26,22 +26,6 @@ body {
         background-color: #fbfbfd;
         color: #1a1a1a;
     }
-}
-
-.NavContainer,
-.nav-link,
-.projectCard,
-.techCard,
-.reference,
-button,
-input,
-.App {
-    font-family: "IBM Plex Sans", sans-serif;
-}
-
-/* Optionally for headings */
-h1, h2, h3, h4, h5, h6 {
-    font-family: "IBM Plex Sans", sans-serif;
 }
 
 .NavContainer {
