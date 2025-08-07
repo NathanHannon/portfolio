@@ -8,8 +8,16 @@ $rounded-corner: 0.75rem; // Slightly more rounded for a softer, liquid shape
 
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
+html {
+    background: transparent; // Let the liquid glass background show through
+
+    &.dark-mode {
+        background: transparent; // Let the liquid glass background show through
+    }
+}
+
 body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); // New light mode gradient
+    background: transparent; // Let the animated background show through
     color: #333;
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 16px;
@@ -19,7 +27,7 @@ body {
     min-height: 100vh; // Ensure gradient covers full viewport height
 
     &.dark-mode {
-        background: linear-gradient(135deg, #2b2b2b 0%, #1a1a1a 100%); // New dark mode gradient
+        background: transparent; // Let the animated background show through
         color: #e0e0e0;
     }
 }
@@ -97,6 +105,15 @@ code {
 // Main App styling
 .App {
     text-align: center;
+    background: transparent; // Ensure no background covers the liquid glass
+    position: relative;
+    z-index: 1;
+}
+
+.app {
+    background: transparent; // Ensure no background covers the liquid glass
+    position: relative;
+    z-index: 1;
 }
 
 @media screen and (max-width: 574px) {

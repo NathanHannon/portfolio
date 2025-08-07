@@ -11,6 +11,7 @@ import Resume from './Resume/Resume';
 import NavMenu from './NavMenu/NavMenu';
 import NotFoundPage from './NotFoundPage';
 import Projects from './Projects/Projects';
+import LiquidGlassBackground from './LiquidGlassBackground/LiquidGlassBackground';
 import { ThemeProvider } from '../context/ThemeContext';
 import '../index.scss';
 
@@ -20,6 +21,7 @@ const App = () => {
 	return (
 		<ThemeProvider>
 			<div className="app">
+				<LiquidGlassBackground />
 				<BrowserRouter>
 					<div className="NavContainer">
 						<NavMenu />

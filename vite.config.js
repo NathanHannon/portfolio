@@ -17,6 +17,22 @@ export default defineConfig({
     publicDir: path.resolve(__dirname, 'client/public'),
     // Set base URL for DigitalOcean
     base: '/',
+    css: {
+        preprocessorOptions: {
+            scss: {
+                api: 'modern-compiler', // Use modern Sass API
+                // Silence Bootstrap 4 deprecation warnings until we can upgrade
+                silenceDeprecations: [
+                    'legacy-js-api',
+                    'import',
+                    'global-builtin',
+                    'color-functions',
+                    'mixed-decls',
+                    'abs-percent'
+                ],
+            }
+        }
+    },
     plugins: [
         react(),
         {
