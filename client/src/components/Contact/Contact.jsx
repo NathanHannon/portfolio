@@ -37,7 +37,7 @@ class Contact extends Component {
                         <Button className='contact-button' href='https://dev.to/nathanhannon' target='_blank' rel='noreferrer noopener' title='Dev.to Profile' variant='none'>
                             <FontAwesomeIcon icon={faDev} size='2x' className='dev-icon' />
                         </Button>
-                        <Button className='contact-button' href='https://www.threads.com/@nate.hannon' target='_blank' rel='noreferrer noopener' title='Threads Profile' variant='none'>
+                        <Button className='contact-button' href='https://www.threads.com/@nate.hannon' target='_blank' rel='noreferrer noopener me' title='Threads Profile' variant='none'>
                             <FontAwesomeIcon icon={faThreads} size='2x' className='threads-icon' />
                         </Button>
                     </p>
