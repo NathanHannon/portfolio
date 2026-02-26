@@ -1,104 +1,372 @@
-// src/index.scss
+// src/index.scss — Refined Editorial Design System
 
-// Frosted glass variables
-$glass: rgba(255, 255, 255, 0.25);
-$frosted-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.7);
-$frosted-border: 1px solid rgba(255, 255, 255, 0.18);
-$rounded-corner: 0.5rem;
+// ═══════════════════════════════════════════════════
+// Design Tokens
+// ═══════════════════════════════════════════════════
 
-// Import Google Fonts
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+// Typography
+$font-display: "Playfair Display", Georgia, serif;
+$font-body: "DM Sans", -apple-system, sans-serif;
+$font-mono: "JetBrains Mono", "Fira Code", monospace;
 
-// Base styles for the body
+// Light palette
+$light-bg: #faf8f5;
+$light-surface: #ffffff;
+$light-surface-elevated: #fff;
+$light-text: #1a1a1e;
+$light-text-muted: #6b6770;
+$light-border: rgba(0, 0, 0, 0.08);
+
+// Dark palette
+$dark-bg: #0a0a0f;
+$dark-surface: #14141b;
+$dark-surface-elevated: #1c1c26;
+$dark-text: #e8e4de;
+$dark-text-muted: #8a8692;
+$dark-border: rgba(255, 255, 255, 0.06);
+
+// Accents
+$accent-gold: #c9a87c;
+$accent-gold-light: #e0c9a6;
+$accent-blue: #4a9eff;
+$accent-blue-muted: #3a7dd4;
+
+// Spacing
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 2rem;
+$space-xl: 4rem;
+$space-2xl: 6rem;
+$space-3xl: 8rem;
+
+// Radius
+$radius-sm: 6px;
+$radius-md: 12px;
+$radius-lg: 20px;
+$radius-pill: 100px;
+
+// Shadows
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+$shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+$shadow-glow-gold: 0 0 30px rgba(201, 168, 124, 0.15);
+$shadow-glow-blue: 0 0 30px rgba(74, 158, 255, 0.12);
+
+// Transitions
+$transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+// ═══════════════════════════════════════════════════
+// Grain texture (CSS-only noise overlay)
+// ═══════════════════════════════════════════════════
+@keyframes grain-drift {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-2%, -3%);
+  }
+
+  30% {
+    transform: translate(3%, 2%);
+  }
+
+  50% {
+    transform: translate(-1%, 4%);
+  }
+
+  70% {
+    transform: translate(2%, -2%);
+  }
+
+  90% {
+    transform: translate(-3%, 1%);
+  }
+}
+
+// ═══════════════════════════════════════════════════
+// Base styles
+// ═══════════════════════════════════════════════════
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-    background-color: #fbfbfd;
-    color: #1a1a1a;
-    font-family: "IBM Plex Sans", sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: $light-bg;
+  color: $light-text;
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  transition: background-color $transition-base, color $transition-base;
+  overflow-x: hidden;
+  position: relative;
 
-    &.dark-mode {
-        background-color: #1a1a1a;
-        color: #fbfbfd;
-    }
+  // Grain overlay
+  &::before {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 10000;
+    animation: grain-drift 8s steps(10) infinite;
+  }
 
-    &.force-light-mode {
-        background-color: #fbfbfd;
-        color: #1a1a1a;
+  &.dark-mode {
+    background-color: $dark-bg;
+    color: $dark-text;
+
+    &::before {
+      opacity: 0.5;
     }
+  }
+
+  &.force-light-mode {
+    background-color: $light-bg;
+    color: $light-text;
+  }
 }
 
+// ═══════════════════════════════════════════════════
+// Typography
+// ═══════════════════════════════════════════════════
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-display;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw + 0.5rem, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.3rem, 2vw + 0.3rem, 2rem);
+}
+
+h4 {
+  font-size: clamp(1.1rem, 1.5vw + 0.3rem, 1.5rem);
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 65ch;
+}
+
+a {
+  color: $accent-blue;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $accent-gold;
+    text-decoration: none;
+  }
+}
+
+body.dark-mode a {
+  color: $accent-gold;
+
+  &:hover {
+    color: $accent-gold-light;
+  }
+}
+
+// Monospace accent text
+.mono {
+  font-family: $font-mono;
+  font-size: 0.85em;
+  letter-spacing: 0.03em;
+}
+
+// ═══════════════════════════════════════════════════
+// Layout
+// ═══════════════════════════════════════════════════
 .NavContainer {
-    margin-top: 72px;
+  margin-top: 0;
+  position: relative;
+  z-index: 1000;
 }
 
-// Content box styles
+.App {
+  text-align: left;
+  position: relative;
+}
+
+// Section container
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-lg;
+}
+
+// ═══════════════════════════════════════════════════
+// Card system (shared)
+// ═══════════════════════════════════════════════════
 .projectCard,
 .techCard {
-    width: auto;
-    padding: 10px;
-    height: auto;
-    border-radius: $rounded-corner;
-    border: $frosted-border;
-    background: #ffffff;
-    box-shadow: 0 11px 16px 0 rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    font-weight: 500;
-    backdrop-filter: blur(10px);
-    backface-visibility: hidden;
-    -webkit-font-smoothing: subpixel-antialiased;
-    transition: background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+  width: auto;
+  padding: 0;
+  height: auto;
+  border-radius: $radius-md;
+  border: 1px solid $light-border;
+  background: $light-surface;
+  box-shadow: $shadow-sm;
+  overflow: hidden;
+  font-weight: 500;
+  backdrop-filter: blur(12px);
+  -webkit-font-smoothing: subpixel-antialiased;
+  transition: all $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-4px);
+  }
+}
+
+body.dark-mode {
+
+  .projectCard,
+  .techCard {
+    background: $dark-surface-elevated;
+    border-color: $dark-border;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      border-color: rgba(201, 168, 124, 0.15);
+    }
+  }
 }
 
 .reference {
-    width: auto;
-    padding: 10px;
-    height: auto;
-    border-radius: $rounded-corner;
-    background: $glass;
-    backdrop-filter: blur(4px);
-    box-shadow: $frosted-shadow;
-    border: $frosted-border;
-    overflow: hidden;
-    transition: background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+  width: auto;
+  padding: $space-md;
+  height: auto;
+  border-radius: $radius-md;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  box-shadow: $shadow-md;
+  border: 1px solid $light-border;
+  overflow: hidden;
+  transition: all $transition-base;
 }
 
-// Main App styling
-.App {
-    text-align: center;
+// ═══════════════════════════════════════════════════
+// Horizontal rule
+// ═══════════════════════════════════════════════════
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      $light-border 20%,
+      $light-border 80%,
+      transparent 100%);
+  margin: $space-xl 0;
 }
 
-// Margin adjustments for pages
-div.aboutPage {
-    margin: 15px;
+body.dark-mode hr {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      $dark-border 20%,
+      rgba(201, 168, 124, 0.12) 50%,
+      $dark-border 80%,
+      transparent 100%);
 }
 
+// ═══════════════════════════════════════════════════
+// Selection
+// ═══════════════════════════════════════════════════
+::selection {
+  background: rgba(201, 168, 124, 0.3);
+  color: inherit;
+}
+
+body.dark-mode ::selection {
+  background: rgba(201, 168, 124, 0.25);
+}
+
+// ═══════════════════════════════════════════════════
+// Scrollbar
+// ═══════════════════════════════════════════════════
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: $radius-pill;
+}
+
+body.dark-mode {
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+// ═══════════════════════════════════════════════════
 // Responsive adjustments
+// ═══════════════════════════════════════════════════
 @media screen and (max-width: 574px) {
-    div.homePage {
-        margin: auto 15px !important;
-    }
+  div.homePage {
+    margin: auto $space-md !important;
+  }
 
-    .nav-link {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-    }
+  .nav-link {
+    padding-left: $space-sm !important;
+    padding-right: $space-sm !important;
+  }
 
-    .iframe-container {
-        height: 62vh;
-    }
+  .iframe-container {
+    height: 62vh;
+  }
 }
 
 @media screen and (max-width: 1052px) {
-    .programming-image {
-        width: 100%;
-    }
+  .programming-image {
+    width: 100%;
+  }
 
-    .nav-link {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-    }
+  .nav-link {
+    padding-left: $space-sm !important;
+    padding-right: $space-sm !important;
+  }
 
-    .iframe-container {
-        height: 62vh;
-    }
+  .iframe-container {
+    height: 62vh;
+  }
 }

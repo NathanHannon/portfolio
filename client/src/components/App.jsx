@@ -21,10 +21,8 @@ const App = () => {
 		<ThemeProvider>
 			<div className="app">
 				<BrowserRouter>
-					<div className="NavContainer">
-						<NavMenu />
-					</div>
-					<div className="App">
+					<NavMenu />
+					<main className="App">
 						<Routes>
 							<Route path="/" element={<About />} />
 							<Route path="/about" element={<About />} />
@@ -33,7 +31,7 @@ const App = () => {
 							<Route path="/contact" element={<Contact />} />
 							<Route path="*" element={<NotFoundPage />} />
 						</Routes>
-					</div>
+					</main>
 				</BrowserRouter>
 			</div>
 		</ThemeProvider>

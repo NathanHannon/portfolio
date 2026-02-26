@@ -1,88 +1,162 @@
-// Frosted glass variables
-$frosted-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.5);
+// src/Projects/ProjectCard/ProjectCard.scss — Editorial Card
 
-// Project card styles
+$font-display: "Playfair Display", Georgia, serif;
+$font-body: "DM Sans", -apple-system, sans-serif;
+$accent-gold: #c9a87c;
+$light-text: #1a1a1e;
+$light-text-muted: #6b6770;
+$light-border: rgba(0, 0, 0, 0.08);
+$light-surface: #ffffff;
+$dark-surface-elevated: #1c1c26;
+$dark-text: #e8e4de;
+$dark-text-muted: #8a8692;
+$dark-border: rgba(255, 255, 255, 0.06);
+$radius-md: 12px;
+$radius-lg: 20px;
+$transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+// ═══ Card
 .projectCard {
-    transition: transform 0.2s ease-in-out, background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
-    max-width: 350px;
-    min-height: 400px;
     display: flex;
     flex-direction: column;
+    background: $light-surface;
+    border: 1px solid $light-border;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    transition: all $transition-base;
+    cursor: pointer;
 
-    .projectCardImage {
-        object-fit: cover;
-        width: 100%;
-        height: 200px;
+    .projectCard-image-wrapper {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16 / 10;
+
+        .projectCardImage {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .projectCard-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 10, 15, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity $transition-base;
+            backdrop-filter: blur(2px);
+        }
+
+        .projectCard-view {
+            font-family: $font-body;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #fff;
+            padding: 0.5rem 1.25rem;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            border-radius: 100px;
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transform: translateY(8px);
+            transition: transform $transition-base;
+        }
     }
 
-    .card-body {
+    .projectCard-body {
+        padding: 1.25rem 1.5rem 1.5rem;
         flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        padding: 15px;
     }
 
     .cardTitle {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: 10px;
-        color: #333;
-        transition: color 0.3s ease;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        font-family: $font-display;
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: $light-text;
+        transition: color $transition-base;
+        line-height: 1.3;
     }
 
     .cardContent {
+        font-family: $font-body;
         font-size: 0.9rem;
-        color: #555;
-        transition: color 0.3s ease;
+        color: $light-text-muted;
+        line-height: 1.6;
+        transition: color $transition-base;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         flex-grow: 1;
+        margin-bottom: 0;
     }
 }
 
-// Link wrapper for hover effects
+// ═══ Link hover
 .project-card-link {
     text-decoration: none;
     display: block;
+    height: 100%;
 
     &:hover {
         .projectCard {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+            border-color: rgba(201, 168, 124, 0.2);
+        }
+
+        .projectCardImage {
             transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .projectCard-overlay {
+            opacity: 1;
+        }
+
+        .projectCard-view {
+            transform: translateY(0);
         }
     }
 }
 
-// Dark mode styles for the card
+// ═══ Dark mode
 body.dark-mode {
     .projectCard {
-        background-color: #2a2a2a;
-        border: 1px solid #444;
-        box-shadow: $frosted-shadow;
+        background: $dark-surface-elevated;
+        border-color: $dark-border;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 
-        .cardTitle,
+        .cardTitle {
+            color: $dark-text;
+        }
+
         .cardContent {
-            color: #e0e0e0;
+            color: $dark-text-muted;
+        }
+    }
+
+    .project-card-link:hover {
+        .projectCard {
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+            border-color: rgba(201, 168, 124, 0.15);
         }
     }
 }
 
-// Mobile adjustments for the card
+// ═══ Responsive
 @media screen and (max-width: 767px) {
     .projectCard {
-        max-width: 100%;
-        min-height: 350px;
-    }
-
-    .projectCardImage {
-        height: 180px;
+        .projectCard-body {
+            padding: 1rem 1.25rem 1.25rem;
+        }
     }
 }

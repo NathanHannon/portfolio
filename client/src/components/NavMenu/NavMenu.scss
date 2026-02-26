@@ -1,29 +1,167 @@
-// src/components/NavMenu.scss
+// src/components/NavMenu.scss — Floating Editorial Navigation
 
-.navbar-custom {
-    transition: background-color 0.3s ease;
+$accent-gold: #c9a87c;
+$accent-gold-light: #e0c9a6;
+$transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    .nav-link {
+.navbar-editorial {
+    background: rgba(250, 248, 245, 0.85) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: none;
+    padding: 0.6rem 1.5rem;
+    transition: all $transition-base;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+
+    .navbar-inner {
         display: flex;
         align-items: center;
-        gap: 8px; // Space between icon and text
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+
+        .brand-logo {
+            transition: transform $transition-base;
+        }
+
+        .brand-name {
+            font-family: "Playfair Display", Georgia, serif;
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: #1a1a1e;
+            letter-spacing: -0.01em;
+            transition: color $transition-base;
+        }
+
+        &:hover .brand-logo {
+            transform: rotate(-3deg) scale(1.05);
+        }
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .nav-link-editorial {
+        font-family: "DM Sans", sans-serif;
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: #6b6770 !important;
+        padding: 0.4rem 1rem !important;
+        border-radius: 100px;
+        transition: all $transition-base;
+        letter-spacing: 0.01em;
+        position: relative;
+
+        &:hover {
+            color: #1a1a1e !important;
+            background: rgba(0, 0, 0, 0.04);
+        }
+
+        &.active {
+            color: #1a1a1e !important;
+            background: rgba(201, 168, 124, 0.12);
+        }
     }
 
     .dark-mode-toggle {
-        margin-left: 15px;
+        margin-left: 0.75rem;
+    }
+
+    .navbar-toggler-editorial {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 0.25rem 0.5rem;
+        border-radius: 8px;
+
+        .navbar-toggler-icon {
+            width: 1.25em;
+            height: 1.25em;
+        }
+    }
+
+    // Scrolled state — more pronounced backdrop
+    &.navbar-scrolled {
+        background: rgba(250, 248, 245, 0.95) !important;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+        border-bottom-color: rgba(0, 0, 0, 0.06);
     }
 }
 
+// ═══════════════════════════════════════════════════
+// Dark mode
+// ═══════════════════════════════════════════════════
 body.dark-mode {
-    .navbar-custom {
-        background-color: #2a2a2a !important;
+    .navbar-editorial {
+        background: rgba(10, 10, 15, 0.85) !important;
+        border-bottom-color: rgba(255, 255, 255, 0.04);
 
-        .nav-link {
-            color: #e0e0e0 !important;
+        .brand .brand-name {
+            color: #e8e4de;
+        }
+
+        .nav-link-editorial {
+            color: #8a8692 !important;
 
             &:hover {
-                color: #00ddeb !important; // Neon accent for hover
+                color: #e8e4de !important;
+                background: rgba(255, 255, 255, 0.06);
             }
+
+            &.active {
+                color: $accent-gold !important;
+                background: rgba(201, 168, 124, 0.08);
+            }
+        }
+
+        .navbar-toggler-editorial {
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        &.navbar-scrolled {
+            background: rgba(10, 10, 15, 0.95) !important;
+            box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+            border-bottom-color: rgba(255, 255, 255, 0.06);
+        }
+    }
+}
+
+// ═══════════════════════════════════════════════════
+// Responsive
+// ═══════════════════════════════════════════════════
+@media screen and (max-width: 575px) {
+    .navbar-editorial {
+        padding: 0.5rem 1rem;
+
+        .brand .brand-name {
+            font-size: 1rem;
+        }
+
+        .nav-links {
+            flex-direction: column;
+            gap: 0;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link-editorial {
+            padding: 0.6rem 1rem !important;
+            width: 100%;
+            text-align: left;
+            border-radius: 8px;
+        }
+
+        .dark-mode-toggle {
+            margin: 0.5rem 0;
+            margin-left: 0;
         }
     }
 }

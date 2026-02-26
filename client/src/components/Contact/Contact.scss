@@ -1,85 +1,294 @@
-$glass: rgba(255, 255, 255, 0.25);
-$frosted-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.5);
-$frosted-border: 1px solid rgba(255, 255, 255, 0.18);
-$rounded-corner: 0.5rem;
+// src/Contact/Contact.scss — Editorial Contact Page
 
-/* Contact Page */
+$font-display: "Playfair Display", Georgia, serif;
+$font-body: "DM Sans", -apple-system, sans-serif;
+$font-mono: "JetBrains Mono", monospace;
+$accent-gold: #c9a87c;
+$accent-gold-light: #e0c9a6;
+$accent-blue: #4a9eff;
+$light-text: #1a1a1e;
+$light-text-muted: #6b6770;
+$light-surface: #ffffff;
+$light-border: rgba(0, 0, 0, 0.08);
+$dark-bg: #0a0a0f;
+$dark-surface-elevated: #1c1c26;
+$dark-text: #e8e4de;
+$dark-text-muted: #8a8692;
+$dark-border: rgba(255, 255, 255, 0.06);
+$radius-md: 12px;
+$radius-lg: 20px;
+$transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-.contactLink {
-    padding-right: 1rem;
-}
-
+// ═══ Page container
 .contactPage {
-    box-sizing: border-box;
+    min-height: 100vh;
+    transition: background-color $transition-base;
 }
 
-.iframe-container {
-    overflow: hidden;
-    /* 16:9 aspect ratio */
-    padding-top: 56.25%;
+// ═══ Hero
+.contact-hero {
+    padding: 6rem 2rem 3rem;
+    text-align: center;
     position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(100%, 600px);
+        height: 1px;
+        background: linear-gradient(90deg,
+                transparent,
+                rgba(0, 0, 0, 0.06) 30%,
+                rgba(201, 168, 124, 0.2) 50%,
+                rgba(0, 0, 0, 0.06) 70%,
+                transparent);
+    }
 }
 
-.iframe-container iframe {
-    border: 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-
-div.contactPage {
-    margin: auto 10px !important;
-}
-
-.container {
+.contact-hero-inner {
+    max-width: 580px;
     margin: 0 auto;
-    padding: 0 1rem;
-    max-width: 1200px;
 }
 
-.contact-button {
-    border-radius: 50% !important;
-    background-color: white;
-    color: inherit;
-    padding: 0.5rem;
-    margin: 0.5rem;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; // Ensure transition is applied to background-color and color
-    -webkit-font-smoothing: subpixel-antialiased;
-    border: 1px solid black !important;
+.section-label {
+    display: inline-block;
+    font-family: $font-mono;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: $accent-gold;
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1rem;
+        height: 1px;
+        background: $accent-gold;
+    }
 }
 
-body.dark-mode .contact-button {
-    background-color: white !important;
-    color: black !important; // Adjust text color for contrast
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; // Ensure transition is applied to background-color and color
+.contact-title {
+    font-family: $font-display;
+    font-size: clamp(2.2rem, 4vw + 0.5rem, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
 }
 
-.contact-button:hover {
-    transform: scale(1.050) translate3d(0, 0, 0);
-    ;
+.contact-subtitle {
+    font-size: 1.1rem;
+    color: $light-text-muted;
+    line-height: 1.8;
+    max-width: 45ch;
+    margin: 0 auto;
 }
 
-.dev-icon,
-.github-icon,
-.x-icon,
-.threads-icon {
-    color: #000000 !important;
-    width: 28px !important;
+// ═══ Content
+.contact-content {
+    padding: 3rem 2rem 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
 }
 
-.mastodon-icon {
-    color: #563ACC !important;
-    width: 28px !important;
+// ═══ Email card
+.contact-card {
+    text-align: center;
 }
 
-.bluesky-icon {
-    color: #0085FF !important;
-    width: 28px !important;
+.contact-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: $light-surface;
+    border: 1px solid $light-border;
+    border-radius: 100px;
+    transition: all $transition-base;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        border-color: rgba(201, 168, 124, 0.2);
+    }
+
+    .contact-email-icon {
+        color: $accent-gold;
+        font-size: 1.1rem;
+    }
+
+    .contact-email-link {
+        font-family: $font-mono;
+        font-size: 1rem;
+        font-weight: 500;
+        color: $light-text;
+        text-decoration: none;
+        letter-spacing: 0.01em;
+        transition: color $transition-base;
+
+        &:hover {
+            color: $accent-gold;
+        }
+    }
 }
 
-.linkedIn-icon {
-    color: #0077B5 !important;
-    width: 28px !important;
+// ═══ Social grid
+.social-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    background: $light-surface;
+    border: 1px solid $light-border;
+    border-radius: $radius-md;
+    text-decoration: none;
+    transition: all $transition-base;
+    min-width: 100px;
+
+    .social-icon {
+        font-size: 1.5rem;
+        color: $light-text;
+        transition: color $transition-base;
+    }
+
+    .social-name {
+        font-family: $font-body;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: $light-text-muted;
+        letter-spacing: 0.02em;
+    }
+
+    &:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        border-color: rgba(201, 168, 124, 0.2);
+    }
+
+    // Individual hover colors
+    &.social-github:hover .social-icon {
+        color: #333;
+    }
+
+    &.social-linkedin:hover .social-icon {
+        color: #0077B5;
+    }
+
+    &.social-dev:hover .social-icon {
+        color: #0A0A0A;
+    }
+
+    &.social-threads:hover .social-icon {
+        color: #000000;
+    }
+}
+
+// ═══ Dark mode
+body.dark-mode {
+    .contact-hero::after {
+        background: linear-gradient(90deg,
+                transparent,
+                $dark-border 30%,
+                rgba(201, 168, 124, 0.12) 50%,
+                $dark-border 70%,
+                transparent);
+    }
+
+    .contact-title {
+        color: $dark-text;
+    }
+
+    .contact-subtitle {
+        color: $dark-text-muted;
+    }
+
+    .contact-email {
+        background: $dark-surface-elevated;
+        border-color: $dark-border;
+
+        &:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(201, 168, 124, 0.15);
+        }
+
+        .contact-email-link {
+            color: $dark-text;
+
+            &:hover {
+                color: $accent-gold;
+            }
+        }
+    }
+
+    .social-link {
+        background: $dark-surface-elevated;
+        border-color: $dark-border;
+
+        .social-icon {
+            color: $dark-text;
+        }
+
+        .social-name {
+            color: $dark-text-muted;
+        }
+
+        &:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            border-color: rgba(201, 168, 124, 0.15);
+        }
+
+        &.social-github:hover .social-icon {
+            color: #e8e4de;
+        }
+
+        &.social-linkedin:hover .social-icon {
+            color: #4a9eff;
+        }
+
+        &.social-dev:hover .social-icon {
+            color: #e8e4de;
+        }
+
+        &.social-threads:hover .social-icon {
+            color: #e8e4de;
+        }
+    }
+}
+
+// ═══ Responsive
+@media screen and (max-width: 768px) {
+    .contact-hero {
+        padding: 5rem 1.25rem 2rem;
+    }
+
+    .contact-content {
+        padding: 2rem 1.25rem 4rem;
+    }
+
+    .social-grid {
+        gap: 0.75rem;
+    }
+
+    .social-link {
+        min-width: 85px;
+        padding: 1rem;
+    }
 }

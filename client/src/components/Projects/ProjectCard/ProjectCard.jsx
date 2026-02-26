@@ -1,6 +1,6 @@
 // src/Projects/ProjectCard/ProjectCard.jsx
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './ProjectCard.scss';
 
 export const ProjectCard = ({ projects }) => {
@@ -13,20 +13,27 @@ export const ProjectCard = ({ projects }) => {
             className="project-card-link"
             aria-label={`View ${projects.name} on GitHub`}
         >
-            <Card className="projectCard">
-                <Card.Img
-                    className="projectCardImage"
-                    variant="top"
-                    src={projects.image_url}
-                    width="300px"
-                    height="200px"
-                    alt={`Screenshot of ${projects.name} project`}
-                />
-                <Card.Body>
-                    <Card.Title className="cardTitle">{projects.name}</Card.Title>
-                    <Card.Text className="cardContent">{projects.description}</Card.Text>
-                </Card.Body>
-            </Card>
+            <article className="projectCard">
+                <div className="projectCard-image-wrapper">
+                    <img
+                        className="projectCardImage"
+                        src={projects.image_url}
+                        width="400"
+                        height="240"
+                        alt={`Screenshot of ${projects.name} project`}
+                        loading="lazy"
+                    />
+                    <div className="projectCard-overlay">
+                        <span className="projectCard-view">
+                            <FontAwesomeIcon icon={['fab', 'github']} /> View on GitHub
+                        </span>
+                    </div>
+                </div>
+                <div className="projectCard-body">
+                    <h3 className="cardTitle">{projects.name}</h3>
+                    <p className="cardContent">{projects.description}</p>
+                </div>
+            </article>
         </a>
     );
 };
