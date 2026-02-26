@@ -17,6 +17,14 @@ export default defineConfig({
     publicDir: path.resolve(__dirname, 'client/public'),
     // Set base URL for DigitalOcean
     base: '/',
+    server: {
+        proxy: {
+            '/api': {
+                target: 'http://localhost:5000',
+                changeOrigin: true,
+            },
+        },
+    },
     plugins: [
         react(),
         {

@@ -1,217 +1,494 @@
-// src/About/About.scss
+// src/About/About.scss — Refined Editorial About Page
 
-// Frosted glass variables
-$glass: rgba(255, 255, 255, 0.25);
-$frosted-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.5);
-$frosted-border: 1px solid rgba(255, 255, 255, 0.18);
-$rounded-corner: 0.5rem;
+// Design tokens
+$font-display: "Playfair Display", Georgia, serif;
+$font-body: "DM Sans", -apple-system, sans-serif;
+$font-mono: "JetBrains Mono", monospace;
+$accent-gold: #c9a87c;
+$accent-gold-light: #e0c9a6;
+$accent-blue: #4a9eff;
+$light-bg: #faf8f5;
+$light-surface: #ffffff;
+$light-text: #1a1a1e;
+$light-text-muted: #6b6770;
+$dark-bg: #0a0a0f;
+$dark-surface: #14141b;
+$dark-surface-elevated: #1c1c26;
+$dark-text: #e8e4de;
+$dark-text-muted: #8a8692;
+$dark-border: rgba(255, 255, 255, 0.06);
+$light-border: rgba(0, 0, 0, 0.08);
+$radius-md: 12px;
+$radius-lg: 20px;
+$transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
-// Base styles for the page
+// ═══════════════════════════════════════════════════
+// Page container
+// ═══════════════════════════════════════════════════
 .aboutPage {
-    padding: 20px;
-    background-color: #f8f9fa;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color $transition-base, color $transition-base;
 }
 
-// Dark mode styles
-body.dark-mode {
-    .aboutPage {
-        background-color: #1a1a1a;
-        color: #e0e0e0;
+// ═══════════════════════════════════════════════════
+// Shared section elements
+// ═══════════════════════════════════════════════════
+.section-label {
+    display: inline-block;
+    font-family: $font-mono;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: $accent-gold;
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
 
-        .aboutHeader h1,
-        .about-me h4,
-        .about-me h5,
-        .what-do h4,
-        .what-do h5,
-        .cardContent {
-            color: #e0e0e0;
-        }
-
-        .techCard {
-            background-color: #2a2a2a;
-            border: 1px solid #444;
-            box-shadow: $frosted-shadow;
-        }
-
-        hr {
-            border-color: #444;
-        }
-
-        .about-me {
-            background: linear-gradient(135deg, #2a2a2a 0%, #4a4a4a 100%);
-        }
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1rem;
+        height: 1px;
+        background: $accent-gold;
     }
 }
 
-// Header styles
-.aboutHeader {
-    text-align: center;
-    padding: 20px 0;
+.section-heading {
+    font-family: $font-display;
+    font-size: clamp(1.8rem, 3vw + 0.5rem, 2.8rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+}
 
-    h1 {
-        font-size: 2.5rem;
-        color: #333;
-        transition: color 0.3s ease;
+// ═══════════════════════════════════════════════════
+// HERO SECTION
+// ═══════════════════════════════════════════════════
+.hero-section {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+
+    // Subtle gradient mesh
+    &::before {
+        content: "";
+        position: absolute;
+        top: -20%;
+        right: -10%;
+        width: 60%;
+        height: 80%;
+        background: radial-gradient(ellipse at center,
+                rgba(201, 168, 124, 0.06) 0%,
+                transparent 70%);
+        pointer-events: none;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -10%;
+        left: -5%;
+        width: 40%;
+        height: 60%;
+        background: radial-gradient(ellipse at center,
+                rgba(74, 158, 255, 0.04) 0%,
+                transparent 70%);
+        pointer-events: none;
     }
 }
 
-// About Me section with gradient background
-.about-me {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-    color: white;
-    padding: 40px;
-    border-radius: $rounded-corner;
-    margin-bottom: 20px;
-    transition: background 0.3s ease;
+.hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
 
-    h4 {
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: #fff;
-        transition: color 0.3s ease;
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    .hero-label {
+        font-family: $font-mono;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: $accent-gold;
+        margin-bottom: 1rem;
     }
 
-    h5 {
-        font-size: 1.3rem;
-        color: #ddd;
-        margin-top: 10px;
-        transition: color 0.3s ease;
+    .hero-title {
+        font-family: $font-display;
+        font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
+        color: $light-text;
     }
 
-    p {
-        font-size: 1rem;
-        line-height: 1.6;
-        text-align: left !important;
+    .hero-description {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: $light-text-muted;
+        margin-bottom: 2rem;
+        max-width: 50ch;
     }
 
-    svg {
-        max-width: 100%;
+    .hero-actions {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .hero-btn {
+        padding: 0.75rem 2rem;
+        font-family: $font-body;
+        font-weight: 600;
+        font-size: 0.95rem;
+        border-radius: 100px;
+        transition: all $transition-base;
+        letter-spacing: 0.01em;
+    }
+
+    .btn-ghost {
+        color: $light-text;
+        border: 1.5px solid rgba(0, 0, 0, 0.15);
+        background: transparent;
+        padding: 0.75rem 2rem;
+        border-radius: 100px;
+        font-family: $font-body;
+        font-weight: 600;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: all $transition-base;
+        text-decoration: none;
+
+        &:hover {
+            border-color: $accent-gold;
+            color: $accent-gold;
+            background: rgba(201, 168, 124, 0.04);
+        }
+    }
+}
+
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+
+    .hero-illustration {
+        width: 100%;
         height: auto;
+        position: relative;
+        z-index: 1;
+        filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.08));
+    }
+
+    .hero-glow {
+        position: absolute;
+        bottom: -10%;
+        left: 10%;
+        width: 80%;
+        height: 40%;
+        background: radial-gradient(ellipse at center,
+                rgba(201, 168, 124, 0.12) 0%,
+                transparent 70%);
+        z-index: 0;
+        filter: blur(30px);
     }
 }
 
-// What I Do section
-.what-do {
-    padding: 20px 0;
+// ═══════════════════════════════════════════════════
+// ABOUT SECTION
+// ═══════════════════════════════════════════════════
+.about-section {
+    padding: 4rem 2rem 5rem;
+    position: relative;
 
-    .description {
-        h4 {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #333;
-            transition: color 0.3s ease;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(100%, 800px);
+        height: 1px;
+        background: linear-gradient(90deg,
+                transparent,
+                rgba(0, 0, 0, 0.06) 30%,
+                rgba(201, 168, 124, 0.2) 50%,
+                rgba(0, 0, 0, 0.06) 70%,
+                transparent);
+    }
+}
+
+.about-inner {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.about-text {
+    p {
+        font-size: 1.1rem;
+        color: $light-text-muted;
+        line-height: 1.9;
+    }
+}
+
+// ═══════════════════════════════════════════════════
+// SKILLS SECTION
+// ═══════════════════════════════════════════════════
+.skills-section {
+    padding: 4rem 2rem 6rem;
+}
+
+.skills-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.skills-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1rem;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.5rem 1rem;
+    background: $light-surface;
+    border: 1px solid $light-border;
+    border-radius: $radius-md;
+    transition: all $transition-base;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+
+    // Subtle shine effect on hover
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg,
+                transparent,
+                rgba(201, 168, 124, 0.04),
+                transparent);
+        transition: left 0.5s ease;
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        border-color: rgba(201, 168, 124, 0.2);
+
+        &::after {
+            left: 100%;
         }
 
-        h5 {
-            font-size: 1.3rem;
-            color: #555;
-            margin-top: 10px;
-            transition: color 0.3s ease;
+        .skill-icon {
+            transform: scale(1.1);
+        }
+    }
+
+    .skill-icon {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        transition: transform $transition-base;
+    }
+
+    .skill-name {
+        font-family: $font-body;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: $light-text-muted;
+        text-align: center;
+        letter-spacing: 0.01em;
+    }
+}
+
+// ═══════════════════════════════════════════════════
+// DARK MODE
+// ═══════════════════════════════════════════════════
+body.dark-mode {
+    .hero-content {
+        .hero-title {
+            color: $dark-text;
         }
 
-        p {
-            font-size: 1rem;
-            line-height: 1.6;
-            text-align: left !important;
+        .hero-description {
+            color: $dark-text-muted;
         }
 
-        .project-button {
-            background: linear-gradient(90deg, #007bff, #00ddeb);
-            border: none;
-            padding: 10px 20px;
-            font-weight: bold;
-            border-radius: $rounded-corner;
-            transition: transform 0.3s ease;
-            color: white;
+        .btn-ghost {
+            color: $dark-text;
+            border-color: rgba(255, 255, 255, 0.12);
 
             &:hover {
-                transform: scale(1.05);
+                border-color: $accent-gold;
+                color: $accent-gold;
+                background: rgba(201, 168, 124, 0.06);
             }
         }
     }
-}
 
-// Tech grid styles
-.tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 15px;
-    padding: 20px 0;
-    list-style: none !important;
-
-    .grid-item {
-        display: block;
-        text-align: center;
-        list-style: none !important;
+    .hero-image-wrapper .hero-illustration {
+        filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.3));
     }
 
-    .techCard {
-        width: 100%;
-        height: 170px;
-        background: #fff;
-        border: $frosted-border;
-        border-radius: $rounded-corner;
-        text-align: center;
-        transition: all 0.2s ease-in-out, background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
-        -webkit-font-smoothing: subpixel-antialiased;
-        transform: translate3d(0, 0, 0);
-        backface-visibility: hidden;
-        padding-bottom: 0;
-        box-shadow: $frosted-shadow;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    .hero-image-wrapper .hero-glow {
+        background: radial-gradient(ellipse at center,
+                rgba(201, 168, 124, 0.1) 0%,
+                transparent 70%);
+    }
 
-        .projectCardImage {
-            margin: 10px auto;
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
+    .hero-section::before {
+        background: radial-gradient(ellipse at center,
+                rgba(201, 168, 124, 0.04) 0%,
+                transparent 70%);
+    }
+
+    .about-section::before {
+        background: linear-gradient(90deg,
+                transparent,
+                $dark-border 30%,
+                rgba(201, 168, 124, 0.12) 50%,
+                $dark-border 70%,
+                transparent);
+    }
+
+    .about-text {
+        .section-heading {
+            color: $dark-text;
         }
 
-        .cardContent {
-            font-size: 0.9rem;
-            color: #333;
-            padding: 5px;
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
+        p {
+            color: $dark-text-muted;
+        }
+    }
+
+    .skills-header .section-heading {
+        color: $dark-text;
+    }
+
+    .skill-card {
+        background: $dark-surface-elevated;
+        border-color: $dark-border;
+
+        &:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            border-color: rgba(201, 168, 124, 0.15);
+        }
+
+        .skill-name {
+            color: $dark-text-muted;
+        }
+    }
+}
+
+// ═══════════════════════════════════════════════════
+// RESPONSIVE
+// ═══════════════════════════════════════════════════
+@media screen and (max-width: 768px) {
+    .hero-section {
+        padding: 5rem 1.25rem 3rem;
+        min-height: auto;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    .hero-content {
+        align-items: center;
+
+        .hero-description {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
             justify-content: center;
-            text-align: center;
-            white-space: normal;
+            flex-wrap: wrap;
         }
     }
-}
 
-// Hover effects for tech cards
-@media (hover: hover) and (pointer: fine) {
-    .techCard:hover {
-        transform: scale(1.1) translate3d(0, 0, 0);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-}
+    .hero-visual {
+        order: -1;
 
-// Mobile adjustments
-@media screen and (max-width: 767px) {
-    .description {
-        padding-bottom: 1rem !important;
+        .hero-image-wrapper {
+            max-width: 320px;
+        }
     }
 
-    .about-me,
-    .what-do {
-        padding: 20px;
+    .about-section,
+    .skills-section {
+        padding: 3rem 1.25rem;
     }
 
-    .tech-grid {
+    .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.75rem;
+    }
+
+    .skill-card {
+        padding: 1.25rem 0.75rem;
     }
 }
 
+@media screen and (max-width: 480px) {
+    .hero-content .hero-title {
+        font-size: 2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+// ═══════════════════════════════════════════════════
 // Typing animation cursor
-#typing-text::after {
+// ═══════════════════════════════════════════════════
+.type-animation-cursor::after {
     content: '|';
     animation: blink 0.7s infinite;
+    color: $accent-gold;
 }
 
 @keyframes blink {

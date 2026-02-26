@@ -1,49 +1,82 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faDev, faXTwitter, faMastodon, faBluesky, faThreads } from '@fortawesome/free-brands-svg-icons';
-import React, { Component } from 'react';
+import { faGithub, faLinkedin, faDev, faThreads } from '@fortawesome/free-brands-svg-icons';
+import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Button } from 'react-bootstrap';
+import { motion } from 'framer-motion';
 import './Contact.scss';
 
-class Contact extends Component {
-    render() {
-        const pageTitle = 'Contact Me';
-        return (
-            <div className='contactPage'>
-                <Helmet>
-                    <title>Nathan Hannon | {pageTitle}</title>
-                </Helmet>
-                <header className='contactHeader'>
-                    <h1>{pageTitle}</h1>
-                </header>
+const socialLinks = [
+    { icon: faGithub, href: 'https://github.com/NathanHannon', label: 'GitHub', className: 'social-github' },
+    { icon: faLinkedin, href: 'https://www.linkedin.com/in/nathan-hannon', label: 'LinkedIn', className: 'social-linkedin' },
+    { icon: faDev, href: 'https://dev.to/nathanhannon', label: 'Dev.to', className: 'social-dev' },
+    { icon: faThreads, href: 'https://www.threads.com/@nate.hannon', label: 'Threads', className: 'social-threads' },
+];
 
-                {/* mailto link placeholder */}
-                <div className='emailLink'>
-                    <p>
-                        <a href='mailto: nathan@hannon.me' className='emailLink btn btn-primary' target='_blank' rel='noreferrer noopener' title='Email Me' tabIndex="-1" aria-disabled="true">
-                            <FontAwesomeIcon icon='envelope' /> Send me an email
-                        </a>
+const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i = 0) => ({
+        opacity: 1,
+        y: 0,
+        transition: { delay: i * 0.1, duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+    }),
+};
+
+const Contact = () => {
+    return (
+        <div className="contactPage">
+            <Helmet>
+                <title>Nathan Hannon | Contact</title>
+            </Helmet>
+
+            <section className="contact-hero">
+                <motion.div
+                    className="contact-hero-inner"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+                >
+                    <span className="section-label mono">Connect</span>
+                    <h1 className="contact-title">Let's Work Together</h1>
+                    <p className="contact-subtitle">
+                        Have a project in mind or just want to say hello?
+                        I'd love to hear from you.
                     </p>
-                </div>
-                <br />
-                <div className='socialLinks'>
-                    <p>
-                        <Button className='contact-button' href='https://github.com/NathanHannon' target='_blank' rel='noreferrer noopener' title='GitHub Profile' variant='none'>
-                            <FontAwesomeIcon icon={faGithub} size='2x' className='github-icon' />
-                        </Button>
-                        <Button className='contact-button' href='https://www.linkedin.com/in/nathan-hannon' target='_blank' rel='noreferrer noopener' title='LinkedIn Profile' variant='none'>
-                            <FontAwesomeIcon icon={faLinkedin} size='2x' className='linkedIn-icon' />
-                        </Button>
-                        <Button className='contact-button' href='https://dev.to/nathanhannon' target='_blank' rel='noreferrer noopener' title='Dev.to Profile' variant='none'>
-                            <FontAwesomeIcon icon={faDev} size='2x' className='dev-icon' />
-                        </Button>
-                        <Button className='contact-button' href='https://www.threads.com/@nate.hannon' target='_blank' rel='noreferrer noopener me' title='Threads Profile' variant='none'>
-                            <FontAwesomeIcon icon={faThreads} size='2x' className='threads-icon' />
-                        </Button>
-                    </p>
-                </div>
-            </div>
-        );
-    }
-}
+                </motion.div>
+            </section>
+
+            <section className="contact-content">
+                <motion.div
+                    className="social-grid"
+                    initial="hidden"
+                    animate="visible"
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                            opacity: 1,
+                            transition: { staggerChildren: 0.08, delayChildren: 0.3 },
+                        },
+                    }}
+                >
+                    {socialLinks.map((link, i) => (
+                        <motion.a
+                            key={link.label}
+                            href={link.href}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            title={`${link.label} Profile`}
+                            className={`social-link ${link.className}`}
+                            variants={fadeUp}
+                            custom={i}
+                            whileHover={{ y: -4 }}
+                        >
+                            <FontAwesomeIcon icon={link.icon} className="social-icon" />
+                            <span className="social-name">{link.label}</span>
+                        </motion.a>
+                    ))}
+                </motion.div>
+            </section>
+        </div>
+    );
+};
+
 export default Contact;

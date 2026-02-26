@@ -1,6 +1,5 @@
 // src/About/About.js
 import React from 'react';
-import { Card } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
@@ -42,121 +41,139 @@ const skills = [
 ];
 
 // Animation variants for Framer Motion
-const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
+const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i = 0) => ({
         opacity: 1,
         y: 0,
-        transition: { delay: i * 0.1, duration: 0.5 },
+        transition: { delay: i * 0.08, duration: 0.6, ease: [0.4, 0, 0.2, 1] },
     }),
 };
 
-const About = () => {
-    const pageTitle = 'About Me';
+const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: { staggerChildren: 0.06, delayChildren: 0.2 },
+    },
+};
 
+const About = () => {
     return (
         <div className="aboutPage">
             <Helmet>
-                <title>Nathan Hannon | {pageTitle}</title>
+                <title>Nathan Hannon | Software Developer</title>
             </Helmet>
 
-            <header className="aboutHeader">
-                <h1>{pageTitle}</h1>
-            </header>
-
-            <motion.div
-                className="row about-me"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-            >
-                <div className="col-sm">
-                    <TypeAnimation
-                        cursor={true}
-                        sequence={["Hi, I'm Nathan.", 1000]}
-                        wrapper="h4"
-                        repeat={false}
-                        speed={50}
-                    />
-                    <h5>Who am I?</h5>
-                    <p>
-                        As a software developer, I am passionate about leveraging technology to create innovative solutions that
-                        make a meaningful impact on people's lives. With years of experience in the industry, I have honed my skills
-                        in a variety of programming languages and tools, allowing me to tackle complex challenges and deliver
-                        high-quality results.
-                    </p>
-                </div>
-                <div className="col-sm">
-                    <motion.svg
-                        width="100%"
-                        height="100%"
-                        preserveAspectRatio="none"
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 0.8 }}
+            {/* ══ HERO SECTION ══ */}
+            <section className="hero-section">
+                <div className="hero-inner">
+                    <motion.div
+                        className="hero-content"
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
                     >
-                        <image href={programming} width="100%" height="100%" />
-                    </motion.svg>
+                        <span className="hero-label mono">Software Developer</span>
+                        <h1 className="hero-title">
+                            <TypeAnimation
+                                cursor={true}
+                                sequence={["Hi, I'm Nathan.", 1000]}
+                                wrapper="span"
+                                repeat={false}
+                                speed={50}
+                            />
+                        </h1>
+                        <p className="hero-description">
+                            I build thoughtful, scalable software that blends clean architecture
+                            with intuitive user experience. Passionate about leveraging technology
+                            to create solutions that make a meaningful impact.
+                        </p>
+                        <div className="hero-actions">
+                            <a href="/projects" className="btn btn-primary hero-btn">
+                                View Projects
+                            </a>
+                            <a href="/contact" className="btn-ghost hero-btn">
+                                Get in Touch
+                            </a>
+                        </div>
+                    </motion.div>
+                    <motion.div
+                        className="hero-visual"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                    >
+                        <div className="hero-image-wrapper">
+                            <img src={programming} alt="Developer illustration" className="hero-illustration" />
+                            <div className="hero-glow" />
+                        </div>
+                    </motion.div>
                 </div>
-            </motion.div>
+            </section>
 
-            <hr />
-
-            <motion.div
-                className="row what-do"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1 }}
-            >
-                <div className="col-sm order-sm-last description">
-                    <TypeAnimation
-                        cursor={true}
-                        sequence={["I'm a full-stack web developer.", 1000]}
-                        wrapper="h4"
-                        repeat={false}
-                        speed={50}
-                    />
-                    <h5>What can I do?</h5>
-                    <p>
-                        I am confident in my abilities to handle front and back end development, as well as the design and
-                        implementation of databases. I am able to adapt to new languages and paradigms, allowing me to quickly learn
-                        and apply new skills to my work. I am also a strong communicator, and I enjoy working with others to solve
-                        problems and create solutions.
-                    </p>
-                    <a href="/projects" type="button" className="btn btn-primary project-button">
-                        View My Projects
-                    </a>
+            {/* ══ ABOUT SECTION ══ */}
+            <section className="about-section">
+                <div className="about-inner">
+                    <motion.div
+                        className="about-text"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-100px" }}
+                        variants={fadeUp}
+                    >
+                        <span className="section-label mono">About</span>
+                        <h2 className="section-heading">Full-Stack Developer</h2>
+                        <p>
+                            With years of experience across the stack, I handle front-end interfaces,
+                            back-end services, and database architecture with equal confidence.
+                            I adapt quickly to new languages and paradigms, and I thrive in
+                            collaborative environments where creative problem-solving drives results.
+                        </p>
+                    </motion.div>
                 </div>
-                <div className="col-sm">
-                    <div className="tech-grid">
+            </section>
+
+            {/* ══ SKILLS SECTION ══ */}
+            <section className="skills-section">
+                <div className="skills-inner">
+                    <motion.div
+                        className="skills-header"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-80px" }}
+                        variants={fadeUp}
+                    >
+                        <span className="section-label mono">Toolkit</span>
+                        <h2 className="section-heading">Technologies I Work With</h2>
+                    </motion.div>
+                    <motion.div
+                        className="skills-grid"
+                        variants={staggerContainer}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-80px" }}
+                    >
                         {skills.map((skill, index) => (
-                            <motion.li
+                            <motion.div
                                 key={skill.name}
-                                className="grid-item"
+                                className="skill-card"
                                 custom={index}
-                                variants={cardVariants}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true }}
+                                variants={fadeUp}
                             >
-                                <Card className="techCard">
-                                    <Card.Img
-                                        className="projectCardImage"
-                                        variant="top"
-                                        src={skill.icon}
-                                        width="60px"
-                                        height="60px"
-                                    />
-                                    <Card.Body>
-                                        <Card.Text className="cardContent">{skill.name}</Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </motion.li>
+                                <img
+                                    src={skill.icon}
+                                    alt={skill.name}
+                                    className="skill-icon"
+                                    width="48"
+                                    height="48"
+                                />
+                                <span className="skill-name">{skill.name}</span>
+                            </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 </div>
-            </motion.div>
+            </section>
         </div>
     );
 };

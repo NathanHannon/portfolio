@@ -9,12 +9,13 @@ const projectRouter = require("./routes/projects")
 
 // app express object
 const app = express();
-app.enable('trust proxy');
+app.set('trust proxy', 1);
 
 /// Rate limiting
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100 // limit each IP to 100 requests per windowMs
+    max: 100, // limit each IP to 100 requests per windowMs
+    validate: { trustProxy: false } // skip trust proxy validation for local dev
 });
 
 // Security headers

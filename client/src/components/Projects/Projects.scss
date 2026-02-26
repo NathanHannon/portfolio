@@ -1,129 +1,153 @@
-// src/Projects/Projects.scss
+// src/Projects/Projects.scss — Editorial Projects Page
 
-// Frosted glass variables (consistent with index.scss and About.scss)
-$glass: rgba(255, 255, 255, 0.25);
-$frosted-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.5);
-$frosted-border: 1px solid rgba(255, 255, 255, 0.18);
-$rounded-corner: 0.5rem;
+$font-display: "Playfair Display", Georgia, serif;
+$font-body: "DM Sans", -apple-system, sans-serif;
+$font-mono: "JetBrains Mono", monospace;
+$accent-gold: #c9a87c;
+$light-text: #1a1a1e;
+$light-text-muted: #6b6770;
+$light-border: rgba(0, 0, 0, 0.08);
+$dark-bg: #0a0a0f;
+$dark-surface-elevated: #1c1c26;
+$dark-text: #e8e4de;
+$dark-text-muted: #8a8692;
+$dark-border: rgba(255, 255, 255, 0.06);
+$radius-md: 12px;
+$radius-lg: 20px;
+$transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 // Import project card styles
 @use "ProjectCard/ProjectCard.scss";
 
-// Base styles for the page
+// ═══ Page container
 .projectPage {
-    padding: 20px;
-    background-color: #f8f9fa;
-    transition: background-color 0.3s ease, color 0.3s ease;
     min-height: 100vh;
+    transition: background-color $transition-base, color $transition-base;
 }
 
-// Dark mode styles
-body.dark-mode {
-    .projectPage {
-        background-color: #1a1a1a;
-        color: #e0e0e0;
-
-        .projectHeader h1,
-        .cardTitle,
-        .cardContent {
-            color: #e0e0e0;
-        }
-
-        .projectCard {
-            background-color: #2a2a2a;
-            border: 1px solid #444;
-            box-shadow: $frosted-shadow;
-        }
-
-        hr {
-            border-color: #444;
-        }
-    }
-}
-
-// Header styles
-.projectHeader {
+// ═══ Projects Hero
+.projects-hero {
+    padding: 6rem 2rem 3rem;
     text-align: center;
-    padding: 20px 0;
+    position: relative;
 
-    h1 {
-        font-size: 2.5rem;
-        color: #333;
-        transition: color 0.3s ease;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(100%, 600px);
+        height: 1px;
+        background: linear-gradient(90deg,
+                transparent,
+                rgba(0, 0, 0, 0.06) 30%,
+                rgba(201, 168, 124, 0.2) 50%,
+                rgba(0, 0, 0, 0.06) 70%,
+                transparent);
     }
 }
 
-// Project list styles
+.projects-hero-inner {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.section-label {
+    display: inline-block;
+    font-family: $font-mono;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: $accent-gold;
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1rem;
+        height: 1px;
+        background: $accent-gold;
+    }
+}
+
+.projects-title {
+    font-family: $font-display;
+    font-size: clamp(2.2rem, 4vw + 0.5rem, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.projects-subtitle {
+    font-size: 1.1rem;
+    color: $light-text-muted;
+    line-height: 1.8;
+    max-width: 50ch;
+    margin: 0 auto;
+}
+
+// ═══ Grid section
+.projects-grid-section {
+    padding: 3rem 2rem 6rem;
+}
+
 .projectList {
-    padding: 0; // Override Container's default padding
-    max-width: 100%; // Override Container's max-width to allow full control
+    padding: 0;
+    max-width: 100%;
 }
 
 .projectList-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px; // Limit the maximum width of the grid
-    margin: 0 auto; // Center the grid horizontally
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .projectList-item {
     display: flex;
-    justify-content: center; // Center the card within its grid cell
+    justify-content: stretch;
 }
 
-// Project card styles
-.projectCard {
-    transition: transform 0.2s ease-in-out, background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
-    max-width: 350px; // Limit the maximum width for consistency
-
-    .projectCardImage {
-        object-fit: cover;
-        width: 100%;
-        height: 200px;
+// ═══ Dark mode
+body.dark-mode {
+    .projects-hero::after {
+        background: linear-gradient(90deg,
+                transparent,
+                $dark-border 30%,
+                rgba(201, 168, 124, 0.12) 50%,
+                $dark-border 70%,
+                transparent);
     }
 
-    .cardTitle {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: 10px;
-        color: #333;
-        transition: color 0.3s ease;
+    .projects-title {
+        color: $dark-text;
     }
 
-    .cardContent {
-        font-size: 0.9rem;
-        color: #555;
-        transition: color 0.3s ease;
+    .projects-subtitle {
+        color: $dark-text-muted;
     }
 }
 
-.project-card-link {
-    text-decoration: none;
-    display: block;
-
-    &:hover {
-        .projectCard {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
+// ═══ Responsive
+@media screen and (max-width: 768px) {
+    .projects-hero {
+        padding: 5rem 1.25rem 2rem;
     }
-}
 
-// Mobile adjustments
-@media screen and (max-width: 767px) {
+    .projects-grid-section {
+        padding: 2rem 1.25rem 4rem;
+    }
+
     .projectList-grid {
         grid-template-columns: 1fr;
-        padding: 15px;
-    }
-
-    .projectPage {
-        padding: 15px;
-    }
-
-    .projectCard {
-        max-width: 100%;
+        gap: 1.25rem;
     }
 }

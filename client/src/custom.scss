@@ -1,7 +1,59 @@
-// change the theme
+// Custom Bootstrap 4 overrides — Refined Editorial theme
+
 $theme-colors: (
-    "primary": #004aad
+    "primary": #c9a87c,
+    "secondary": #4a9eff,
+    "dark": #0a0a0f,
+    "light": #faf8f5
 );
+
+$font-family-base: "DM Sans", -apple-system, sans-serif;
+$headings-font-family: "Playfair Display", Georgia, serif;
+$body-bg: #faf8f5;
+$body-color: #1a1a1e;
+$link-color: #4a9eff;
+$link-hover-color: #c9a87c;
+$border-radius: 12px;
+$border-radius-sm: 6px;
+$border-radius-lg: 20px;
+
+$btn-border-radius: 100px;
+$btn-padding-x: 1.5rem;
+$btn-padding-y: 0.65rem;
+$btn-font-weight: 600;
+
+$navbar-padding-y: 0.75rem;
 
 // Import Bootstrap and its default variables
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
+
+// Button refinements
+.btn-primary {
+    background-color: #c9a87c;
+    border-color: #c9a87c;
+    color: #0a0a0f;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+
+    &:hover,
+    &:focus {
+        background-color: #b8956a;
+        border-color: #b8956a;
+        color: #0a0a0f;
+        box-shadow: 0 4px 20px rgba(201, 168, 124, 0.3);
+    }
+}
+
+body.dark-mode .btn-primary {
+    background-color: #c9a87c;
+    border-color: #c9a87c;
+    color: #0a0a0f;
+
+    &:hover,
+    &:focus {
+        background-color: #e0c9a6;
+        border-color: #e0c9a6;
+        box-shadow: 0 4px 20px rgba(201, 168, 124, 0.4);
+    }
+}
