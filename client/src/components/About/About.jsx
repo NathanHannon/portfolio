@@ -33,11 +33,11 @@ const skills = [
     { name: 'C#', icon: csharp },
     { name: 'Go', icon: go },
     { name: 'Java', icon: java },
+    { name: 'Python', icon: python },
     { name: 'Linux', icon: linux },
     { name: 'MongoDB', icon: mongodb },
     { name: 'PostgreSQL', icon: postgresql },
-    { name: 'SQL Server', icon: mssql },
-    { name: 'Python', icon: python }
+    { name: 'SQL Server', icon: mssql }
 ];
 
 // Animation variants for Framer Motion

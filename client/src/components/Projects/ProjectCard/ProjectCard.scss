@@ -153,6 +153,21 @@ body.dark-mode {
 }
 
 // ═══ Responsive
+@media screen and (max-width: 480px) {
+    .projectCard-body {
+        padding: 1rem 1.25rem 1.25rem !important;
+
+        .cardTitle {
+            font-size: 1.05rem !important;
+        }
+
+        .cardContent {
+            -webkit-line-clamp: 4; // allow slightly more text on small screens
+        }
+    }
+}
+
+// ═══ Responsive
 @media screen and (max-width: 767px) {
     .projectCard {
         .projectCard-body {
