@@ -19,6 +19,7 @@ import mongodb from '../../assets/tech-logos/mongodb.svg';
 import postgresql from '../../assets/tech-logos/postgresql.svg';
 import mssql from '../../assets/tech-logos/microsoft-sql-server.svg';
 import python from '../../assets/tech-logos/python.svg';
+import docker from '../../assets/tech-logos/docker.svg';
 import './About.scss';
 
 // Define skills array for easier mapping
@@ -37,7 +38,8 @@ const skills = [
     { name: 'Linux', icon: linux },
     { name: 'MongoDB', icon: mongodb },
     { name: 'PostgreSQL', icon: postgresql },
-    { name: 'SQL Server', icon: mssql }
+    { name: 'SQL Server', icon: mssql },
+    { name: 'Docker', icon: docker }
 ];
 
 // Animation variants for Framer Motion
