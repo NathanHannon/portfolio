@@ -36,6 +36,8 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 USER appuser
 
 ENV NODE_ENV=production
-EXPOSE 5000
+# PORT is injected by DigitalOcean App Platform (default 8080).
+# The server reads process.env.PORT, so no hardcoded value needed.
+EXPOSE 8080
 
 CMD ["node", "server/bin/www"]
