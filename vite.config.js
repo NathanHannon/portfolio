@@ -18,6 +18,7 @@ export default defineConfig({
     // Set base URL for DigitalOcean
     base: '/',
     server: {
+        host: '0.0.0.0', // Bind to all interfaces (required for Docker)
         proxy: {
             '/api': {
                 target: 'http://localhost:5000',

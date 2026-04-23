@@ -1,33 +1,41 @@
-# Use Node.js LTS as the base image
-FROM node:lts-alpine
+# Stage 1: Build the React frontend
+FROM node:20-alpine AS builder
 
-# Set the working directory to /app
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the container
+# Copy package files and install all dependencies
 COPY package*.json ./
+RUN npm ci
 
-# Install production dependencies only
-RUN npm install --production
+# Copy only the files needed for the frontend build
+COPY index.html ./
+COPY vite.config.js ./
+COPY client/ ./client/
 
-# Copy the built application from the build stage
-COPY build ./build
+# Build the React app (outputs to /app/build/)
+RUN npm run build
 
-# Copy the public directory to the container
-COPY public ./public
+# Stage 2: Production server
+FROM node:20-alpine AS production
 
-# Copy the src directory to the container
-COPY src ./src
+WORKDIR /app
 
-# Set NODE_ENV to production
-ENV NODE_ENV=production
+# Copy package files and install production dependencies only
+COPY package*.json ./
+RUN npm ci --omit=dev
 
-# Create a non-root user to run the application
+# Copy built frontend from builder stage
+COPY --from=builder /app/build ./build
+
+# Copy server code and SSL certificate for database connection
+COPY server/ ./server/
+COPY certs/ ./certs/
+
+# Create a non-root user for security
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 USER appuser
 
-# Expose port 3000 for the React app
-EXPOSE 3000
+ENV NODE_ENV=production
+EXPOSE 5000
 
-# Start the React app
-CMD ["sh", "-c", "PORT=$PORT npm start"]
+CMD ["node", "server/bin/www"]

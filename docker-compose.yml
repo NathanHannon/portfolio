@@ -1,0 +1,36 @@
+services:
+  # Production: multi-stage build that compiles the React app and serves via Express
+  # Usage: docker compose --profile prod up --build
+  app-prod:
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.prod
+    ports:
+      - "5000:5000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      - NODE_ENV=production
+    profiles:
+      - prod
+
+  # Development: hot-reloading with Vite (port 5173) and Express (port 5000)
+  # Usage: docker compose --profile dev up --build
+  app-dev:
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.dev
+    ports:
+      - "5000:5000"
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      - NODE_ENV=development
+    profiles:
+      - dev
