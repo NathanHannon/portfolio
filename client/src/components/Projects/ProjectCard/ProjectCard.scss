@@ -25,7 +25,16 @@ $transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: $radius-lg;
     overflow: hidden;
     transition: all $transition-base;
-    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+        border-color: rgba(201, 168, 124, 0.2);
+
+        .projectCardImage {
+            transform: scale(1.05);
+        }
+    }
 
     .projectCard-image-wrapper {
         position: relative;
@@ -39,32 +48,11 @@ $transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .projectCard-overlay {
+        .projectCard-gradient {
+            width: 100%;
+            height: 100%;
             position: absolute;
             inset: 0;
-            background: rgba(10, 10, 15, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity $transition-base;
-            backdrop-filter: blur(2px);
-        }
-
-        .projectCard-view {
-            font-family: $font-body;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: #fff;
-            padding: 0.5rem 1.25rem;
-            border: 1.5px solid rgba(255, 255, 255, 0.4);
-            border-radius: 100px;
-            letter-spacing: 0.02em;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transform: translateY(8px);
-            transition: transform $transition-base;
         }
     }
 
@@ -99,31 +87,52 @@ $transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         flex-grow: 1;
         margin-bottom: 0;
     }
-}
 
-// ═══ Link hover
-.project-card-link {
-    text-decoration: none;
-    display: block;
-    height: 100%;
+    .projectCard-actions {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+    }
 
-    &:hover {
-        .projectCard {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
-            border-color: rgba(201, 168, 124, 0.2);
+    .projectCard-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-family: $font-body;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.4rem 0.9rem;
+        border-radius: 100px;
+        text-decoration: none;
+        letter-spacing: 0.02em;
+        transition: all $transition-base;
+        white-space: nowrap;
+
+        &--github {
+            color: $light-text;
+            border: 1.5px solid $light-border;
+            background: transparent;
+
+            &:hover {
+                border-color: $light-text;
+                background: rgba(0, 0, 0, 0.04);
+                color: $light-text;
+                text-decoration: none;
+            }
         }
 
-        .projectCardImage {
-            transform: scale(1.05);
-        }
+        &--demo {
+            color: $accent-gold;
+            border: 1.5px solid rgba(201, 168, 124, 0.4);
+            background: transparent;
 
-        .projectCard-overlay {
-            opacity: 1;
-        }
-
-        .projectCard-view {
-            transform: translateY(0);
+            &:hover {
+                background: rgba(201, 168, 124, 0.1);
+                border-color: $accent-gold;
+                color: $accent-gold;
+                text-decoration: none;
+            }
         }
     }
 }
@@ -135,6 +144,11 @@ body.dark-mode {
         border-color: $dark-border;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 
+        &:hover {
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+            border-color: rgba(201, 168, 124, 0.15);
+        }
+
         .cardTitle {
             color: $dark-text;
         }
@@ -142,12 +156,16 @@ body.dark-mode {
         .cardContent {
             color: $dark-text-muted;
         }
-    }
 
-    .project-card-link:hover {
-        .projectCard {
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
-            border-color: rgba(201, 168, 124, 0.15);
+        .projectCard-btn--github {
+            color: $dark-text;
+            border-color: $dark-border;
+
+            &:hover {
+                border-color: $dark-text;
+                background: rgba(255, 255, 255, 0.06);
+                color: $dark-text;
+            }
         }
     }
 }
