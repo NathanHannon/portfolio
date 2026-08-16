@@ -92,9 +92,9 @@ $transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         display: flex;
         gap: 0.5rem;
         margin-top: 1rem;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         align-items: center;
-        overflow-x: auto;
+        overflow: visible;
     }
 
     .projectCard-btn {
@@ -110,7 +110,7 @@ $transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         letter-spacing: 0.02em;
         transition: all $transition-base;
         white-space: nowrap;
-        flex: 0 0 auto;
+        flex: 0 1 auto;
 
         &--github {
             color: $light-text;
