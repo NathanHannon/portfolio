@@ -45,7 +45,7 @@ export const ProjectCard = ({ projects }) => {
             <div className="projectCard-body">
                 <h3 className="cardTitle">{projects.name}</h3>
                 <p className="cardContent">{projects.description}</p>
-                {(projects.repo_url || projects.demo_url) && (
+                {(projects.repo_url || projects.demo_url || projects.writeup_url) && (
                     <div className="projectCard-actions">
                         {projects.repo_url && (
                             <a
@@ -69,6 +69,18 @@ export const ProjectCard = ({ projects }) => {
                             >
                                 <FontAwesomeIcon icon={['fas', 'arrow-up-right-from-square']} />
                                 Live Demo
+                            </a>
+                        )}
+                        {projects.writeup_url && (
+                            <a
+                                href={projects.writeup_url}
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="projectCard-btn projectCard-btn--writeup"
+                                aria-label={`Read the case study for ${projects.name}`}
+                            >
+                                <FontAwesomeIcon icon={['fas', 'book-open']} />
+                                Case Study
                             </a>
                         )}
                     </div>

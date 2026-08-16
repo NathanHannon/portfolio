@@ -36,3 +36,4 @@ server/ssl/*
 server/.babelrc
 
 .idx
+server/add_project_writeup.sql

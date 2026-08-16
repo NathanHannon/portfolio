@@ -134,6 +134,19 @@ $transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 text-decoration: none;
             }
         }
+
+        &--writeup {
+            color: #496a8f;
+            border: 1.5px solid rgba(73, 106, 143, 0.35);
+            background: transparent;
+
+            &:hover {
+                background: rgba(73, 106, 143, 0.08);
+                border-color: #496a8f;
+                color: #496a8f;
+                text-decoration: none;
+            }
+        }
     }
 }
 
@@ -165,6 +178,17 @@ body.dark-mode {
                 border-color: $dark-text;
                 background: rgba(255, 255, 255, 0.06);
                 color: $dark-text;
+            }
+        }
+
+        .projectCard-btn--writeup {
+            color: #8eb6dc;
+            border-color: rgba(142, 182, 220, 0.35);
+
+            &:hover {
+                background: rgba(142, 182, 220, 0.1);
+                border-color: #8eb6dc;
+                color: #8eb6dc;
             }
         }
     }

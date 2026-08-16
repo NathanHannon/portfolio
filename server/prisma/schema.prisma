@@ -15,6 +15,7 @@ model project {
   image_url   String?
   repo_url    String?
   demo_url    String?
+  writeup_url String?
 }
 
 model tags {
