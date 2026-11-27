@@ -1,5 +1,6 @@
 // src/About/About.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
@@ -92,12 +93,12 @@ const About = () => {
                             to create solutions that make a meaningful impact.
                         </p>
                         <div className="hero-actions">
-                            <a href="/projects" className="btn btn-primary hero-btn">
+                            <Link to="/projects" className="btn btn-primary hero-btn">
                                 View Projects
-                            </a>
-                            <a href="/contact" className="btn-ghost hero-btn">
+                            </Link>
+                            <Link to="/contact" className="btn-ghost hero-btn">
                                 Get in Touch
-                            </a>
+                            </Link>
                         </div>
                     </motion.div>
                     <motion.div

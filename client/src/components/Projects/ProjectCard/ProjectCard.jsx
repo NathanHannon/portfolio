@@ -1,6 +1,8 @@
 // src/Projects/ProjectCard/ProjectCard.jsx
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faArrowUpRightFromSquare, faBookOpen } from '@fortawesome/free-solid-svg-icons';
 import './ProjectCard.scss';
 
 const GRADIENTS = [
@@ -55,7 +57,7 @@ export const ProjectCard = ({ projects }) => {
                                 className="projectCard-btn projectCard-btn--github"
                                 aria-label={`View ${projects.name} on GitHub`}
                             >
-                                <FontAwesomeIcon icon={['fab', 'github']} />
+                                <FontAwesomeIcon icon={faGithub} />
                                 GitHub
                             </a>
                         )}
@@ -67,7 +69,7 @@ export const ProjectCard = ({ projects }) => {
                                 className="projectCard-btn projectCard-btn--demo"
                                 aria-label={`View live demo of ${projects.name}`}
                             >
-                                <FontAwesomeIcon icon={['fas', 'arrow-up-right-from-square']} />
+                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                                 Live Demo
                             </a>
                         )}
@@ -79,7 +81,7 @@ export const ProjectCard = ({ projects }) => {
                                 className="projectCard-btn projectCard-btn--writeup"
                                 aria-label={`Read the case study for ${projects.name}`}
                             >
-                                <FontAwesomeIcon icon={['fas', 'book-open']} />
+                                <FontAwesomeIcon icon={faBookOpen} />
                                 Case Study
                             </a>
                         )}

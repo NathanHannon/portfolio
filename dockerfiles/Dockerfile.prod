@@ -27,9 +27,8 @@ RUN npm ci --omit=dev
 # Copy built frontend from builder stage
 COPY --from=builder /app/build ./build
 
-# Copy server code and SSL certificate for database connection
+# Copy server code (pass CA cert via DATABASE_CERT env var in production)
 COPY server/ ./server/
-COPY certs/ ./certs/
 
 # Create a non-root user for security
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup

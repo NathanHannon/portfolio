@@ -116,8 +116,47 @@ $transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     justify-content: stretch;
 }
 
+// ═══ Loading / Error / Empty states
+.projects-status {
+    text-align: center;
+    color: $light-text-muted;
+    max-width: 1260px;
+    margin: 0 auto;
+
+    p {
+        margin: 0 auto 1.25rem;
+    }
+}
+
+.projectCard-skeleton {
+    height: 360px;
+    border-radius: $radius-lg;
+    border: 1px solid $light-border;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.04) 25%, rgba(0, 0, 0, 0.08) 50%, rgba(0, 0, 0, 0.04) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s infinite;
+}
+
+@keyframes skeleton-shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
 // ═══ Dark mode
 body.dark-mode {
+    .projects-status {
+        color: $dark-text-muted;
+    }
+
+    .projectCard-skeleton {
+        border-color: $dark-border;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 25%, rgba(255, 255, 255, 0.07) 50%, rgba(255, 255, 255, 0.03) 75%);
+        background-size: 200% 100%;
+    }
     .projects-hero::after {
         background: linear-gradient(90deg,
                 transparent,
