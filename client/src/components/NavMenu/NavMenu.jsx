@@ -1,8 +1,9 @@
-// src/components/NavMenu.js
+// src/components/NavMenu.jsx
 import React, { useState, useContext, useEffect } from 'react';
-import { Image, Nav, Navbar } from 'react-bootstrap';
-import Logo from '../../assets/SVGs/brand-logo/NH-Initials.svg';
+import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faMoon, faSun, faXmark } from '@fortawesome/free-solid-svg-icons';
+import Logo from '../../assets/SVGs/brand-logo/NH-Initials.svg';
 import { ThemeContext } from '../../context/ThemeContext';
 import './NavMenu.scss';
 
@@ -10,25 +11,24 @@ const ThemeToggle = ({ darkMode, toggle }) => (
   <button
     className={`theme-toggle ${darkMode ? 'is-dark' : 'is-light'}`}
     onClick={toggle}
-    aria-label="Toggle dark mode"
+    aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+    aria-pressed={darkMode}
     type="button"
   >
     <div className="toggle-track">
       <div className="toggle-thumb">
-        <FontAwesomeIcon icon={darkMode ? 'moon' : 'sun'} className="toggle-icon" />
+        <FontAwesomeIcon icon={darkMode ? faMoon : faSun} className="toggle-icon" />
       </div>
     </div>
   </button>
 );
 
 const NavMenu = () => {
-  const [collapsed, setCollapsed] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
 
-  const toggleNavbar = () => {
-    setCollapsed(!collapsed);
-  };
+  const closeNavbar = () => setExpanded(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,38 +39,48 @@ const NavMenu = () => {
   }, []);
 
   return (
-    <Navbar
-      className={`navbar-editorial ${scrolled ? 'navbar-scrolled' : ''}`}
-      variant={darkMode ? 'dark' : 'light'}
-      fixed="top"
-      expand="sm"
-    >
-      <div className="navbar-inner">
-        <Navbar.Brand href="/" className="brand" tabIndex="-1" aria-disabled="true" alt="Home Page">
-          <Image rounded={true} src={Logo} alt="Branding" height={'36'} width={'auto'} className="brand-logo" />
-          <span className="brand-name">Nathan Hannon</span>
-        </Navbar.Brand>
-        <Navbar.Toggle onClick={toggleNavbar} aria-controls="responsive-navbar-nav" className="navbar-toggler-editorial" />
-        <Navbar.Collapse
-          className="justify-content-end"
-          id="responsive-navbar-nav"
-          isopen={(!collapsed).toString()}
-        >
-          <Nav className="nav-links">
-            <Nav.Link href="/" className="nav-link-editorial" tabIndex="-1" aria-disabled="true">
-              About
-            </Nav.Link>
-            <Nav.Link href="/projects" className="nav-link-editorial" tabIndex="-1" aria-disabled="true">
-              Projects
-            </Nav.Link>
-            <Nav.Link href="/contact" className="nav-link-editorial" tabIndex="-1" aria-disabled="true">
-              Contact
-            </Nav.Link>
-          </Nav>
-          <ThemeToggle darkMode={darkMode} toggle={toggleDarkMode} />
-        </Navbar.Collapse>
-      </div>
-    </Navbar>
+    <header>
+      <nav
+        aria-label="Primary navigation"
+        className={`navbar-editorial ${scrolled ? 'navbar-scrolled' : ''}`}
+      >
+        <div className="navbar-inner">
+          <Link to="/" className="brand" onClick={closeNavbar}>
+            <img src={Logo} alt="Nathan Hannon logo" height="36" width="36" className="brand-logo" />
+            <span className="brand-name">Nathan Hannon</span>
+          </Link>
+
+          <button
+            type="button"
+            className="navbar-toggler-editorial"
+            aria-controls="responsive-navbar-nav"
+            aria-expanded={expanded}
+            aria-label={expanded ? 'Close navigation menu' : 'Open navigation menu'}
+            onClick={() => setExpanded((prev) => !prev)}
+          >
+            <FontAwesomeIcon icon={expanded ? faXmark : faBars} />
+          </button>
+
+          <div
+            className={`navbar-collapse ${expanded ? 'is-open' : ''}`}
+            id="responsive-navbar-nav"
+          >
+            <div className="nav-links">
+              <NavLink to="/" end className="nav-link-editorial" onClick={closeNavbar}>
+                About
+              </NavLink>
+              <NavLink to="/projects" className="nav-link-editorial" onClick={closeNavbar}>
+                Projects
+              </NavLink>
+              <NavLink to="/contact" className="nav-link-editorial" onClick={closeNavbar}>
+                Contact
+              </NavLink>
+            </div>
+            <ThemeToggle darkMode={darkMode} toggle={toggleDarkMode} />
+          </div>
+        </div>
+      </nav>
+    </header>
   );
 };
 

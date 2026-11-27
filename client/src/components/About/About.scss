@@ -498,48 +498,6 @@ body.dark-mode {
             text-align: center;
         }
     }
-}
-
-.hero-content {
-    align-items: center;
-
-    .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-actions {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-}
-
-.hero-visual {
-    order: -1;
-
-    .hero-image-wrapper {
-        max-width: 320px;
-    }
-}
-
-.about-section,
-.skills-section {
-    padding: 3rem 1.25rem;
-}
-
-.skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 0.75rem;
-}
-
-.skill-card {
-    padding: 1.25rem 0.75rem;
-}
-
-@media screen and (max-width: 480px) {
-    .hero-content .hero-title {
-        font-size: 2rem;
-    }
 
     .skills-grid {
         grid-template-columns: repeat(3, 1fr);

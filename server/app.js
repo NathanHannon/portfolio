@@ -5,21 +5,35 @@ const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 
-const projectRouter = require("./routes/projects")
+const projectRouter = require('./routes/projects');
 
-// app express object
 const app = express();
+const isProd = process.env.NODE_ENV === 'production';
 app.set('trust proxy', 1);
 
-/// Rate limiting
+// Rate limiting
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 100, // limit each IP to 100 requests per windowMs
+    standardHeaders: true,
+    legacyHeaders: false,
     validate: { trustProxy: false } // skip trust proxy validation for local dev
 });
 
-// Security headers
-app.use(helmet());
+// Security headers (allow Google Fonts and external project screenshots)
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            scriptSrc: ["'self'"],
+            styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+            fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+            imgSrc: ["'self'", 'data:', 'https:'],
+            connectSrc: ["'self'", 'https://nathanhannon.dev'],
+            frameAncestors: ["'none'"],
+        },
+    },
+}));
 app.use(limiter);
 
 /**
@@ -32,6 +46,9 @@ const validateDomain = (origin) => {
     const validDomains = [
         /^https:\/\/(portfolio\.|[\w-]+\.)?nathanhannon\.(dev|xyz|com)$/
     ];
+    if (!isProd) {
+        validDomains.push(/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/);
+    }
     return validDomains.some(pattern => pattern.test(origin));
 };
 
@@ -40,27 +57,45 @@ app.use(cors({
         if (!origin || validateDomain(origin)) {
             callback(null, true);
         } else {
-            callback(new Error('Not allowed by CORS'));
+            const err = new Error('Not allowed by CORS');
+            err.status = 403;
+            callback(err);
         }
     },
     credentials: true,
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
-app.use(logger("dev"));
+app.use(logger(isProd ? 'combined' : 'dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "../build")));
+
+const buildDir = path.join(__dirname, '../build');
+app.use(express.static(buildDir));
 app.get('/.well-known/nostr.json', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build/.well-known/nostr.json'));
+    res.sendFile(path.join(buildDir, '.well-known/nostr.json'));
 });
 
-// routers
-app.use("/api", projectRouter);
+// API routers
+app.use('/api', projectRouter);
+app.use('/api', (req, res) => {
+    res.status(404).json({ error: 'API endpoint not found' });
+});
 
-// fallback for serving main page.
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../public/index.html'));
-// });
+// SPA fallback for client-side routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(buildDir, 'index.html'));
+});
+
+// Global error handler
+app.use((err, req, res, next) => {
+    const status = err.status || 500;
+    if (status >= 500) {
+        console.error(err);
+    }
+    res.status(status).json({
+        error: status === 403 ? err.message : 'Internal server error',
+    });
+});
 
 module.exports = app;
